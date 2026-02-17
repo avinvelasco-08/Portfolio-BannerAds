@@ -1,0 +1,311 @@
+/****** Common CSS ******/
+.Guide{
+    opacity: 0.4;
+    display: none;
+    z-index: 49;
+}
+.Absolute{
+    position: absolute;
+}
+.Relative{
+    position: relative;
+}
+.Flex{
+    display: Flex;
+}
+.Left{
+    justify-content: flex-start;
+}
+.Center{
+    justify-content: center;
+}
+.Right{
+    justify-content: flex-end;
+}
+.Top{
+    align-items: flex-start
+}
+.Middle{
+    align-items: center;
+}
+.Bottom{
+    align-items: flex-end;
+}
+
+.Row{
+    flex-direction: row;
+}
+.Column{
+    flex-direction: column;
+}
+
+.Contain{
+    object-fit: contain;
+}
+.FullSize{
+    width: 300px;
+    height: 250px;
+}
+.MaxSize{
+    width: 100%;
+    height: 100%;
+}
+.AbsolutePosition{
+    left: 0px;
+    top: 0px;
+}
+.Red{
+    color: #EE0000;
+}
+.trans{
+    opacity: 0;
+}
+#cover{
+    top: 300px;
+}
+.FixPixelation{
+    will-change: transform;
+    transform-origin: center;
+    text-rendering: auto;
+    perspective: 1000px;
+}
+u{
+    text-decoration-line: underline;
+    text-decoration-thickness: 0px;
+}
+#MainContent {
+    overflow: hidden;
+    background-color: black;
+    opacity: 0;
+}
+
+/* BG Animation */
+#chatboxOverlay{
+    left:25px;
+    top:25px;
+}
+#path1AsB{
+    position: absolute;
+    left:19px;
+    top:19px;
+}
+#Anim1{
+    position: absolute;
+    left:-13px;
+    top:-15px;
+}
+/* FRAMES */
+#Frame1, #Frame3{
+    width: 300px;
+    height: 250px;
+    left: 0px;
+    top: 0px;
+    opacity: 1;
+}
+
+#ribbon1_wrapper{
+    top: 0px;
+    right: 0px;
+    width: 131px;
+    height: 108px;
+    overflow: hidden;
+}
+
+#ribbon1a_masking{
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 0px;
+    overflow: hidden;
+}
+
+#ribbon1b_masking{
+    bottom: 0px;
+    left: 0px;
+    width: 36px;
+    height: 52px;
+    overflow: hidden;
+}
+
+.ribbon1_img{
+    width: 134px;
+    height: 113px;
+    left: -4px;
+    position: absolute;
+}
+
+#ribbon1b_img{
+    bottom: 0;
+}
+/* FRAME TEXT */
+#F1FlexBox, #F3FlexBox{
+    width: 300px;
+    height: 250px;
+    left: 0px;
+    top: 0px;
+}
+#F1HeadlineBox1{
+    overflow: hidden;
+    height: 28px;
+    width: 175px;
+    top: 73px;
+    left: 19px;
+}
+#F1HeadlineBox2{
+    overflow: hidden;
+    height: 29px;
+    width: 190px;
+    top: 101px;
+    left: 20px;
+}
+#F1HeadlineBox3{
+    overflow: hidden;
+    height: 35px;
+    width: 295px;
+    top: 125px;
+    left: 23px;
+}
+#F3HeadlineBox1{
+    /* overflow: hidden; */
+    height: 25px;
+    width: 185px;
+    top: 48px;
+    left: 47px;
+}
+#F3HeadlineBox2{
+    /* overflow: hidden; */
+    height: 20px;
+    width: 185px;
+    top: 73px;
+    left: 47px;
+}
+
+#F3HeadlineBox3{
+    /* overflow: hidden; */
+    height: 20px;
+    width: 185px;
+    top: 73px;
+    left: 47px;
+}
+
+#F3SubHeadlineBox{
+    width: 300px;
+    height: 250px;
+    top: 0px;
+    left: 0px;
+}.f1-headline1{
+    width: 300px;
+    height: 250px;
+    left: -18px;
+    top: -73px;
+}
+.f1-headline2{
+    width: 300px;
+    height: 250px;
+    top: -101px;
+    left: -19px;
+}
+.f1-headline3{
+    width: 300px;
+    height: 250px;
+    left: -23px;
+    top: -125px;
+}
+.f3-headline1{
+    width: 300px;
+    height: 250px;
+    left: -47px;
+    top: -48px;
+}
+.f3-headline2{
+    width: 300px;
+    height: 250px;
+    top: -73px;
+    left: -47px;
+}
+.f3-headline3{
+    width: 300px;
+    height: 250px;
+    top: -98px;
+    left: -47px;
+}
+.f3-subheadline{
+    width: 300px;
+    height: 250px;
+    top: 0px;
+    left: 0px;
+}
+.st-logo{
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 250px;
+}
+.walmart-logo{
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 250px;
+}
+.iPhone{
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 250px;
+}
+.cta{
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 250px;
+}
+.see-details{
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 250px;
+}
+
+.disclaimer{
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 250px;
+
+}
+#Disclaimer{
+    background-color: #000;
+    /* display: none; */
+}
+
+#offerHotspot {
+    top: 231px;
+    left: 24px;
+    width: 36px;
+    height: 9px;
+    cursor: pointer;
+}
+
+#closeBtn {
+    top: 12px;
+    right: 12px;
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+
+/*Ribbon*/
+.ribbon{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 250px;
+    z-index: -1;
+    opacity: 0;
+}
+.ribbon img{
+    width: 300px;
+    height: 250px;
+}
+

@@ -1,0 +1,835 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+@font-face {
+  font-family: 'VerizonNHGeDSRegular';
+  src: url('../fonts/VerizonNHGeDS-Regular.woff2') format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'VerizonNHGDSLight';
+  src: url('../fonts/VerizonNHGDS-Light.woff2') format('woff2');
+  font-weight: normal;
+}
+
+/* @font-face {
+    font-family: 'VerizonNHGeDSBold';
+    src: url('../fonts/VerizonNHGeDS-Bold.woff2') format('woff2');
+    font-weight: normal;
+} */
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  /*    -webkit-backface-visibility: hidden;*/
+  /* Safari */
+  /*    backface-visibility: hidden;*/
+}
+
+html,
+body {
+  position: absolute;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  background: #FFFFFF;
+  width: 100%;
+  height: 100%;
+
+  /* below improves consistancey of font rendering across browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+
+  /* below stops FireFox rendering copy too heavily */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --ad-width: 0;
+  --ad-height: 0;
+  --cta-arrow-width: 9px;
+  --headline-font: 34px;
+}
+
+/* ------------ Generic ----------- */
+.frame,
+.lines {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.heading-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#main {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: var(--ad-width);
+  height: var(--ad-height);
+  background-color: #F8F3E9;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* ------------ DOM ----------- */
+#headingFrame {
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 0 0 0 0;
+}
+
+#headingContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#footerContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ------------ Images ----------- */
+.media-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------ Text fields ----------- */
+#main,
+.heading,
+.eyebrow,
+.sublegal {
+  position: relative;
+  font-family: 'VerizonNHGDSLight';
+  color: #000;
+}
+
+b {
+  /* font-family: VerizonNHGeDSBold; */
+  font-weight: 400;
+}
+
+.exit-click {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.banner-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #D8DADA;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Tooltip Properties */
+.hotspot {
+  position: absolute;
+  background: transparent;
+  /* Red semi-transparent background for visibility */
+  cursor: pointer;
+  z-index: 2;
+}
+
+.arrowTip-container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 0.35px;
+  left: 0;
+  width: 9px;
+  height: 6px;
+  z-index: 3;
+}
+
+.tooltip-container {
+  position: absolute;
+  width: 146px;
+  height: 79px;
+  border: solid 0.5px #000;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 12px 25px 10px 14px;
+  z-index: 1;
+}
+
+.disclaimer {
+  font-family: VerizonNHGDSLight;
+  font-size: 8px;
+  line-height: 1.125em;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  box-sizing: content-box;
+}
+
+.disclaimer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 44px;
+  top: 23px;
+  right: 11px;
+  background: rgb(246, 246, 246);
+}
+
+.close-btn {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 9px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.xclose {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-thumb {
+  position: relative;
+  width: 100%;
+  background: rgb(218, 216, 216);
+  cursor: pointer;
+}
+
+/*COLORS*/
+.red,
+red {
+  color: #E10014;
+}
+
+.vzn_red_svg {
+  fill: #E10014;
+}
+
+/* .coral, coral{
+    color: #FF281E;
+} */
+.yellow,
+yellow {
+  color: #F5FF1E;
+}
+
+.stone,
+stone {
+  color: #F8F3E9;
+}
+
+.white,
+white {
+  color: #FFFFFF;
+}
+
+.black,
+black {
+  color: #000000;
+}
+
+#ctaWithText {
+  width: 86px;
+}
+
+/*Footer*/
+.footer-container,
+.lockup-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.footer-container {
+  max-height: 85px;
+}
+
+.lockup-container {
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.legal-container {
+  position: relative;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  display: none;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  min-width: 50px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.logo-mask {
+  position: relative;
+  width: 81px;
+}
+
+.cta-container {
+  display: flex;
+  z-index: 4;
+}
+
+.sublegal {
+  font-size: 8px;
+  color: #000000;
+}
+
+.cta-container {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.cta-mask {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.cta-mask-arrow {
+  position: absolute;
+  width: 87px;
+}
+
+.cta-text {
+  position: relative;
+  white-space: nowrap;
+  /*  padding-right: calc(var(--cta-arrow-width));*/
+}
+
+cta-abs {
+  position: absolute;
+  display: block;
+  min-width: 9px;
+  width: 9px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#ctaArrow {
+  opacity: 1;
+  top: 1.8px;
+  position: relative;
+}
+
+#vlogo {
+  position: absolute;
+  width: 29px;
+  height: auto;
+  top: 4px;
+  left: -1px;
+}
+
+#businessLogo {
+  position: relative;
+}
+
+#logoMask,
+#businessMask {
+  position: absolute;
+  left: 29px;
+  top: 18px;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+#businessLogo {
+  width: 120px;
+  height: 33px;
+  overflow: hidden;
+  left: 15px;
+  top: 1px;
+}
+
+#LogoMask1A {
+  display: flex;
+  width: 100%;
+  bottom: -2px;
+}
+
+#LogoMask2A {
+  position: relative;
+  right: -1px;
+  width: 66.5%;
+}
+
+#LogoMask1A,
+#LogoMask1B {
+  width: inherit;
+  height: 19px;
+  overflow: hidden;
+}
+
+#LogoMask1A {
+  opacity: 0;
+  position: relative;
+  right: -105%;
+}
+
+#LogoMask2A,
+#LogoMask2B {
+  width: inherit;
+  height: 14px;
+  overflow: hidden;
+  bottom: 0px;
+  position: absolute;
+  left: 28px;
+}
+
+#BottomLogoA {
+  bottom: 2px;
+  position: relative;
+  height: 0px;
+  overflow: hidden;
+}
+
+/* LOGO AND CTA SVG DYNAMIC SIZE */
+#ctaArrowOnly {
+  display: flex;
+}
+
+/* #TopLogoA_svg, #BottomLogoA_svg, #ctaArrowOnly_svg{ width: 100%; height: auto; } */
+
+#ctaArrowOnly {
+  overflow: hidden;
+  display: block;
+  width: 26px;
+  margin-top: 10px;
+  margin-right: 13px;
+  opacity: 0;
+}
+
+/*CUSTOMIZABLE*/
+#heading1,
+#heading2,
+#heading3,
+#heading4,
+#heading5,
+#heading6,
+#heading7,
+#heading8,
+#heading9,
+#endframe {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading,
+.subheading,
+.cta-text,
+.eyebrow {
+  font-family: VerizonNHGDSLight;
+}
+
+.logo-fill {
+  fill: #E10014;
+}
+
+.arrow-fill {
+  fill: #E10014;
+}
+
+.heading {
+  font-size: 28px;
+  line-height: 100%;
+  text-align: center;
+}
+
+.subheading {
+  font-family: 'VerizonNHGeDSRegular';
+  font-size: 8px;
+  margin-top: 9px;
+  margin-left: 2px;
+}
+
+.eyebrow {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+#legalContainerInner .sublegal {
+  text-align: right;
+  position: absolute;
+  top: -9px;
+}
+
+#legalContainerWide.legal-container {
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+}
+
+#legalContainerWide.legal-container:not(:empty) {
+  margin-bottom: -20px;
+}
+
+.legal-container.legal-inner {
+  margin-top: 0px;
+}
+
+.disclaimer {
+  color: #000;
+}
+
+#deviceFrame {
+  opacity: 0;
+  visibility: visible;
+  text-align: center;
+}
+
+#deviceFrame img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: auto;
+}
+
+.cta-mask {
+  width: 53% !important;
+}
+
+#heading4,
+#endframe {
+  opacity: 0;
+}
+
+/* ------------- HEADLINES ---------------------------------------- */
+#h1Heading div,
+#h2Heading div,
+#h3Heading div {
+  will-change: transform;
+  perspective: 1000px;
+}
+
+#h1Heading,
+#h2Heading,
+#h3Heading {
+  margin-top: 31px;
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.splitted-chars {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* F1 svgs ------------------------------------------------ */
+.f1svg {
+  position: absolute;
+  opacity: 1;
+}
+
+#h1_small {
+  top: 57px;
+  left: 21px;
+  width: 112px;
+  height: 46px;
+  overflow: hidden;
+}
+
+.h1_business {
+  top: 104px;
+  left: 67px;
+  width: 213px;
+}
+
+#h1_days {
+  bottom: 11px;
+  left: 140px;
+  width: 123px;
+  height: 52px;
+  overflow: hidden;
+}
+
+#h1_days_svg {
+  bottom: 0;
+  position: absolute;
+}
+
+#h1_arrow {
+  top: 92px;
+  left: 157px;
+  width: 24px;
+}
+#h1_arrow_m {
+  top: 62px;
+  left: 74px;
+  width: 24px;
+  transform: rotate(180deg)
+}
+.i_busi {
+  overflow: hidden;
+}
+/* F1 svgs end here ------------------------------------------------ */
+
+/*OVERRIDES*/
+#heading1 {
+  left: -1px;
+}
+.line,
+.rec {
+  position: absolute;
+  top: -50%;
+}
+#yellowline {
+  left: -264px;
+}
+#redline {
+  right: -114px;
+}
+#redtangle {
+  left: -270px;
+  z-index: 2;
+}
+#heading1 {
+  z-index: 1;
+}
+.above {
+  z-index: 3;
+}
+#h2Heading {
+  color: #F8FF3C;
+  font-size: 48px;
+  margin-top: 44px;
+}
+#h3Heading {
+  color: #E10014;
+  font-size: 48px;
+  margin-top: 47px;
+  z-index: 4;
+  text-align: center;
+  line-height: 1em;
+  perspective: 1000px;
+  transform: rotate(0.01deg);
+  text-rendering: auto;
+}
+
+/* FRAME 3 --------------------------------------------------------------- */
+.coverMaskF3 {
+  position: absolute;
+  background-color: #F8F3E9;
+  width: 300px;
+  height: 350px;
+  transform: rotate(21deg);
+  z-index: 3;
+}
+#coverMaskF3-L {
+  left: -320px;
+  top: -74px;
+}
+#coverMaskF3-R {
+  right: -321px;
+  bottom: -119px;
+}
+
+/* FRAME 4 --------------------------------------------------------------- */
+.coverMaskF4 {
+  position: absolute;
+  background-color: #E10014;
+  width: 500px;
+  height: 500px;
+  transform: rotate(21deg);
+  z-index: 3;
+}
+#coverMaskF4-L {
+  left: -532px;
+  top: -125px;
+}
+#coverMaskF4-R {
+  right: -535px;
+  bottom: -169px;
+}
+#f4Lifestyle_img {
+  opacity: 0;
+  z-index: 3;
+}
+
+/* FRAME 5 --------------------------------------------------------------- */
+#h5Heading {
+  margin-top: 56px;
+  margin-left: 2px;
+  color: #F8F3E9;
+  font-size: 30px;
+  letter-spacing: 0.01em;
+  opacity: 0;
+}
+#h5Heading .splitted-container:nth-child(2) {
+  font-size: 48px;
+  opacity: 0;
+}
+#h5Heading .splitted-container:first-child {
+  margin-bottom: -3px;
+  margin-left: 2px;
+}
+#h5Heading .splitted-container:last-child {
+  text-align: right !important;
+  margin-top: -3px;
+  margin-right: -1px;
+  opacity: 0;
+}
+
+/* END FRAME --------------------------------------------------------------- */
+#endframe {
+  z-index: 3;
+}
+#endFrameHeading {
+  text-align: center;
+  margin-top: 49px;
+  margin-left: 3px;
+  color: #E10014;
+  font-size: 30px;
+  letter-spacing: 0em;
+  line-height: 1em;
+  opacity: 0;
+}
+
+#yellowBorderFrame {
+  position: absolute;
+  background-color: #F8FF3C;
+  width: 300px;
+  height: 8px;
+  top: 0px;
+}
+
+body {
+  width: 300px;
+  height: 250px;
+}

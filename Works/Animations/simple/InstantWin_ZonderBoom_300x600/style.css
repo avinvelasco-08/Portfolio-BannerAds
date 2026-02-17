@@ -1,0 +1,225 @@
+body {margin: 0px;}
+
+#container {
+	background-color: black;
+	border: 1px solid gray;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: none;
+	overflow: hidden;
+	position: absolute;
+	width: 300px;
+	height: 600px;
+	pointer-events: none;
+}
+
+#container * {
+	position: absolute;
+}
+
+#clickthru{
+	width: 100%;
+	height: 100%;
+	pointer-events: auto;
+}
+.checkSmall, .checkLarge{
+	width: 300px;
+	height: 600px;
+}
+.shp{
+	will-change: transform;
+}
+
+/*-------------- SPRITE -------------*/
+.sprite { background: url('sprite.png') no-repeat top left; width: 262px; height: 898px; background-size: 262px 898px;  } 
+.sprite.cta-bg { background-position: 0 0; width: 204px; height: 60px; } 
+.sprite.cta-text1 { background-position: 0 -70px; width: 132px; height: 26px; } 
+.sprite.cta-text2 { background-position: 0 -106px; width: 14px; height: 20px; } 
+.sprite.logo { background-position: 0 -136px; width: 84px; height: 32px; } 
+.sprite.text1 { background-position: 0 -178px; width: 260px; height: 172px; } 
+.sprite.text2 { background-position: 0 -360px; width: 260px; height: 74px; } 
+.sprite.text3 { background-position: 0 -444px; width: 262px; height: 100px; } 
+.sprite.text4 { background-position: 0 -554px; width: 224px; height: 94px; } 
+.sprite.text5 { background-position: 0 -658px; width: 194px; height: 62px; } 
+.sprite.text6 { background-position: 0 -730px; width: 32px; height: 32px; } 
+.sprite.text7 { background-position: 0 -772px; width: 166px; height: 88px; } 
+.sprite.text8 { background-position: 0 -870px; width: 84px; height: 28px; } 
+
+/*--------- SPRITE POSITION ---------*/
+.cta-text2 {top: 14px;left: 164px;}
+.cta-text1 {top: 14px;left: 18px;}
+.logo {top: 9px;left: 4px;}
+.text1 {top: 130px;left: 16px;}
+.text2 {top: 302px;left: 20px;}
+.text3 {top: 138px;left: 17px;}
+.text4 {top: 145px;left: 39px;}
+.text5 {top: 143px;left: 49px;}
+.text6 {top: 207px;left: 126px;}
+.text7 {top: 235px;left: 61px;}
+.text8 {top: 567px;left: 7px;}
+
+.shimmer{
+	width: 356px;
+	height: 212px;
+	top: -50px;
+	left: -356px;
+	background: -moz-linear-gradient(-45deg,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 25%, rgba(255,255,255,1) 52%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 100%);
+	background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 25%,rgba(255,255,255,1) 52%,rgba(255,255,255,0) 75%,rgba(255,255,255,0) 100%);
+	background: linear-gradient(135deg,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 25%,rgba(255,255,255,1) 52%,rgba(255,255,255,0) 75%,rgba(255,255,255,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
+}
+#shimmer_holder{
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+	top: 0px;
+	left: 0px;
+	border-radius: 4px;
+	/* background-color: #ccc; */
+}
+
+/*-------- IMAGES | POSITION --------*/
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.bg{
+	width: 300px;
+	height: 503px;
+	top: 0px;
+	left: -1px;
+}
+.bg2{
+	width: 300px;
+	height: 97px;
+	top: 503px;
+	left: 0px;
+}
+
+.cta{
+    width: 191px;
+    height: 47px;
+    right: 3px;
+    bottom: 10px;
+    overflow: hidden;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0e9f06+0,65b629+100 */
+    background: #0e9f06; /* Old browsers */
+    background: -moz-linear-gradient(left, #0e9f06 0%, #65b629 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #0e9f06 0%,#65b629 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #0e9f06 0%,#65b629 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e9f06', endColorstr='#65b629',GradientType=1 ); /* IE6-9 */
+    -webkit-box-shadow: 0px 2px 0px 0px rgba(0,97,12,1);
+    -moz-box-shadow: 0px 2px 0px 0px rgba(0,97,12,1);
+    box-shadow: 0px 2px 0px 0px rgba(0,97,12,1);
+    border-radius: 3px;
+}
+/*<!-- ======================= BOXES ======================= -->*/
+.box1{
+	width: 130px;
+	height: 146px;
+	top: 401px;
+	left: 80px;
+}
+.box2{
+	width: 300px;
+	height: 600px;
+	top: 0px;
+	left: 0px;
+	opacity: 0;
+}
+.box2a{
+	width: 127px;
+	height: 107px;
+	top: 420px;
+	left: 81px;
+}
+.box2b{
+	width: 95px;
+	height: 140px;
+	top: 276px;
+	left: 310px;
+}
+
+/*<!-- ======================= CHECKS SMALL ======================= -->*/
+.checkS1{
+	width: 100px;
+	height: 98px;
+	top: 93px;
+	left: -6px;
+}
+.checkS2{
+	width: 67px;
+	height: 81px;
+	top: 87px;
+	left: 41px;
+}
+.checkS3{
+	width: 25px;
+	height: 39px;
+	top: 128px;
+	left: 139px;
+}
+.checkS4{
+	width: 109px;
+	height: 97px;
+	top: 54px;
+	left: 186px;
+}
+.checkS5{
+	width: 64px;
+	height: 45px;
+	top: 164px;
+	left: 223px;
+}
+.checkS6{
+	width: 78px;
+	height: 63px;
+	top: 323px;
+	left: 195px;
+}
+.checkS7{
+	width: 64px;
+	height: 66px;
+	top: 365px;
+	left: 189px;
+}
+.checkS8{
+	width: 108px;
+	height: 129px;
+	top: 350px;
+	left: 35px;
+}
+.checkS9{
+	width: 116px;
+	height: 100px;
+	top: 322px;
+	left: -58px;
+}
+
+/*<!-- ======================= CHECKS LARGE ======================= -->*/
+.check1{
+	width: 270px;
+	height: 164px;
+	top: 299px;
+	left: 8px;
+}
+.check2{
+	width: 281px;
+	height: 148px;
+	top: 305px;
+	left: 5px;
+}
+.check3{
+	width: 265px;
+	height: 152px;
+	top: 301px;
+	left: 11px;
+}
+.check4{
+	width: 279px;
+	height: 149px;
+	top: 306px;
+	left: 13px;
+}

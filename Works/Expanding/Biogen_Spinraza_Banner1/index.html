@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<meta charset="UTF-8">
+	<title>BIOGEN - SPINRAZA</title>
+	<meta name="ad.size" content="width=300,height=250"> 
+	<link rel="stylesheet" href="style.css">
+	<script> var clickTag = "https://www.google.com"; </script>
+	<!-- STUDIO -->
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script> 
+    <!-- GSAP -->
+    <script src='https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.2.4_min.js'></script>
+    <!-- STANDARD -->
+    <script src="custom.js"></script>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+<body>
+	<div id="container">
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+		<div id="collapsedSection">
+			<div class="col-bg1 imgfix">
+				<img src="col-bg1.jpg">
+			</div>
+			<div class="col-bg2 imgfix">
+				<img src="col-bg2.png">
+			</div>
+
+			<div class='sprite logo1 col-Logo1'></div>
+			<div class='sprite col-t1a t1col'></div>
+			<div class='sprite col-t1b t1col'></div>
+			<div class='sprite col-t1c t1col'></div>
+			<div class='sprite col-t1d t1col'></div>
+			<div class='sprite col-t1e t1col'></div>
+			<div class='sprite col-t1f t1col'></div>
+			<div class='sprite col-ctaBtn colCta'></div>
+			<div class='sprite col-ctaIcon colCta'></div>
+			<div class="footer imgfix">
+				<img src="col-footer.jpg">
+			</div>
+			<div class='sprite col-t2'></div>
+			<div class='sprite col-t3'></div>
+			<div class='sprite col-t4'></div>
+			<div class='sprite col-btnRef'></div>
+
+			<div id="expandButton"></div>
+
+			<div class="referencesHolder">
+				<div class="col-bg3 imgfix">
+					<img src="col-bg3.png">
+				</div>
+				<div class='sprite col-ref-t1 refTxt'></div>
+				<div class='sprite col-ref-t2 refTxt'></div>
+				<div class='sprite col-ref-t3 refTxt'></div>
+				<div class='sprite logo2 col-Logo2'></div>
+			</div>
+			
+		</div>
+
+		<div id="expandedSection">
+			<div class="exp-bg1 imgfix">
+				<img src="exp-bg1.png">
+			</div>
+			<div class='sprite logo1 exp-Logo'></div>
+
+			<div id="exp-cta">
+				<div class='sprite exp-cta-txt exp-cta'></div>
+				<div class='sprite exp-cta-arrow exp-cta'></div>
+			</div>
+
+			<div class='sprite exp-t1'></div>
+			<div class='sprite exp-t2 last'></div>
+			<div class='sprite exp-t3 last'></div>
+
+			<div id="clickthru"></div>
+
+			<video id="video" width="364" height="250" controls>
+			  <source src="video.mp4" type="video/mp4">
+			</video>
+			
+			<div class='sprite exp-btnRef'></div>
+			<div class="exp-close exp imgfix">
+				<img src="exp-close.png" alt="Close Expanded">
+			</div>
+
+		</div>
+		<div class='sprite col-btnBack'></div>
+		<div id="blocker"></div>
+
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+	</div>
+	<script>
+		let tlCol 	 = gsap.timeline({defaults: {duration:0.6, ease:'sine.out'}});
+		let tlExp 	 = gsap.timeline({defaults: {duration:1.0, ease:'sine.out'}, paused:true});
+		let isExpanded = false;
+
+		function initAd() {
+			//--------- PRE-LOAD IMAGE ------------
+			startPreload(	'col-bg1.jpg',
+							'col-bg2.png',
+							'col-bg3.png',
+							'col-footer.jpg',
+							'exp-bg1.png',
+							'exp-close.png',
+							'sprite.png',
+							startAnim);
+			//-------------------------------------
+			function startAnim() {
+				//--------------- SET -----------------
+				gsap.set('#container', {display: 'block'});
+                gsap.set('.imgfix', { rotation:0.001});
+                gsap.set('.t1col', {transformOrigin: 'top 50% 30', rotation: 0.001, force3D: false})
+				//------------ ADD EVENT --------------
+				addEvent();
+				//---------- ADD ANIMATION ------------
+				tlCol
+					.add('scene1', '+=0.5')
+					.from('.col-bg2', {duration: 1.5, x:-535, ease:"power4.out"}, 'scene1')
+					.from('.col-bg1', {duration: 1.5, x:-30, ease:"power4.out"}, 'scene1+=0.45')
+                    .from('.t1col', {duration:1, opacity:0, rotationX: 90, ease:"power2.out", stagger:0.15}, 'scene1+=1')
+                    .from(['.col-t2', '.col-t3', '.col-t4'], {duration:1, opacity:0, x:20, ease:"power2.out", stagger:0.2}, 'scene1+=2.5')
+                    .from('.col-btnRef', {duration:0.7, x:70, ease:"power2.out"}, 'scene1+=3')
+                    .from('.colCta', {duration:1, x:-150, ease:"power3.out"}, '+=0.1')
+                    .to('.col-ctaIcon', {duration:0.4, x:10, ease:"none", repeat: 3, yoyo:true}, '+=0.2')
+                	.add('end','endframe')
+
+				tlExp
+					.set('#expandedSection', {display:'block'}, 'expAnim')
+					.from('.exp-bg1', {opacity:0, y:20, ease:"power2.out"}, 'expAnim')
+					.from('.exp-t1',  {opacity:0, y:10, ease:"power2.out"}, 'expAnim+=0.4')
+					.from('#exp-cta', {duration:1.2, x:250, ease:"expo.out"}, 'expAnim+=0.8')
+					.from('.exp-cta', {duration:0.8, opacity:0, x:-20, ease:"power2.out", stagger:0.2}, 'expAnim+=1.5')
+					.from('.last', {duration:0.8, opacity:0, ease:"power2.out", stagger:0.4}, 'expAnim+=2.1')
+                    .from('.exp-btnRef', {duration:0.7, x:80, ease:"power2.out"}, 'expAnim+=2.7')
+                    .to('.exp-cta-arrow', {duration:0.4, x:10, ease:"none", repeat: 3, yoyo:true}, '+=0.2')
+
+				//-------------------------------------
+			};
+			function addEvent() {
+				Enabler.setExpandingPixelOffsets(
+				    0, // left
+				    0, // top
+				    600, // expandedWidth
+				    250  // expandedHeight
+				);
+
+				// EXPANDING EVENT
+				Enabler.addEventListener(studio.events.StudioEvent.EXPAND_START, expandStartHandler);
+			    Enabler.addEventListener(studio.events.StudioEvent.EXPAND_FINISH, expandFinishHandler);
+			    Enabler.addEventListener(studio.events.StudioEvent.COLLAPSE_START, collapseStartHandler);
+			    Enabler.addEventListener(studio.events.StudioEvent.COLLAPSE_FINISH, collapseFinishHandler);
+			    Enabler.addEventListener(studio.events.StudioEvent.EXIT, collapseExpanded);
+
+			    // BUTTON EVENT HANDLER
+			    _('#expandButton').on('mouseover', expandRequestHandler);
+			    _('#expandedSection').on('mouseleave', collapseRequestHandler);
+			    _('#clickthru').on('click', exit);
+			    _('.referencesHolder').on('click', exit);
+			    _('.col-btnRef').on('click', showRef);
+			    _('.exp-btnRef').on('click', showRef);
+			    _('.col-btnBack').on('click', hideRef);
+			    _('.exp-close').on('click', function(){
+			    	Enabler.reportManualClose();
+			    	collapseRequestHandler();
+			    });
+			};
+
+			function expandRequestHandler() {
+				if(!isExpanded) {
+					isExpanded = true;
+					Enabler.requestExpand();
+				}
+			}
+
+			function collapseRequestHandler() {
+				if(isExpanded) {
+					isExpanded = false;
+					Enabler.requestCollapse();
+				}
+			}
+
+			function expandStartHandler() {
+				tlCol.pause('endframe');
+				Enabler.finishExpand();
+			}
+
+			function expandFinishHandler() {
+				gsap.set('#expandedSection', {display:'block'})	
+				if (video.readyState == 4){
+					video.play();
+				}
+				tlExp.play('expAnim')
+			}
+
+			function collapseStartHandler() {
+				video.pause();
+				video.currentTime = 0;
+				gsap.set('#expandedSection', {display:'none'})	
+				Enabler.finishCollapse();
+			}
+
+			function collapseFinishHandler() {		
+			}
+
+			function expandCollapsed() {
+				if(!isExpanded) {
+					isExpanded = true;
+					Enabler.requestExpand();
+				}
+			}
+
+			function collapseExpanded() {
+				if(isExpanded) {
+					isExpanded = false;
+					Enabler.requestCollapse();
+				}
+			}
+			
+			function showRef() {
+				if(isExpanded) {
+					isExpanded = false;
+					Enabler.requestCollapse();
+				}
+				gsap.set('.referencesHolder, .col-btnBack', {display:'block'})	
+			}
+			function hideRef() {
+				gsap.set('.referencesHolder, .col-btnBack', {display:'none'})	
+				gsap.set('#blocker', {display:'block'})	
+				setTimeout(function(){ 
+					gsap.set('#blocker', {display:'none'})	
+				}, 1000);
+			}
+			function exit() {
+                Enabler.exit('Background Exit'); /*Studio/Enabler Exit*/
+            }
+            //-------------------------------------
+            
+		};
+	</script>
+</body>
+</html>

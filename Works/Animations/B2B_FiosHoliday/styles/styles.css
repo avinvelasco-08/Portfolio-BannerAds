@@ -1,0 +1,639 @@
+@charset "UTF-8";
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+@font-face {
+    font-family: 'VerizonNHGeDSRegular';
+    src: url('../fonts/VerizonNHGeDS-Regular.woff2') format('woff2');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'VerizonNHGeDSBold';
+    src: url('../fonts/VerizonNHGeDS-Bold.woff2') format('woff2');
+    font-weight: normal;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    background-repeat: no-repeat;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}    
+
+html,
+body {
+    position: absolute;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    background: #FFFFFF;
+    width:100%;
+    height:100%;
+
+    /* below improves consistancey of font rendering across browsers */
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+
+    /* below stops FireFox rendering copy too heavily */
+    -moz-osx-font-smoothing: grayscale;
+}
+:root {
+    --ad-width: 0;
+    --ad-height: 0;
+}
+/* ------------ Generic ----------- */
+.Absolute{
+    position: absolute;
+}
+.Relative{
+    position: relative;
+}
+.frame {
+    position: absolute;
+    display: flex;
+    width:100%;
+    height:100%;
+}
+
+.heading-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.footer-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-height: 77px;
+}
+
+.media-frame {
+    display: flex;
+    width: 280px;
+    height: 230px;
+    overflow: hidden;
+}
+
+.lockup-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.legal-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 11px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.logo-container {
+    position: relative;
+    display: flex;
+    min-width: 30px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.logo-mask{
+    position: relative;
+    width: 81px;
+}
+
+.cta-container{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100px;
+}
+
+.cta-mask {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+    flex-direction: row;
+    width: 109px;
+}
+
+#main {
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: var(--ad-width);
+    height: var(--ad-height);
+    background-color: #F50A23;
+    overflow: hidden;
+    visibility: hidden;
+    will-change: transform;
+    perspective: 1000px;
+}
+
+/* ------------ DOM ----------- */
+
+#deviceFrame, #imgFrame {
+    opacity:0;
+    visibility: hidden;
+    top: 0;
+}
+#headingFrame {
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 0 15px 15px 15px;
+    will-change: transform;
+}
+
+#headingContainer{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#footerContainer{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#heading1, #heading2, #heading3, #heading4, #heading5, #heading5, #heading6 {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#legalCont {
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#frame-logo {
+    position: absolute;
+    align-items: center;
+    justify-content: flex-start;
+    width: 970px;
+    flex-direction: column;
+}
+
+
+/* ------------ REPEATING TEXT ----------- */
+.repeatFrame {
+    position: absolute;
+    display: flex;
+    width:100%;
+    height:100%;
+    /* background-color: #FF0000; */
+    z-index: 1;
+    
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.relFrame {
+    position: relative;
+    display: flex;
+    width:100%;
+    height:100%;
+    
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Change to Row if 728x90 */
+}
+#switchFrame #box{
+    top: -5px;
+}
+#repeatFrame .repeat{
+    position: relative;
+    font-family: VerizonNHGeDSRegular;
+    /* color: #F3EDE0; */
+    color: #F3EDE000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #F3EDE0;
+    text-align: center;
+}
+#switchFrame .repeat{
+    position: relative;
+    font-family: VerizonNHGeDSRegular;
+    /* color: #F3EDE0; */
+    color: #F3EDE000;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000000;
+    text-align: center;
+}
+/* .textStroke{
+    color: #F3EDE000;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F3EDE0;
+} */
+#repeatFrame .repeat:nth-child(1){
+    color: #F3EDE0;
+}
+/* #switchFrame .repeat:nth-child(1){
+    color: #F3EDE0;
+} */
+
+/* ------------ Images ----------- */
+
+.media-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.logo{
+    width: 81px;
+    height: auto;
+}
+
+.arrow-fill {
+    fill: #fff;
+}
+
+.logo-color{
+    fill: #fff;
+}
+
+/* ------------ Text fields ----------- */
+.heading {
+    position: relative;
+    font-family: VerizonNHGeDSRegular;
+    color: #F3EDE0;
+    font-size: 46px;
+    text-align: center;
+    /* margin-bottom: 14px; */
+}
+.subheading{
+    position: relative;
+    font-family: VerizonNHGeDSRegular;
+    color: #F3EDE0;
+    font-size: 28px;
+    line-height: 1em;
+    text-align: center;
+    /* margin-bottom: 7px; */
+}
+
+.legal-subheading {
+    position: relative;
+    font-family: VerizonNHGeDSRegular;
+    color: #F3EDE0;
+    font-size: 8px;
+    line-height: 9px;
+    text-align: center;
+}
+
+.splitted-container{
+    position: relative;
+    line-height: 1em;
+}
+
+.legal {
+    position: relative;
+    font-family: VerizonNHGeDSRegular;
+    color: #F3EDE0;
+    font-size: 8px;
+    line-height: 1em;
+    text-align: left;
+}
+
+.legal-frame{
+    position: relative;
+    display: none;
+    font-family: VerizonNHGeDSRegular;
+    color: #fff;
+    font-size: 8px;
+    line-height: 1em;
+    text-align: center;
+}
+
+/* TEXT */
+#f1Heading1 {
+    top: -1px;
+}
+#f1subHeading1 {
+    top: -7px;
+}
+#f1Legal1 {
+    top: 3px;
+}
+#f2Heading1 {
+    top: 8px;
+    color: #000000;
+    font-size: 40px;
+}
+#f3Heading1 {
+    top: -2px;
+    color: #F50A23;
+    font-size: 80px;
+}
+#f4Heading1 {
+    top: 8px;
+    font-size: 40px;
+    color: #000000;
+}
+
+#f5Heading1 {
+    top: 12px;
+    font-size: 46px;
+}
+#f5Heading2 {
+    top: 3px;
+    font-size: 46px;
+}
+
+#f6Heading1 {
+    top: -5px;
+    font-size: 28px;
+    color: #000000;
+}
+#f6Heading2 {
+    top: -11px;
+    font-size: 28px;
+    color: #F50A23;
+}
+#f6Heading3 {
+    top: -17px;
+    font-size: 28px;
+    color: #F50A23;
+}
+#f6Legal1 {
+    top: -9px;
+    font-size: 8px;
+    color: #000000;
+}
+/* LOGO */
+#LogoBox1{
+    width: 82px;
+    height: 32px;
+    bottom: 13px;
+    left: 15px;
+    overflow: hidden;
+}
+#LogoBox2{
+    width: 29.09px;
+    height: 26.08px;
+    bottom: 15px;
+    left: 14px;
+}
+#LogoMask1{
+    width: inherit;
+    height: 19px;
+    overflow: hidden;
+    top: 0px;
+}
+#LogoMask2{
+    width: inherit;
+    height: 14px;
+    overflow: hidden;
+    top: 17px;
+    left: 27px;
+}
+#BottomLogo{
+    top: 0px;
+}
+#VerizonVBox{
+    position: absolute;
+    height: 27px;
+    width: 30px;
+    bottom: 15px;
+    left: 14px;
+    overflow: hidden;
+}
+#VLogo{
+    position: absolute;
+    width: 30px;
+    height: 27px;
+    top: 0px;
+    /* display: none; */
+}
+#VBox {
+    position: absolute;
+    width: 30px;
+    height: 27px;
+    overflow: hidden;
+}
+#CTABox{
+    width: 26px;
+    height: 25px;
+    right: 14px;
+    bottom: 15px;
+    overflow:hidden;
+}
+#CTAArrow {
+    width: 26px;
+    height: 25px;
+    right: 0;
+    bottom: 0;
+}
+/* ----------- */
+black {
+    color: #000000;
+}
+ 
+red {
+    color: #F50A23;
+}
+ 
+blush {
+    color: #FF8C6C;
+}
+ 
+coral {
+    color: #FF3C2D;
+}
+ 
+stone {
+    color: #F3EDE0;
+}
+ 
+yellow {
+    color: #F5FF1E;
+}
+white {
+    color: #FFFFFF;
+}  
+
+.copy-reg {
+ font-family: VerizonNHGeDSRegular;
+ font-weight: 400;
+}
+
+b {
+    font-family: VerizonNHGeDSBold;
+    font-weight: 400;
+}
+   
+
+.cta-text {
+    position: relative;
+    font-family: 'VerizonNHGeDSBold';
+    font-size: 18px;
+    color: #fff;
+    white-space: nowrap;
+    margin-right: 0.5em;
+}
+
+.cta-rel{
+    position: relative;
+    display: flex;
+    width: 9px;
+}
+
+.cta-abs{
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 0;
+    width: 9px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.cta-cover {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 100%;
+    background-color: #F3EDE0;
+}
+
+.arrow-cover{
+    position: relative;
+    width: 8px;
+    height: 15px;
+}
+
+.exit-click {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.banner-exit{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #D8DADA;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Tooltip Properties */
+.hotspot {
+    position: absolute;
+    background: transparent; /* Red semi-transparent background for visibility */
+    cursor: pointer;
+    z-index: 2;
+}
+
+.arrowTip-container{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.tooltip-arrow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 5px;
+    z-index: 3;
+}
+.tooltip-container{
+    position: absolute;
+    width: 146px;
+    height: 79px;
+    border: solid 0.5px #000;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    padding: 12px 25px 10px 14px;
+    z-index: 1;
+}
+
+.disclaimer {
+    font-family: VerizonNHGeDSRegular;
+    font-size: 8px;
+    line-height: 1.125em;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    box-sizing: content-box;
+}
+
+.disclaimer::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 44px;
+    top: 23px;
+    right: 11px;
+    background: rgb(246, 246, 246);
+}
+
+.close-btn{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.xclose {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.scroll-thumb {
+    position: relative;
+    width: 100%;
+    background: rgb(218, 216, 216);
+    cursor: pointer;
+}

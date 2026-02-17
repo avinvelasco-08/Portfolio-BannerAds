@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ADvance_medscape_banners_FR</title>
+	<meta name="ad.size" content="width=300,height=600">
+	<link rel="stylesheet" href="style.css">
+	<script>
+		var clickTag = "https://biogenlinc.fr/learning/";
+	</script>
+	<!-- STUDIO -->
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+    <!-- GSAP -->
+    <script src='https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.2.4_min.js'></script>
+	<!-- STANDARD -->
+	<script src="custom.js"></script>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+<body>
+	<div id="container">
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+
+		<!-- COLLAPSED SECTION -->
+		<section id="collapsed" class="btn abs">			
+			<div class='bg_col abs'>
+				<img src="bg_col.png" alt="background">
+			</div>
+			<div class='sprite logo_col abs'></div>
+			<div class='sprite logotext_sub_col abs'></div>
+			<div class='sprite selected-correct sel1 abs'></div>
+			<div class='sprite selected-correct sel2 abs'></div>
+			<div class='sprite selected-correct sel3 abs'></div>
+			<div class='sprite selected-correct sel4 abs'></div>
+			<div class='sprite textmain_col abs'></div>
+			<div class='sprite textsub_col abs'></div>
+			<div class='sprite black_logo abs'></div>
+			<div class='sprite label abs'></div>
+			<div class='sprite cta_col abs'></div>
+			<div class="clickthru abs"></div>	
+			<div class='sprite text1_col abs' id='s1'></div>
+			<div class='sprite text2_col abs' id='s2'></div>
+			<div class='sprite text3_col abs' id='s3'></div>
+			<div class='sprite text4_col abs' id='s4'></div>
+			
+		</section>
+
+		<!-- EXPANDED SECTION -->
+		<section id="expanded" class="bg_white abs btn">
+			<div class='bg_exp abs'>
+				<img src="bg_exp.png" alt="background">
+			</div>
+			<div class='sprite_exp l1 abs'></div>
+			<div class='sprite_exp l2 abs'></div>
+			<div class='sprite_exp label_exp abs'></div>
+			<div class='sprite_exp logo_exp abs'></div>
+			<div class='sprite_exp logo_text_exp abs'></div>
+			<div class='sprite_exp textsub_exp abs'></div>
+			<div class='sprite_exp message_exp abs'></div>
+			<div class='sprite_exp t1 abs'></div>
+			<div class='sprite_exp t2 abs'></div>
+			<div class='sprite_exp t3 abs'></div>
+			
+			<div class='sprite_exp black_exp abs'></div>
+			<div class="clickthru2 abs"></div>
+			<div class='sprite_exp exp_cta abs'></div>
+			<a class="close"></a>
+		</section>
+
+		<div id="blocker"></div>
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+	</div>
+	<script>
+
+
+		// Common Functions
+		const _class = {
+			add: function(el, name) {
+				return TweenLite.set(el, {className:"+="+name});
+			},
+			remove: function(el, name) {
+				return TweenLite.set(el, {className:"-="+name});
+			}
+		}
+
+		const _get = {
+			prev: function() {
+				const n = parseInt(selected) - 1;
+				return (n === 0) ? 3 : n;
+			},
+			next: function() {
+				const n = parseInt(selected) + 1;
+				return (n > 4) ? 1 : n;
+			}
+		}
+	</script>
+<script>
+	var isExpanded = false;
+	var sine = Sine.easeOut;
+	var initAnim;
+	var hoverTimeout;
+	var isWhat;
+
+	function initAd() {
+		startPreload('sprite.png','sprite_exp.png','bg_exp.png','bg_col.png',startAnim);
+
+		//--------------- SET -----------------
+		function startAnim() {
+			TweenMax.set('#container', {display: 'block'});
+			TweenMax.set(['img','.sprite','.bg'], {rotation: 0.01})
+			_class.add('#blocker','hide');
+			//------------ ADD EVENT --------------
+			addEvent();
+			//------------ TIMELINE EVEN ----------
+			gsap.set('.sel1,.sel2,.sel3,.sel4',{opacity:0});
+			initAnim = new TimelineMax({onComplete: enableHover})
+			.from('.textmain_col, .bg_col', 1, {opacity:0, x:-7, ease:sine})
+			.from('.text1_col', 1, {opacity:0, x:-7, ease:sine})
+			.from('.text2_col', 1, {opacity:0, x:-7, ease:sine})
+			.from('.text3_col', 1, {opacity:0, x:-7, ease:sine})
+			.from('.text4_col', 1, {opacity:0, x:-7, ease:sine})
+			.from('.cta_col', 1, {opacity:0, x:-7})
+		}
+
+		function addEvent() {
+			Enabler.setExpandingPixelOffsets(
+				    300, // left
+				    0, // top
+				    600, // expandedWidth
+				    600  // expandedHeight
+				);
+			// EXPANDING EVENT
+			Enabler.addEventListener(studio.events.StudioEvent.EXPAND_START,expandStartHandler);
+			Enabler.addEventListener(studio.events.StudioEvent.EXPAND_FINISH,expandFinishHandler);
+			Enabler.addEventListener(studio.events.StudioEvent.COLLAPSE_START,collapseStartHandler);	
+			Enabler.addEventListener(studio.events.StudioEvent.COLLAPSE_FINISH,collapseFinishHandler);
+			Enabler.addEventListener(studio.events.StudioEvent.EXIT, collapseExpanded);
+
+			_('.close').on('click', function() {
+					if(isExpanded) {
+						collapseExpanded();
+						Enabler.reportManualClose();
+					}
+				});
+			//asdf
+			_('#expanded').on('mouseleave', collapseExpanded);
+
+
+			_('.text1_col').on('mouseleave',radioOut);	
+			_('.text2_col').on('mouseleave',radioOut);	
+			_('.text3_col').on('mouseleave',radioOut);	
+			_('.text4_col').on('mouseleave',radioOut);	
+			_('#collapsed').on('mouseleave',radioOut);	
+			
+			
+		}
+	}
+	function enableHover() {
+			_('.text1_col').on('click',actionClickHandler);	
+			_('.text2_col').on('click',actionClickHandler);	
+			_('.text3_col').on('click',actionClickHandler);	
+			_('.text4_col').on('click',actionClickHandler);	
+			_('.text1_col').on('mouseover',radioHoverA);	
+			_('.text2_col').on('mouseover',radioHoverB);	
+			_('.text3_col').on('mouseover',radioHoverC);	
+			_('.text4_col').on('mouseover',radioHoverD);	
+	}
+
+	function expandStartHandler() {
+		TweenMax.set('#expanded', {display:'block'})
+		
+		// Perform expand animation.
+		// Optionally, should you want the direction to expand in call:
+		// Enabler.getExpandDirection(); //
+		// When animation finished must call
+		_class.remove('#blocker','hide');
+		_class.remove('#expanded .panel', 'fade');
+		// resetAnimation_EXP();
+		Enabler.finishExpand();
+	}
+
+
+	function expandFinishHandler() {
+		// Convenience callback for setting
+		// final state when expanded.
+		var TL4 = new TimelineMax()
+		
+		TweenMax.set('#expanded', {display:'block'})
+		gsap.set('.t1, .t2, .t3, .l1, .l2, .message_exp, .textsub_exp', {opacity: 0, x:0});
+		gsap.set('.exp_cta', {display: 'none', opacity: 0, x:0});
+
+		function scene_s4 () {
+			TL4.to('.message_exp', 0.5, {opacity:1, x:-7, ease:sine})
+				.to('.t1', 0.5, {opacity:1, x:-7, ease:sine})
+				.to('.l1', 0.5, {opacity:1, x:-7, ease:sine})
+				.to('.t2', 0.5, {opacity:1, x:-7, ease:sine})
+				.to('.l2', 0.5, {opacity:1, x:-7, ease:sine})
+				.to('.t3', 0.5, {opacity:1, x:-7, ease:sine})
+				.set('.exp_cta', {display: 'block'})
+				.to('.exp_cta', 0.5, {opacity:1, x:-7, ease:sine})
+				.to('.textsub_exp', 0.5, {opacity:1, x:-7, ease:sine})
+				return TL4;
+		}
+
+
+		var master = gsap.timeline()
+		gsap.killTweensOf('.message_exp')
+		gsap.killTweensOf('.t1');
+		gsap.killTweensOf('.t2');
+		gsap.killTweensOf('.t3');
+		gsap.killTweensOf('.l1');
+		gsap.killTweensOf('.l2');
+		gsap.killTweensOf('.exp_cta')
+		gsap.killTweensOf('.textsub_exp')
+		
+		switch(isWhat) {
+			case 's1' : 
+				// master.add(scene_s1(),"anim1") 
+				
+			case 's2' : 
+				// master.add(scene_s2(),"anim1") 
+				
+			case 's3' : 
+				// master.add(scene_s3(),"anim1") 
+				
+			case 's4' : 
+				master.add(scene_s4(),"anim1") 
+
+				break;
+		}
+
+		isExpanded = true;
+	}
+	
+	function collapseStartHandler() {
+		// Perform collapse animation.
+		// When animation finished must call
+
+		Enabler.finishCollapse();
+	}
+	
+	function collapseFinishHandler() {
+		// Convenience callback for setting
+		// final state when collapsed.
+	
+		
+		TweenMax.set('#expanded', {display:'none'})
+
+		clearTimeout(hoverTimeout);
+		hoverTimeout = setTimeout(function(){
+			_class.add('#blocker','hide');
+		}, 600);
+
+		isExpanded = false;
+	}
+
+	function expandCollapsed() {
+		if(!isExpanded) {
+			Enabler.requestExpand();
+
+			clearTimeout(hoverTimeout)
+			isExpanded = true;
+		}
+	}
+	
+	function actionClickHandler() {
+		isWhat = 's4'
+		isExpanded ? Enabler.requestCollapse() : Enabler.requestExpand();
+	}
+
+
+
+	function collapseExpanded() {
+		if(isExpanded) {
+			Enabler.requestCollapse();
+		}
+	}
+	function radioOut() {
+		gsap.set('.sel1', {opacity: 0});
+		gsap.set('.sel2', {opacity: 0});
+		gsap.set('.sel3', {opacity: 0});
+		gsap.set('.sel4', {opacity: 0});
+	}
+	function radioHoverA() {
+		gsap.set('.sel1', {opacity: 1});
+	}
+	function radioHoverB() {
+		gsap.set('.sel2', {opacity: 1});
+	}
+	function radioHoverC() {
+		gsap.set('.sel3', {opacity: 1});
+	}
+	function radioHoverD() {
+		gsap.set('.sel4', {opacity: 1});
+	}
+
+	_('.exp_cta').on('click', function () {Enabler.exit('CTA_EXIT', clickTag);});
+	_('.clickthru').on('click', function () {Enabler.exit('BACKGROUND_EXIT', clickTag);});
+	_('.clickthru2').on('click', function () {Enabler.exit('BACKGROUND_EXIT', clickTag);});
+    
+
+	
+	gsap.config({
+  	nullTargetWarn: false
+});
+ 
+		
+	</script>
+	
+</body>
+</html>

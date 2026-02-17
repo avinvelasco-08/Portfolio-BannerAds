@@ -1,0 +1,961 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+
+@font-face {
+  font-family: 'VerizonNHGeDSRegular';
+  src: url('../fonts/VerizonNHGeDS-Regular.woff2') format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'VerizonNHGeDSBold';
+  src: url('../fonts/VerizonNHGeDS-Bold.woff2') format('woff2');
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+html,
+body {
+  position: absolute;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  background: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  font-family: 'VerizonNHGeDSRegular';
+  /* below improves consistancey of font rendering across browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+
+  /* below stops FireFox rendering copy too heavily */
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --ad-width: 0;
+  --ad-height: 0;
+}
+/* ------------ Generic ----------- */
+.frame {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  perspective: 1000px;
+  opacity: 0;
+}
+
+.abs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.heading-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 5% 5% 22%;
+}
+
+
+
+/*COLORS*/
+.red,
+red {
+  color: #EE001E;
+}
+.vzn_red_svg {
+  fill: #EE001E;
+}
+.coral,
+coral {
+  color: #FF281E;
+}
+.yellow,
+yellow {
+  color: #F8FF3C;
+}
+.stone,
+stone {
+  color: #F6F0E2;
+}
+.white,
+white {
+  color: #FFFFFF;
+}
+.black,
+black {
+  color: #000000;
+}
+
+#main {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: var(--ad-width);
+  height: var(--ad-height);
+  background-color: #EE001E;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* ------------ DOM ----------- */
+#frame1 {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#headingContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#devicesFrame {
+  align-items: center;
+  justify-content: center;
+}
+
+#footer {
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 5% 5%;
+  /*padding-bottom: 18.5%;
+    padding-left: 4.8%;*/
+  opacity: 1;
+}
+
+
+
+#heading1,
+#heading2,
+#heading3,
+#heading4,
+#heading5,
+#heading6,
+#heading7,
+#heading8,
+#heading9 {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* ------------ Images ----------- */
+.img-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-device {
+  position: relative;
+  display: flex;
+  width: 206px;
+  height: auto;
+}
+
+
+/* -logo- */
+#logoTop {
+  width: 82px;
+  height: 19px;
+  top: 0px;
+  left: 0px;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+#logoBottom {
+  width: 83px;
+  height: 11px;
+  position: relative;
+  top: 1px;
+  left: -1px;
+  will-change: transform;
+}
+
+#logoBottomMask {
+  height: 11px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  will-change: transform;
+}
+#lockupContainer {
+  display: flex;
+  align-items: center;
+  /* vertically align arrow with logo */
+
+  flex-direction: row;
+  width: 100%
+}
+
+/* Stack logoTop and logoBottom vertically */
+#logoContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#arrowOnly {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+#ctaContainer {
+  position: relative;
+  top: 3px;
+}
+
+.logo,
+.arrow-fill {
+  fill: #FFFFFF;
+}
+/*------*/
+.cta-mask {
+  width: 53% !important;
+  right: 5px;
+  top: 1px;
+}
+
+
+/* ------------ Text fields ----------- */
+b {
+  font-family: VerizonNHGeDSBold;
+  font-weight: 400;
+}
+bold {
+  font-family: VerizonNHGeDSBold;
+  font-weight: 400;
+}
+.verizon-bold {
+  font-family: VerizonNHGeDSBold;
+}
+.verizon-regular {
+  font-family: VerizonNHGeDSRegular;
+}
+smallFont {
+  font-size: 20px;
+  line-height: 0.9em;
+}
+#frame1 .eyebrow {
+  position: relative;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame1 .heading {
+  position: relative;
+  color: #fff;
+  font-size: 56px;
+  line-height: 0.9em;
+  text-align: left;
+  white-space: pre;
+}
+#f1Heading .splitted-container1 {
+  top: -23px;
+  left: -49px;
+}
+#f1Heading .splitted-container2 {
+  top: -30px;
+  left: -29px;
+}
+#frame1 .sub-heading {
+  position: relative;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame1 .sub-legal {
+  position: relative;
+  color: #fff;
+  font-size: 8px;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+#frame2 .eyebrow {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  text-align: left;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame2 .heading {
+  position: relative;
+  color: #fff;
+  font-size: 42px;
+  line-height: 0.9em;
+  text-align: left;
+  white-space: pre;
+}
+#f2Heading .splitted-container1 {
+  font-size: 20px;
+  top: -3px;
+  left: -38px;
+}
+#f2Heading .splitted-container2 {
+  top: -8px;
+  left: -38px;
+}
+#f2Heading .splitted-container3 {
+  top: -7px;
+  left: -38px;
+}
+#f2Heading .splitted-container4 {
+  top: -7px;
+  left: -38px;
+}
+#frame2 .sub-heading {
+  position: relative;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame2 .sub-legal {
+  position: relative;
+  color: #fff;
+  font-size: 8px;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+#frame3 .eyebrow {
+  position: relative;
+  color: #fff;
+  font-size: 40px;
+  text-align: left;
+  line-height: 0.9em;
+  white-space: pre;
+  left: -80px;
+  top: 53px;
+}
+
+#frame3 .heading {
+  position: relative;
+  color: #F8FF3C;
+  font-size: 110px;
+  line-height: 0.9em;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: -1.5px;
+  /* will-change: transform; */
+}
+#f3Heading .splitted-container1 {
+  font-size: 36px;
+  left: -19px;
+  top: 11px;
+}
+#f3Heading .splitted-container2 {
+  top: -66px;
+  left: 2px;
+}
+
+#frame3 .sub-heading {
+  position: relative;
+  color: #F6F0E2;
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame3 .sub-legal {
+  position: relative;
+  color: #F6F0E2;
+  font-size: 8px;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+#frame4 .eyebrow {
+  position: relative;
+  color: #F6F0E2;
+  font-size: 16px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame4 .heading {
+  position: relative;
+  color: #F8FF3C;
+  font-size: 56px;
+  line-height: 0.9em;
+  text-align: left;
+  white-space: nowrap;
+  left: -79px;
+  top: -50px;
+}
+
+#frame4 .sub-heading {
+  position: relative;
+  color: #F6F0E2;
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame4 .sub-legal {
+  position: relative;
+  bottom: -14px;
+  color: #F6F0E2;
+  font-size: 8px;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+#frame5 .eyebrow {
+  position: relative;
+  color: #F8FF3C;
+  font-size: 84px;
+  text-align: left;
+  line-height: 0.9em;
+  white-space: pre;
+  top: 32px;
+  left: -100px;
+}
+
+#frame5 .heading {
+  position: relative;
+  color: #F8FF3C;
+  font-size: 57px;
+  line-height: 0.9em;
+  text-align: left;
+  white-space: nowrap;
+  left: -28px;
+  top: 2px;
+}
+
+#frame5 .sub-heading {
+  position: relative;
+  color: #fff;
+  font-size: 30px;
+  text-align: left;
+  line-height: 0.9em;
+  white-space: pre;
+  left: -58px;
+  top: -15px;
+}
+
+#frame5 .sub-legal {
+  position: relative;
+  bottom: -14px;
+  color: #F6F0E2;
+  font-size: 8px;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+#frame6 .eyebrow {
+  position: relative;
+  color: #F6F0E2;
+  font-size: 16px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame6 .heading {
+  position: relative;
+  color: #fff;
+  font-size: 84px;
+  line-height: 0.9em;
+  text-align: left;
+  white-space: nowrap;
+}
+#f6Heading .splitted-container1 {
+  top: -18px;
+  left: -78px;
+}
+#f6Heading .splitted-container2 {
+  top: -41px;
+  left: -38px;
+}
+#frame6 .sub-heading {
+  position: relative;
+  color: #F6F0E2;
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame6 .sub-legal {
+  position: relative;
+  bottom: -14px;
+  color: #F6F0E2;
+  font-size: 8px;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+#frame7 .eyebrow {
+  position: relative;
+  color: #F8FF3C;
+  font-size: 42px;
+  text-align: left;
+  line-height: 0.9em;
+  white-space: pre;
+  left: -80px;
+  top: 20px;
+}
+
+#frame7 .heading {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  line-height: 0.9em;
+  text-align: left;
+  white-space: nowrap;
+  top: 6px;
+  left: -19px;
+}
+
+#frame7 .sub-heading {
+  position: relative;
+  color: #fff;
+  font-size: 10px;
+  text-align: left;
+  line-height: 1em;
+  white-space: pre;
+  left: -20px;
+  top: 1px;
+  letter-spacing: -0.2px;
+}
+
+#frame7 .sub-legal {
+  position: relative;
+  bottom: -42px;
+  color: #fff;
+  font-size: 8px;
+  text-align: left;
+  line-height: 1.1em;
+}
+#heading7 {
+  padding: 4% 4% 22%;
+}
+.cta-text {
+  position: relative;
+  font-family: VerizonNHGeDSBold;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+.exit-click {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #D8DADA;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Tooltip Properties */
+.hotspot {
+  position: absolute;
+  background: transparent;
+  /* Red semi-transparent background for visibility */
+  cursor: pointer;
+  z-index: 2;
+}
+
+.arrowTip-container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 5px;
+  z-index: 3;
+}
+.tooltip-container {
+  position: absolute;
+  width: 146px;
+  height: 79px;
+  border: solid 0.5px #000;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 12px 25px 10px 14px;
+  z-index: 1;
+}
+
+.disclaimer {
+  font-family: VerizonNHGeDSRegular;
+  font-size: 8px;
+  line-height: 1.125em;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  box-sizing: content-box;
+}
+
+.disclaimer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 44px;
+  top: 23px;
+  right: 11px;
+  background: rgb(246, 246, 246);
+}
+
+.close-btn {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 9px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.xclose {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-thumb {
+  position: relative;
+  width: 100%;
+  background: rgb(218, 216, 216);
+  cursor: pointer;
+}
+
+
+/* ARROW BACKGROUND ----------------  */
+#arrowPatternFrame,
+.arrow-rect {
+  position: absolute;
+  will-change: transform;
+}
+.arrowBg {
+  position: absolute;
+  mix-blend-mode: hard-light;
+  opacity: 0.8;
+}
+#bgAnimation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.arrow-rect-wrapper {
+  mix-blend-mode: hard-light;
+  left: -115%;
+}
+/* F0 ARROWS */
+#f0ArrowRect .arrowBg {
+  width: 446px;
+  height: auto;
+}
+#f0ArrowRect-1 {
+  top: 3px;
+  left: -231px;
+}
+#f0ArrowRect-2 {
+  top: 3px;
+  left: -142px;
+}
+#f0ArrowRect-3 {
+  top: 108px;
+  left: -303px;
+}
+#f0ArrowRect-4 {
+  top: 108px;
+  left: -214px;
+}
+#f0ArrowRect-5 {
+  top: 108px;
+  left: -109px;
+}
+
+/* F1 ARROWS */
+#f1ArrowRect .arrowBg {
+  width: 384px;
+  height: auto;
+}
+#f1ArrowRect-1 {
+  top: 62px;
+  left: -166px;
+}
+#f1ArrowRect-2 {
+  top: 62px;
+  left: -90px;
+}
+#f1ArrowRect-3 {
+  top: 140px;
+  left: -211px;
+}
+#f1ArrowRect-4 {
+  top: 140px;
+  left: -135px;
+}
+#f1ArrowRect-5 {
+  top: 140px;
+  left: -45px;
+}
+
+/* F2 ARROWS */
+#f2ArrowRect-1 {
+  width: 616px;
+  height: auto;
+  top: -29px;
+  left: -317px;
+}
+
+/*F3 arrows*/
+#f3ArrowRect .arrowBg {
+  width: 424px;
+  height: auto;
+}
+
+#f3ArrowRect-1 {
+  left: -150px;
+  top: 120px;
+}
+
+#f3ArrowRect-2 {
+  left: -210px;
+  top: 120px;
+}
+
+#f3ArrowRect-3 {
+  left: -310px;
+  top: 120px;
+}
+
+/* F4 ARROWS */
+#f4ArrowRect .arrowBg {
+  width: 350px;
+  height: auto;
+}
+#f4ArrowRect-1 {
+  top: 57px;
+  left: -45px;
+}
+#f4ArrowRect-2 {
+  top: 57px;
+  left: -145px;
+}
+#f4ArrowRect-3 {
+  top: 57px;
+  left: -182px;
+}
+#f4ArrowRect-4 {
+  top: 152px;
+  left: -95px;
+}
+#f4ArrowRect-5 {
+  top: 152px;
+  left: -185px;
+}
+#f4ArrowRect-6 {
+  top: 152px;
+  left: -242px;
+}
+
+/*F5 arrows*/
+#f5ArrowRect .arrowBg {
+  width: 424px;
+  height: auto;
+}
+
+#f5ArrowRect-1 {
+  left: -80px;
+  top: 120px;
+}
+
+#f5ArrowRect-2 {
+  left: -160px;
+  top: 120px;
+}
+
+#f5ArrowRect-3 {
+  left: -240px;
+  top: 120px;
+}
+
+/* F6 ARROWS */
+#f6ArrowRect-1 {
+  width: 616px;
+  height: auto;
+  top: -29px;
+  left: -317px;
+}
+
+/*F7 arrows*/
+#f7ArrowRect .arrowBg {
+  width: 570px;
+  height: auto;
+}
+
+#f7ArrowRect-1 {
+  left: -230px;
+  top: 76px;
+}
+
+#f7ArrowRect-2 {
+  left: -350px;
+  top: 76px;
+}
+
+#f7ArrowRect-3 {
+  left: -420px;
+  top: 76px;
+}
+
+/* F8 ARROWS */
+#f8ArrowRect-1 {
+  width: 616px;
+  height: auto;
+  top: -29px;
+  left: 28px;
+  mix-blend-mode: normal;
+}
+
+#f8ArrowRect {
+  mix-blend-mode: normal;
+}
+
+body {
+  width: 300px;
+  height: 250px;
+}

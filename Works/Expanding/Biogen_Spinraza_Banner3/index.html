@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<meta charset="UTF-8">
+	<title>BIOGEN - SPINRAZA</title>
+	<meta name="ad.size" content="width=300,height=250"> 
+	<link rel="stylesheet" href="style.css">
+	<script> var clickTag = "https://www.google.com"; </script>
+	<!-- STUDIO -->
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script> 
+    <!-- GSAP -->
+    <script src='https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.2.4_min.js'></script>
+    <!-- STANDARD -->
+    <script src="custom.js"></script>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+<body>
+	<div id="container">
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+		<div id="collapsedSection">
+			<div class="phone-grp">
+				<div class='typing-seq'></div>
+			</div>
+
+			<div class='col-bg1b imgfix '>
+				<img src="col-bg1b.png" alt="Background">
+				<div class='sprite col-t1a col-t1'></div>
+				<div class='sprite col-t1b col-t1'></div>
+			</div>
+
+			<div class="header">
+				<div class='sprite logo2 col-Logo1'></div>
+			</div>
+			<div class="footer">
+				<div class='sprite col-rollOver'></div>
+				<div class='sprite col-t2a col-t2'></div>
+				<div class='sprite col-t2b col-t2'></div>
+			</div>
+
+			<div id="expandButton"></div>
+
+			<div class="referencesHolder">
+				<div class="col-bg2 imgfix">
+					<img src="col-bg2.png" alt="Background">
+				</div>
+				<div class='sprite col-ref-t1 refTxt'></div>
+				<div class='sprite col-ref-t2 refTxt'></div>
+				<div class='sprite logo1 col-Logo2'></div>
+			</div>
+
+		</div>
+
+		<div id="expandedSection">
+			<div class='exp-bg imgfix '>
+				<img src="exp-bg.jpg" alt="Background">
+			</div>
+			<div class="chart">
+				<div class="chartBg">
+					<img src="exp-chartBg.png" alt="chartBg">
+				</div>
+
+				<!-- GRAPH SVG MASKING -->
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="600px" height="250px" viewBox="0 0 600 250" enable-background="new 0 0 600 250" xml:space="preserve">
+		            <defs>
+		                <mask id="svgMask1" x="0">
+		               		<rect id=maskElement1 class=masks fill="white" width="160" height="45" x="56" y="42"/>
+		                </mask>
+		                <mask id="svgMask2" x="0">
+		               		<rect id=maskElement2 class=masks fill="white" width="160" height="90" x="57" y="42"/>
+		                </mask>
+		                <mask id="svgMask3" x="0">
+		               		<rect id=maskElement3 class=masks fill="white" width="160" height="70" x="57" y="42"/>
+		                </mask>
+		            </defs>
+		        	<image width="158" height="41" x="56" y="42" overflow="visible" xlink:href="exp-chartL1.png" mask="url(#svgMask1)"></image>
+		        	<image width="157" height="84" x="57" y="42" overflow="visible" xlink:href="exp-chartL2.png" mask="url(#svgMask2)"></image>
+		        	<image width="157" height="65" x="57" y="42" overflow="visible" xlink:href="exp-chartL3.png" mask="url(#svgMask3)"></image>
+		        </svg>
+
+				<div class='sprite exp-chartDet'></div>
+				<div class='sprite exp-chartLeg'></div>
+				<div class='sprite exp-chartPts'></div>
+				<div class='sprite exp-t1a expt1'></div>
+				<div class='sprite exp-t1b expt1'></div>
+				<div class='sprite exp-t1c expt1'></div>
+				<div class='sprite exp-t1d expt1'></div>
+				<div class='sprite exp-t2a expt2'></div>
+				<div class='sprite exp-t2b expt2'></div>
+				<div class='sprite exp-t3 last'></div>
+				<div class='sprite exp-t4 last'></div>
+				<div class='sprite logo2 exp-Logo1'></div>
+
+				<div id="exp-cta">
+					<div class='sprite exp-cta-txt exp-cta'></div>
+					<div class='sprite exp-cta-arrow exp-cta'></div>
+				</div>
+
+				<div id="clickthru"></div>
+
+				<div class='sprite exp-btnRef'></div>
+				<div class="exp-close exp imgfix">
+					<img src="exp-close.png" alt="Close Expanded">
+				</div>
+			</div>
+		</div>
+		<div class='sprite col-btnBack'></div>
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+	</div>
+	<script>
+		let tlCo = gsap.timeline({defaults: {duration:1, ease:'sine.out'}});
+		let tlExp 	 = gsap.timeline({defaults: {duration:1, ease:'sine.out'}, paused:true});
+		let isExpanded = false;
+
+		function initAd() {
+			//--------- PRE-LOAD IMAGE ------------
+			startPreload(	'col-bg1a.jpg',
+							'col-bg1b.png',
+							'col-bg2.png',
+							'col-typingSprite.png',
+							'exp-bg.jpg',
+							'exp-chartBg.png',
+							'exp-chartL1.png',
+							'exp-chartL2.png',
+							'exp-chartL3.png',
+							'exp-close.png',
+							'sprite.png',
+							startAnim);
+			//-------------------------------------
+			function startAnim() {
+				//--------------- SET -----------------
+				gsap.set('#container', {display: 'block'});
+                gsap.set('.imgfix', { rotation:0.001});
+                gsap.set('.expt1, .expt2', {transformOrigin: 'top 50% 25', rotation: 0.001, force3D: false})
+				//------------ ADD EVENT --------------
+				addEvent();
+				//---------- ADD ANIMATION ------------
+				tlCo
+					.from('.col-t1', {opacity:0, y:-8}, 0.3)
+				  	.from('.col-t2', {x:-300, stagger:0.15}, 0.4)
+				  	.from('.col-rollOver', {duration:0.7, y:80}, 1.2)
+				  	.to('.typing-seq', {duration:14.5, backgroundPosition:'0px -12358px', ease:'steps(167)'}, 2)
+
+				tlExp
+					.set('#expandedSection', {display:'block'})
+					.from('.expt1', {opacity:0, rotationX: 90, ease:"power2.out", stagger:0.15}, 'expAnim+=0.3')
+                    .from('.expt2', {opacity:0, rotationX: 90, ease:"power2.out", stagger:0.15}, 'expAnim+=1.5')
+
+                    .from('.masks', {duration: 1.4, x: -180, ease:'none', stagger:1}, 'expAnim+=2.1')
+                    .from('.exp-chartPts', {duration:0.5, scale:0, opacity:0, transformOrigin:'top left', ease: "back.out(1.7)"}, 'expAnim+=5.5')
+                    
+					.from('#exp-cta', {duration:0.8, x:300, ease:"expo.out"}, 'expAnim+=6.5')
+					.from('.exp-cta', {duration:0.8, opacity:0, x:-20, ease:"power2.out", stagger:0.2}, 'expAnim+=7')
+					.from('.last', {duration:0.8, opacity:0, ease:"power2.out", stagger:0.4}, 'expAnim+=8')
+					.from('.exp-btnRef', {duration:0.8, y:30, ease:"power2.out", stagger:0.4}, 'expAnim+=8.5')
+                    .to('.exp-cta-arrow', {duration:0.4, x:6, ease:"none", repeat: 3, yoyo:true}, '+=0.2')
+				//-------------------------------------
+			};
+			function addEvent() {
+				Enabler.setExpandingPixelOffsets(
+				    0, // left
+				    0, // top
+				    600, // expandedWidth
+				    250  // expandedHeight
+				);
+
+				// EXPANDING EVENT
+				Enabler.addEventListener(studio.events.StudioEvent.EXPAND_START, expandStartHandler);
+			    Enabler.addEventListener(studio.events.StudioEvent.EXPAND_FINISH, expandFinishHandler);
+			    Enabler.addEventListener(studio.events.StudioEvent.COLLAPSE_START, collapseStartHandler);
+			    Enabler.addEventListener(studio.events.StudioEvent.COLLAPSE_FINISH, collapseFinishHandler);
+			    Enabler.addEventListener(studio.events.StudioEvent.EXIT, collapseExpanded);
+
+			    // BUTTON EVENT HANDLER
+			    _('#expandButton').on('mouseover', expandRequestHandler);
+			    _('#container').on('mouseleave', collapseRequestHandler);
+			    _('#clickthru').on('click', exit);
+			    _('.referencesHolder').on('click', exit);
+			    _('.exp-btnRef').on('click', showRef);
+			    _('.exp-btnRef').on('click', showRef);
+			    _('.col-btnBack').on('click', hideRef);
+			    _('.exp-close').on('click', function(){
+			    	Enabler.reportManualClose();
+			    	collapseRequestHandler();
+			    });
+			};
+
+			function expandRequestHandler() {
+				if(!isExpanded) {
+					isExpanded = true;
+					Enabler.requestExpand();
+					tlExp.play('expAnim')
+				}
+			}
+
+			function collapseRequestHandler() {
+				if(isExpanded) {
+					isExpanded = false;
+					Enabler.requestCollapse();
+				}
+			}
+
+			function expandStartHandler() {
+				Enabler.finishExpand();
+			}
+
+			function expandFinishHandler() {
+				
+			}
+
+			function collapseStartHandler() {
+				gsap.set('#expandedSection', {display:'none'})	
+				Enabler.finishCollapse();
+			}
+
+			function collapseFinishHandler() {		
+				showHideExp();
+			}
+
+			function expandCollapsed() {
+				if(!isExpanded) {
+					isExpanded = true;
+					Enabler.requestExpand();
+				}
+			}
+
+			function collapseExpanded() {
+				if(isExpanded) {
+					isExpanded = false;
+					Enabler.requestCollapse();
+				}
+			}
+			
+			function showRef() {
+				collapseExpanded();
+				gsap.set('.referencesHolder, .col-btnBack', {display:'block'})
+			}
+
+			function hideRef() {
+				gsap.set('.referencesHolder, .col-btnBack', {display:'none'})
+				showHideExp();
+			}
+			
+			function showHideExp(){
+				gsap.set('#expandButton', {display:'none'})
+				setTimeout(function(){ 
+					gsap.set('#expandButton', {display:'block'})
+				}, 1000);
+			}
+			function exit() {
+                Enabler.exit('Background Exit'); /*Studio/Enabler Exit*/
+            }
+            //-------------------------------------
+            
+		};
+	</script>
+</body>
+</html>

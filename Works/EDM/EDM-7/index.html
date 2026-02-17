@@ -1,0 +1,514 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="format-detection" content="telephone=no"/>
+        <!-- <title>Title Goes Here</title> -->
+
+        <!--[if gte mso]><xml>
+        <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml><![endif]-->
+
+        <style type="text/css">
+            /* Client specific styles. */
+            #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+			.ReadMsgBody{width:100%;} .ExternalClass{width:100%;}
+			.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} 
+			p, span, font, td, th, div {line-height: 100%; margin: 0; padding: 0;}
+			body, table, td, th, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+			table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+			img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+			/* Reset Styles*/
+			body{margin:0;padding:0;}
+            img{display:block;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;vertical-align: middle;}
+            table{border-collapse:collapse !important;}
+            body,#bodyTable,#bodyCell{height:100% !important;margin:0;padding:0;width:100% !important;}
+            /* a{text-decoration: none; color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important;} */
+
+            *{
+                box-sizing: border-box !important;
+            }
+
+            @media (max-width: 599px){
+                body, table, td, th, p, a, li, blockquote span, font{-webkit-text-size-adjust:none !important;} /* Prevent Webkit platforms from changing default text sizes */
+                .fullWidth{width:100% !important;}
+                .fullWidthImg{max-width:100% !important;width:100% !important;}
+            }
+
+            html,body{
+                background-color: #ffffff !important;
+            }
+            .mainTable{
+                width:600px;
+                max-width:600px;
+            }
+            /* standard custom styling */
+            *{
+                font-family: Arial, sans-serif !important;
+                color: #000000;
+            }
+            .borderBottom{
+                border-bottom: 1px #f1f1f1 solid;
+            }
+            a{
+                color:#142e53;
+            }
+            a:visited{
+                color:#142e53;
+            }
+            .viewInBrowser a, .viewInBrowser a:visited{
+                color:#bbbbbb;
+            }
+            /* Mobile layout. */
+            @media (max-width: 599px){
+                /* br{display:none;} */
+                .alignCenter{text-align: center !important;}
+                .stack{display:block !important;width:100% !important;height:auto !important;}
+                .hide{display: none !important; height: 0 !important; line-height: 0 !important; font-size: 0 !important;}
+                .show{display:block !important;}
+
+                /* another way of hiding/showing elements in Outlook
+                .show{
+                    display:block !important;
+                    width:100% !important;
+                    overflow:visible !important;
+                    max-height:none !important;
+                    font-size:inherit !important;
+                    line-height:inherit !important;
+                    height:auto !important;
+                    float:none !important;
+                } */
+                
+                /* NOTE: take of note of how images and texts are styled to avoid conflicts when switching template Type */
+                /* Comment next line to transform this template to fluid styling */
+                .mainTable{width: 320px !important;max-width: 320px !important;}
+                
+                .beanContainer{
+                    padding: 15px 0px !important;
+                }
+                .beanContainer tr th{
+                    padding: 0px 5px 10px !important;
+                }
+                .beanContainer > table{
+                    width: 100% !important;
+                }
+
+                .viewInBrowser{
+                    padding: 33px 4px 25px 0px !important;
+                }
+                .preaheaderText{
+                    font-size: 14px !important;
+                    padding: 0px 8px 39px 15px !important;
+                    letter-spacing: 0.15px !important;
+                    line-height: 18px !important;
+                }
+                .companyLogo {
+                    padding-bottom: 35px !important;
+                }
+                .companyLogo img{
+                    max-width: 86px !important;
+                    width: 86px !important;
+                }
+                .mastheadTitle{
+                    padding-bottom: 30px !important;
+                    font-size: 36px !important;
+                }
+                .descriptionComponentWrapper{
+                    padding: 0 17px !important;
+                }
+                .descriptionComponentWrapper > table th{
+                    font-size: 15px !important;
+                    line-height: 20px !important;
+                    letter-spacing: 0px !important;
+                }
+                .descriptionComponentWrapper .desc_last{
+                    padding: 0 10px 38px 10px !important;
+                }
+                .listTitle{
+                    padding: 42px 8px 29px 11px !important;
+                    font-size: 20px !important;
+                    letter-spacing: 0px !important;
+                    line-height: 26px !important;
+                }
+                .listWrapper > table {
+                    width: 81% !important;
+                }
+                .listBullet{
+                    padding: 7px 13px 0px 3px !important;
+                }
+                .img-tbl{width:14px !important;}
+                .bull-img, .bull-img img{width:14px !important; height: 14px !important; padding-left: 0px !important; padding-right: 0px !important;}
+
+                .bullet4{
+                    padding: 12px 14px 0px 2px !important;
+                }
+                .listDisc{
+                    padding: 16px 0 27px 0 !important;
+                    font-size: 15px !important;
+                    line-height: 20px !important;
+                }
+                .btn_02{
+                    padding-bottom: 22px !important;   
+                }
+                .btn_02 img{
+                    max-width: 130px !important;
+                    width: 130px !important;
+                }
+                .footerLogo{
+                    padding: 48px 0px 41px !important;
+                }
+                .footerLogo img {
+                    max-width: 153px !important;
+                    width: 153px !important;
+                    margin: 0 6px 0 0  !important;
+                }
+                .footerNavWrapper{
+                    padding: 0 !important;
+                    border:  0 !important;
+                }
+                .footerNavItem{
+                    padding: 24px 0px 18px 6px !important;
+                    border-bottom: 1px solid #142e53 !important;
+                    line-height: 16px !important;
+                }
+                .footer{
+                    padding: 0px 21px !important;
+                }
+                .footerDesc{
+                    padding: 22px 0px 17px 0px !important;
+                }
+                .footerDesc > table th {
+                    letter-spacing: -0.29px !important;
+                }
+                .descom1{
+                    padding: 30px 15px 0 15px !important;
+                }
+                .descom2{
+                    padding: 20px 0px 26px 0px !important;
+                }
+                .btn_01{
+                    padding-bottom: 21px !important;
+                }
+                .btn_01 img{
+                    max-width: 255px !important;
+                    width: 255px !important;
+                }
+                .listComponentTB{
+                    margin-left: 33px !important;
+                }
+                .listMobilePadding_a{
+                    padding-right: 14px !important;
+                }
+                .mb{ margin-bottom: -1px !important; }
+
+            }
+            
+        </style>
+        <!--[if mso]>
+        <style> body,table tr,table td,th,a, span,table.MsoNormalTable {  font-family:Arial, Helvetica, sans-serif !important;  }</style>
+        <![endif]-->
+        <!--[if !mso 9]><!--><!--<![endif]-->
+    </head>
+    
+    
+    <body style="margin: 0 auto !important; padding: 0 !important;  background: #ffffff !important;">
+
+        <div style="display:none;font-size:0px;line-height:0px;max-height:0px;max-width:0px;opacity:0;overflow:hidden; mso-hide:all; font-family: sans-serif; font-color:#ffffff;">
+            Obtain up to 6 GM Accessories Employee Discount authorization numbers for you and eligible family members each year.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+        </div>
+
+        <table class="mainTable" border="0" align="center" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+                <th style="margin: 0 auto; ">
+
+                    <table class="preheaderComponent" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <th class="viewInBrowser" align="center" valign="middle" style="padding: 43px 3px 26px 0; color: #bbbbbb; font-family: Arial, sans-serif; font-size: 14px; font-weight: 400;">
+                                <a description="A_TXT_VIEW" CAT1="Preheader" CAT2="View in Browser" href="#Zeta_to_code" style="color: #bbbbbb; text-decoration: underline; font-size: 14px; font-weight: 400;">
+                                    View in browser
+                                </a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="preaheaderText" align="center" style="padding: 0px 23px 50px 27px; letter-spacing: -0.05px; line-height: 17px; color: #142e53; font-family: Arial, sans-serif; font-size: 16px;font-weight: bold;">
+                                Obtain up to 6 GM Accessories Employee Discount authorization numbers for you and eligible family members each year.
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="companyLogo" align="center" style="padding-bottom: 44px;">
+                                <a description="A_IMG_LOGO" CAT1="Preheader" CAT2="Tree_Logo" href="https://www.gmfamilyfirst.com/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>">
+                                    <img src="images/logo.png" alt="GM Family First Program logo" width="67" style="width: 67px; max-width: 67px; height: auto; margin: 0 auto; display: block;">
+                                </a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="mastheadTitle" align="center" style="padding-bottom: 29px; border-bottom: 3px solid #ea882d; color: #142e53; font-family: Arial, sans-serif; font-size: 42px; font-weight: bold; letter-spacing: -2px;">
+                                Did you know?
+                            </th>
+                        </tr>
+                    </table>
+
+                    <table class="descriptionComponent" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                    <tr>
+                        <th class="descriptionComponentWrapper">
+                            <table  border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                                <tr>
+                                    <th class="descom1" align="center" style=" padding-top: 31px; padding-bottom:21px; color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px; text-align: center;">
+                                        As an eligible GM employee,* you can get more than <br class="hide">just employee pricing on select, new GM vehicles. 
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="descom2 hide" align="center" style="padding-bottom:34px; color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px; text-align: center; display: block">
+                                        You can also get 20% below MSRP<span style=" font-size: 8px; color: #142e53; line-height: 10px; vertical-align: 6px;">&#8224;</span> on eligible Chevrolet, Buick, <br class="hide">GMC and Cadillac Accessories with your GM Accessories <br class="hide">Employee Discount. Enhance the appearance, performance and <br class="hide">capability of your existing GM vehicle(s), and share this deal <br class="hide">with eligible family members to do the same.
+                                    </th>
+                                    <!--[if !mso 9]><!-->
+                                    <th class="descom2 show" align="center" style="padding-bottom:34px; color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px; text-align: center; display: none">
+                                        You can also get 20% below MSRP<span style=" font-size: 8px; color: #142e53; line-height: 10px; vertical-align: 6px;">&#8224;</span> <br class="show">on eligible Chevrolet, Buick, <br class="hide">GMC and Cadillac Accessories with your GM Accessories <br class="hide">Employee Discount. Enhance the appearance, performance and <br class="hide">capability of your existing GM vehicle(s), and share this deal <br class="hide">with eligible family members to do the same.
+                                    </th>
+                                    <!--<![endif]-->
+                                </tr>
+                                <tr>
+                                    <th class="btn_01" align="center" style="padding-bottom: 34px;">
+                                        <a description="M_BTN_GET" CAT1="Body" CAT2="Get Authorization Number" href="https://www.gmfamilyfirst.com/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>">
+                                            <img src="images/btn_01.png" alt="Get Authorization Number" width="255" style="width: 255px; max-width: 255px; height: auto; margin: 0 auto; display: block;">
+                                        </a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th align="center" class="desc_last" style="padding-bottom:49px; color: #142e53; font-family: Arial, sans-serif; font-size: 16px; line-height: 21px; font-weight: 400; text-align: center;">
+                                        We appreciate the excellent work you do for GM, which is <br class="hide">why we want you and your family to get the best deals.
+                                    </th>
+                                </tr>
+                            </table>
+                        </th>
+                    </tr>
+                    </table>
+
+
+
+                    <table class="mastheadComponent" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <th  align="center" valign="middle" style="width: 100%; display: block;">
+                                <img class="hide" src="images/masthead_image.gif" alt="GM Vehicle Accessories &#8208; Chevrolet, Buick, GMC and Cadillac" width="100%" style="width: 100%; max-width: 600px; height: auto; display: block;">
+                                <!--[if !mso 9]><!-->
+                                <img class="show" src="images/mobile_masthead_image.gif" alt="GM Vehicle Accessories &#8208; Chevrolet, Buick, GMC and Cadillac" width="100%" style="width: 100%; max-width: 600px; height: auto; display: none;">
+                                <!--<![endif]-->
+                            </th>
+                        </tr>
+                    </table>
+
+                    <table bgcolor="#142e53" class="titleComponent" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; background-color: #142e53;">
+                        <tr>
+                            <th align="center" class="listTitle" style="padding: 49px 0px 36px; line-height: 28px; border-bottom: 3px solid #ea882d; border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0px; mso-table-rspace: 0px; background-color: #142e53; color: #ffffff; font-family: Arial, sans-serif; font-size: 27px; font-weight: bold; letter-spacing: 0px; text-align: center;">
+                                Stand Out From the Crowd <br class="hide">With GM Accessories for Less
+                            </th>
+                        </tr>
+
+                    </table>
+                    
+                    <table bgcolor="#142e53" class="listComponent" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; background-color:#142e53">
+                        <tr>
+                            <th class="listWrapper" style="background-color: #142e53; padding-top: 29px;">
+                                <table class="listComponent listComponentTB" border="0" align="center" cellspacing="0" cellpadding="0" width="67%" style="width: 67%; margin-left: 113px;">
+                                    <tr>
+                                        <th class="listBullet" align="left" valign="top" style="padding-top: 5px; padding-right: 24px;">
+                                            <table class="img-tbl" border="0" align="left" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+                                                <tr>
+                                                    <td align="left" style="width:17px;">
+                                                        <img class="bull-img" src="images/bullet.png" alt="bullet" width="17" style="width: 17px; max-width: 17px; height: auto; margin: 0 auto; display: block;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                        <th class="hide" align="left" valign="top" style="padding-top: 4px; padding-bottom: 17px; color: #ffffff; font-family: Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 21px; display: block;">
+                                            You&#39;re eligible to receive a total of <br class="hide"><span style="color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">6 GM Accessories Employee Discount authorization numbers per year.</span>
+                                        </th>
+                                        <!--[if !mso 9]><!-->
+                                        <th class="show" align="left" valign="top" style="padding-top: 2px; padding-bottom: 17px; color: #ffffff; font-family: Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 21px; display: none;">
+                                            You&#39;re eligible to receive <br class="show">a total of <span style="color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">6 GM Accessories Employee Discount authorization numbers <br class="show">per year.</span>
+                                        </th>                                        
+                                        <!--<![endif]-->
+                                    </tr>
+                                    <tr>
+                                        <th class="listBullet" align="left" valign="top" style="padding-top: 7px; padding-right: 24px;">
+                                            <table class="img-tbl" border="0" align="left" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+                                                <tr>
+                                                    <td align="left" style="width:17px;">
+                                                        <img class="bull-img" src="images/bullet.png" alt="bullet" width="17" style="width: 17px; max-width: 17px; height: auto; margin: 0 auto; display: block;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                        <th align="left" valign="top" style="padding-top: 4px; padding-bottom: 17px; color: #ffffff; font-family: Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 21px;">
+                                            You can <span style="color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">share authorization numbers with eligible family members,</span> including your spouse, children, parents, grandparents and others.
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="listBullet" align="left" valign="top" style="padding-top: 7px; padding-right: 24px;">
+                                            <table class="img-tbl" border="0" align="left" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+                                                <tr>
+                                                    <td align="left" style="width:17px;">
+                                                        <img class="bull-img" src="images/bullet.png" alt="bullet" width="17" style="width: 17px; max-width: 17px; height: auto; margin: 0 auto; display: block;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                        <th class="hide" align="left" valign="top" style="padding-top: 4px; padding-bottom: 17px; color: #ffffff; font-family: Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 21px; display: block;">
+                                            The GM Accessories Employee Discount <br class="hide"><span style="color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">can be used on eligible GM Accessories</span> purchased from participating dealers on the <br class="hide">brand accessories websites or in their parts and service department. Accessories purchased <br class="hide">from third-party retailers do not qualify.
+                                        </th>
+                                        <!--[if !mso 9]><!-->
+                                        <th class="show" align="left" valign="top" style="padding-top: 4px; padding-bottom: 17px; color: #ffffff; font-family: Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 21px; display: none;">
+                                            The GM Accessories <br class="show">Employee Discount <br class="hide"><span style="color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">can <br class="show">be used on eligible GM Accessories</span> purchased from participating dealers on the <br class="hide">brand accessories websites <br class="show">or in their parts and service department. Accessories purchased <br class="hide">from third-party retailers do not qualify.
+                                        </th>
+                                        <!--<![endif]-->
+                                    </tr>
+                                    <tr>
+                                        <th class="listBullet bullet4" align="left" valign="top" style="padding-top: 7px; padding-right: 24px;">
+                                            <table class="img-tbl" border="0" align="left" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+                                                <tr>
+                                                    <td align="left" style="width:17px;">
+                                                        <img class="bull-img" src="images/bullet.png" alt="bullet" width="17" style="width: 17px; max-width: 17px; height: auto; margin: 0 auto; display: block;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                        <th class="hide" align="left" valign="top" style="padding-top: 4px; padding-bottom: 17px; color: #ffffff; font-family: Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 21px; display: block;">
+                                            Once you&#39;re signed in, you can <span style="color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">easily obtain<br class="hide"> an authorization number</span> by scrolling down <br class="hide">on the &quot;Your Authorizations&quot; page, clicking <br class="hide">&quot;GM Accessories Employee Discount&quot; and selecting &quot;Get Authorization Number.&quot;
+                                        </th>
+                                        <!--[if !mso 9]><!-->
+                                        <th class="show" align="left" valign="top" style="padding-top: 4px; padding-bottom: 17px; color: #ffffff; font-family: Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 21px; display: none;">
+                                            Once you&#39;re signed in, <br class="show">you can <span style="color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">easily obtain<br class="hide"> an authorization number</span> by scrolling down <br class="hide">on the &quot;Your Authorizations&quot; page, clicking <br class="hide">&quot;GM Accessories Employee Discount&quot; and selecting &quot;Get Authorization Number.&quot;
+                                        </th>
+                                        <!--<![endif]-->
+                                    </tr>
+                                    <tr>
+                                        <th class="listBullet" align="left" valign="top" style="padding-top: 7px; padding-right: 24px;">
+                                            <table class="img-tbl" border="0" align="left" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+                                                <tr>
+                                                    <td align="left" style="width:17px;">
+                                                        <img class="bull-img" src="images/bullet.png" alt="bullet" width="17" style="width: 17px; max-width: 17px; height: auto; margin: 0 auto; display: block;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                        <th class="hide" align="left" valign="top" style="padding-top: 4px; padding-bottom: 6px; color: #ffffff; font-family: Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 21px; display: block;">
+                                            Provide your authorization number to your <br class="hide">dealer, or <span style="color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">enter it as an offer code at<br class="hide"> checkout</span> on the brand accessories sites. 
+                                        </th>
+                                        <!--[if !mso 9]><!-->
+                                        <th class="show" align="left" valign="top" style="padding-top: 4px; padding-bottom: 6px; color: #ffffff; font-family: Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 21px; display: none;">
+                                            Provide your authorization number to your <br class="hide">dealer, or <br class="show"><span style="color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">enter it as an offer code <br class="show">at<br class="hide"> checkout</span> on the brand accessories sites. 
+                                        </th>
+                                        <!--<![endif]-->
+                                    </tr>
+                                    
+                                </table>
+
+                                <table  border="0" align="center" cellspacing="0" cellpadding="0" width="66%" style="width: 65%;">
+                                    <tr>
+                                        <th class="listDisc" align="center" style="padding-top: 17px; padding-bottom: 34px; padding-left: 2px; color: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 21px;">
+                                            Ready to shop for accessories? Visit the GM Family First website to sign in to your account, and obtain your authorization number t&zwnj;o&zwnj;d&zwnj;a&zwnj;y.
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="btn_02" align="center" style="padding-bottom: 42px;">
+                                            <a description="SC_BTN_GO_NOW" CAT1="Body" CAT2="Go Now" href="https://www.gmfamilyfirst.com/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>">
+                                                <img src="images/btn_02.png" alt="Go Now" width="130" style="width: 130px; max-width: 130px; height: auto; margin: 0 auto; display: block;">
+                                            </a>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </th>
+                        </tr>
+                    </table>
+                    
+                    <table class="footerLogoComponent" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <th class="footerLogo" align="center" style="padding: 49px 0px 46px;">
+                                <a description="SC_IMG_LOGO" CAT1="Body" CAT2="GM Family First Logo" href="https://www.gmfamilyfirst.com/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>">
+                                    <img src="images/footer_logo.png" alt="GM Family First logo" width="177" style="width: 177px; max-width: 177px; height: auto; margin: 0 40px 0 0;">
+                                </a>
+                            </th>
+                        </tr>
+                    </table>
+                    
+                    <table class="footerComponent" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <th class="footer" bgcolor="#ea882d" style="background-color:#ea882d; padding: 26px;">
+                                <table  border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                                    <tr>
+                                        <th class="footerNavWrapper" style="border-bottom: solid 2px #142e53; padding: 4px 8px 19px">
+                                            <table class="footerNav" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                                                <tr>
+                                                    <th class="footerNavItem alignCenter stack" align="left" style="padding-right: 22px; color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold;">
+                                                        <a description="F_TXT_ABOUT" CAT1="Footer" CAT2="About" href="https://www.gmfamilyfirst.com/about-the-discount/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>" style="color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none;">
+                                                            About
+                                                        </a>
+                                                    </th>
+                                                    <th class="footerNavItem alignCenter stack" align="left" style="padding-right: 12px; color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold;">
+                                                        <a description="F_TXT_VEHICLES" CAT1="Footer" CAT2="Vehicles" href="https://www.gmfamilyfirst.com/vehicles/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>" style="color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none;">
+                                                            Vehicles
+                                                        </a>
+                                                    </th>
+                                                    <th class="footerNavItem alignCenter stack" align="left" style="color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold;">
+                                                        <a description="F_TXT_OFFERS" CAT1="Footer" CAT2="Offers" href="https://www.gmfamilyfirst.com/offers/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>" style="color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none;">
+                                                            Offers
+                                                        </a>
+                                                    </th>
+            
+                                                    <th class="footerNavItem alignCenter stack" align="right" style="color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold;">
+                                                        <a description="F_TXT_FAQ_1" CAT1="Footer" CAT2="FAQs" href="https://www.gmfamilyfirst.com/about-the-discount/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>" style="color: #142e53; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none;">
+                                                            FAQs
+                                                        </a>
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="footerDesc" style="padding: 22px 8px 4px 8px;">
+                                            <table  border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                                                <tr>
+                                                    <th align="left" style="color: #142e53; font-family: Arial, sans-serif; font-size: 11px; font-weight: 400; line-height: 12px; letter-spacing: -0.27px;">
+                                                        *Eligible active, retired, former hourly or salaried GM employees with more than 20 total years of cumulative service, widows and widowers of former GM employees with more than 20 total years of cumulative service, and active employees and retirees of GM Financial can sponsor the following purchasers: their spouse, children, stepchildren, grandchildren, stepgrandchildren, grandparents (including in-law and step), parents, stepparents, siblings (including full, half and step), mother-/father-in-law, sons-/daughters-in-law, brothers-/sisters-in-law, aunts, uncles, nieces and nephews. Eligible former hourly or salaried GM employees with 5&zwnj;-20 total years of cumulative service and widows and widowers of former GM employees with 5&zwnj;-&zwnj;20 total years of cumulative service can sponsor the following purchasers: their spouse and dependent children. (Children must be under 21 years of age or full-time students under 25 years of age at time of purchase.) At participating dealers only. Excludes select base trims, 2&zwnj;0&zwnj;2&zwnj;1 Corvette and 2020 Corvette. Not available with some other offers. Take new retail delivery by 1&zwnj;/&zwnj;3&zwnj;/&zwnj;22.
+                                                        <br><br>
+                                                        <span style=" font-size: 8px; color: #142e53; line-height: 7px; vertical-align: 4px;">&#8224;</span>Discount applicable to cost of eligible GM Accessories, including Associated Accessories, purchased online and at participating dealers, up to a total discount value of $800. Discount is not applicable to tax, shipping, installation charges, Limited Production Options (accessories ordered with the vehicle and included on the vehicle's window label and invoice), GM Genuine Parts, ACDelco, service parts, or Performance Parts (e.g., Crate Engines, Transmissions, Engine Components, etc.). Employee discount cannot be stacked or combined with other GM Accessories offers/discounts offered by GM. Offer subject to availability. Dealer participation in discount may affect final price. Participants are limited to 6 transactions from &zwnj;1&zwnj;/&zwnj;5&zwnj;/&zwnj;2&zwnj;1 to 1&zwnj;/&zwnj;3&zwnj;/&zwnj;2&zwnj;2. Employee pricing subject to change at any time without notice.
+                                                        <br><br>
+                                                        Please do not reply to this message. This email was sent by an automated system, which cannot respond to replies. Have questions or want to learn more? Read our <a description="F_TXT_FAQ_2" CAT1="Footer" CAT2="Frequently Asked Questions" href="https://www.gmfamilyfirst.com/about-the-discount/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>" style="color: #142e53; font-family: Arial, sans-serif; font-size: 11px; font-weight: 400; line-height: 12px; letter-spacing: -0.27px; text-decoration: underline;">Frequently Asked Questions</a> or visit the GM Family First website at <a description="F_GM_COM" CAT1="Footer" CAT2="gmfamilyfirst.com" href="https://www.gmfamilyfirst.com/?eVar36=<DI_TRACKING_CODE/>_<DI_CATALOG_ID/>" style="color: #142e53; font-family: Arial, sans-serif; font-size: 11px; font-weight: 400; line-height: 12px; letter-spacing: -0.27px; text-decoration: underline;">gmfamilyfirst.com</a>.
+                                                        <br><br>
+                                                        You received this email advertisement because you are a valued GM employee.
+                                                        <br><br>
+                                                        <!-- <a href="#" style="color: #142e53; font-family: Arial, sans-serif; font-size: 11px; font-weight: 400; line-height: 12px; letter-spacing: -0.27px; text-decoration: none;">Unsubscribe</a>
+                                                        &nbsp;|&nbsp; -->
+                                                        <a description="F_COPYRIGHT" CAT1="Footer" CAT2="Copyright_&_Trademark" href="http://www.gm.com/copyright-trademark.html" style="color: #142e53; font-family: Arial, sans-serif; font-size: 11px; font-weight: 400; line-height: 12px; letter-spacing: -0.27px; text-decoration: underline;">Copyright &amp; Trademark</a>
+                                                        &nbsp;|&nbsp;
+                                                        <a description="F_PRIVACY" CAT1="Footer" CAT2="GM_Privacy_Statement" href="http://www.gm.com/privacy-statement.html" style="color: #142e53; font-family: Arial, sans-serif; font-size: 11px; font-weight: 400; line-height: 12px; letter-spacing: -0.27px; text-decoration: underline;">GM Privacy Statement</a>
+                                                        <br><br>
+                                                        <!-- <a href="#" style="color: #142e53; font-family: Arial, sans-serif; font-size: 11px; font-weight: 400; line-height: 12px; letter-spacing: -0.27px; text-decoration: none;"> -->
+                                                            General Motors
+                                                        <!-- </a> -->
+                                                        | 1&zwnj;00 Renaissance Center | 482&zwnj;.&zwnj;A00&zwnj;.&zwnj;MAR | Detroit, MI 48&zwnj;2&zwnj;6&zwnj;5 
+                                                        <br><br>
+                                                        &#169;2021 General Motors. All Rights Reserved. 
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </th>
+                        </tr>
+                    </table>
+
+                </th>
+            </tr>
+        </table>    
+    </body>
+
+</html>

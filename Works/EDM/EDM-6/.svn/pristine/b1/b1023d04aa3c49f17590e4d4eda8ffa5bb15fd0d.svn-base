@@ -1,0 +1,473 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <meta name="format-detection" content="telephone=no"/>
+        <title>Chevrolet</title>
+
+        <!--[if gte mso]><xml>
+        <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml><![endif]-->
+
+        <style type="text/css">
+        @font-face{ 
+            font-family: 'stratum';  
+            font-style: normal; 
+            src: local('stratum'),  url('https://www.gmc.com/etc/clientlibs/gmc/head/css/fonts/stratum-black.woff2') format('woff2');
+            } 
+        @font-face{ 
+            font-family: 'muli';  
+            font-style: normal; 
+            src: local('muli'), url('https://www.gmc.com/etc/clientlibs/gmc/head/css/fonts/muli-bold-webfont.woff2') format('woff2');
+            } 
+        @font-face{ 
+            font-family: 'muli';  
+            font-style: normal; 
+            src: local('muli'), url('https://www.gmc.com/etc/clientlibs/gmc/head/css/fonts/muli-webfont.woff2') format('woff2');
+            }
+            /* Client specific styles. */
+            #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+			.ReadMsgBody{width:100%;} .ExternalClass{width:100%;}
+			.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} 
+			p, span, font, td, th, div {line-height: 100%; margin: 0; padding: 0;}
+			body, table, td, th, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+			table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+			img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+			/* Reset Styles*/
+			body{margin:0;padding:0;}
+            img{display:block;border:0;height:auto; line-height:100%;outline:none;text-decoration:none;vertical-align: middle;}
+            table{border-collapse:collapse !important;}
+            body,#bodyTable,#bodyCell{height:100% !important;margin:0;padding:0;width:100% !important;}
+            /* a{text-decoration: none; color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important;} */
+
+            *{
+                box-sizing: border-box !important;
+            }
+
+            @media (max-width: 599px){
+                body, table, td, th, p, a, li, blockquote span, font{-webkit-text-size-adjust:none !important;} /* Prevent Webkit platforms from changing default text sizes */
+                .fullWidth{width:100% !important;}
+                .fullWidthImg{max-width:100% !important;width:100% !important;}
+            }
+
+            html,body{
+                background-color: #ffffff !important;
+            }
+            .mainTable{
+                width:100%;
+                max-width:600px;
+            }
+            /* standard custom styling */
+            *{
+                font-family: 'Gotham SSm A', 'Gotham SSm B', 'Montserrat', Arial, Helvetica, sans-serif;
+                color: #ffffff;
+            }
+            .borderBottom{
+                border-bottom: 1px #f1f1f1 solid;
+            }
+            a, a:visited{color:#ffffff;}
+            a.btn, a.btn:visited{color:#000000;}
+            
+            .comp_masthead .wrapper{background-repeat:no-repeat; background-size:cover; background-position: center left; max-width: 600px; width:600px; font-size: 12px;}
+
+            a.link_000000, a.link_000000:link, span.link_000000, a.link_000000:active, span.link_000000:hover, a.link_000000:hover, a.link_000000:focus, a.link_000000:visited { color:#000000 !important; }
+            a.link_ffffff, a.link_ffffff:link, span.link_ffffff, a.link_ffffff:active, span.link_ffffff:hover, a.link_ffffff:hover, a.link_ffffff:focus, a.link_ffffff:visited { color:#ffffff !important; }
+            a.link_333333, a.link_333333:link, span.link_333333, a.link_333333:active, span.link_333333:hover, a.link_333333:hover, a.link_333333:focus, a.link_333333:visited { color:#333333 !important; }
+
+            /* Mobile layout. */
+            @media (max-width: 599px){
+                /* br{display:none;} */
+                .alignCenter{text-align: center !important;}
+                .alignRight{text-align: right !important;}
+                .alignLeft{text-align: left !important;}
+                .stack{display:block !important;width:100% !important;height:auto !important;}
+                .hide{display: none !important; height: 0 !important; line-height: 0 !important; font-size: 0 !important;}
+                .show{display:block !important;}
+
+                /* another way of hiding/showing elements in Outlook
+                .show{
+                    display:block !important;
+                    width:100% !important;
+                    overflow:visible !important;
+                    max-height:none !important;
+                    font-size:inherit !important;
+                    line-height:inherit !important;
+                    height:auto !important;
+                    float:none !important;
+                } */
+                
+                /* NOTE: take of note of how images and texts are styled to avoid conflicts when switching template Type */
+                /* Comment next line to transform this template to fluid styling */
+                .mainTable{width: 100% !important;max-width: 320px !important;}
+
+                .comp_preheader .wrapper{padding: 12px 0px 14px 0px !important;}
+
+                .comp_masthead .headline{padding: 14px 0px 0px 14px !important;}
+                .comp_masthead .desc{padding: 10px 16px 26px 20px !important;}
+                .comp_masthead .cta_01{padding-bottom: 38px !important;}
+
+                .comp_story_01 .wrapper{padding: 20px 16px !important}
+                .comp_story_01 .img_01{width: 48px !important; padding: 0px !important;}
+                .comp_story_01 .desc_01{padding: 12px 0px 26px 6px !important; line-height: 24px !important;}
+                .comp_story_01 .img_02{width: 48px !important; padding: 0px !important;}
+                .comp_story_01 .desc_02{padding: 12px 0px 30px 8px !important; line-height: 24px !important;}
+                .comp_story_01 .img_03{width: 48px !important; padding: 0px !important;}
+                .comp_story_01 .desc_03{padding: 10px 0px 0px 4px !important; line-height: 24px !important;}
+
+                .comp_story_02 .headline{padding: 28px 0px 12px 20px !important;}
+                .comp_story_02 .desc_01{padding: 0px 18px 44px 20px !important;}
+
+                .comp_story_03 .wrapper{padding: 0px 0px 16px 0px !important;}
+                .comp_story_03 .headline{padding: 38px 0px 18px 20px !important;}
+                .comp_story_03 .img_05{padding-left: 12px !important;}
+                .comp_story_03 .desc{padding: 10px 14px 34px 22px !important; line-height: 24px !important;}
+                .comp_story_03 .cta_02{padding-bottom: 28px !important;}
+                .comp_story_03 .line{padding: 0px 32px !important;}
+
+                .comp_social .wrapper{padding: 0px 0px 0px 0px !important;}
+                .comp_social .wrapper .title_04{padding-left: 22px !important;}
+                .comp_social .social{padding-top: 1px !important;}
+                .comp_social .social .yt_icon{padding: 0px 22px 0px 10px !important;}
+                .comp_social .social .ig_icon{padding-left: 6px !important;}
+                .comp_social .social .tw_icon{padding-left: 0px !important;}
+
+                .comp_footer .wrapper{padding: 8px 27px 108px 22px!important;}
+                .comp_footer .wrapper .text_01{padding-bottom: 16px !important; line-height: 13.2px !important; letter-spacing: -0.2px !important;}
+
+
+
+            }
+            
+        </style>
+        <!--[if mso]>
+        <style> body,table tr,table td,th,a, span,table.MsoNormalTable {  font-family:Arial, Helvetica, sans-serif !important;  }
+            .comp_footer .wrapper .text_02 br{line-height: 14px !important;}
+        </style>
+        <![endif]-->
+        <!--[if !mso 9]><!--><!--<![endif]-->
+    </head>
+    <body style="margin: 0 auto !important; padding: 0 !important;  background: #ffffff !important;">
+    
+        <div style="display:none;font-size:0px; line-height:0px;max-height:0px;max-width:0px;opacity:0;overflow:hidden; mso-hide:all; font-family: sans-serif; font-color:#ffffff;">
+            Find new levels of appreciation&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+        </div>
+        <!--[if mso]>
+        <table border="0" align="center" cellspacing="0" cellpadding="0" width="602"><tr><td> 
+        <![endif]-->
+        <table class="mainTable" border="0" align="center" cellspacing="0" cellpadding="0" width="600" style="border-collapse: collapse;">
+            <tr>
+                <td style="margin: 0 auto;  background-color: #ffffff; border: 1px solid #9299a0;">
+                    <table class="comp_preheader" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <td class="wrapper" style="padding: 22px 35px 30px 36px;">
+                                <table class="" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                                    <tr>
+                                        <th class="logo stack alignCenter" align="center" valign="middle">
+                                            <a _label="A_LOGOCHEVROLET_LOGO" _category="CHEVROLET_LOGO" href="https://www.chevrolet.com/?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                                <img class=" hide" src="images/gmpdmResB2000004805_2202_CHE_logo.png" alt="Chevrolet Logo" style="display: block;">
+                                                <!--[if !mso]><!-->
+                                                <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_logo.png" alt="Chevrolet Logo" style="display: none;  margin: 0 auto;">
+                                                <!--<![endif]-->
+                                            </a>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="comp_masthead" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <td class="" align="center" valign="middle" style="width: 100%; display: block;">
+                                <a _label="M_IMG_SUV" _category="MASTHEAD1_SUV_IMAGE" href="https://www.chevrolet.com/rewards?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                    <img class=" hide" src="images/gmpdmResB2000004805_2202_CHE_masthead_img.png" alt="Family gets ready for soccer game outside 2022 Chevrolet Suburban" style=" display: block;">
+                                    <!--[if !mso]><!-->
+                                    <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_masthead_img.png" alt="Family gets ready for soccer game outside 2022 Chevrolet Suburban" style=" display: none;">
+                                    <!--<![endif]-->
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="headline" align="left" valign="top" style="padding: 24px 0px 0px 30px;">
+                                <a _label="MB_TXT_DESERVE" _category="HEADLINE1_YOU_DESERVE_A_NEW_KIND_OF_APPRECIATION" href="https://www.chevrolet.com/rewards?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                    <img class=" hide" src="images/gmpdmResB2000004805_2202_CHE_title_01.png" alt="YOU DESERVE A NEW KIND OF APPRECIATION" style="display: block;">
+                                    <!--[if !mso]><!-->
+                                    <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_title_01.png" alt="YOU DESERVE A NEW KIND OF APPRECIATION" style="display: none;">
+                                    <!--<![endif]-->
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="desc" align="left" valign="top" style="padding: 0px 40px 36px 38px; font-family: Arial,sans-serif; color: #3f3f37; font-size: 17px; font-weight: 300; letter-spacing: -0.2px; line-height: 24px;">
+                                [Name], the all-new My Chevrolet Rewards&#42; unlocks a world of appreciation, including three new membership tiers&#42;&#42; for you to explore. We've created new and improved ways you can earn and redeem points &#x02014; plus exclusive offers and benefits that make your Chevrolet experience even more exciting and fun.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cta_01" align="center" valign="top" style="padding-bottom: 26px;">
+                                <a _label="MB_BTN_LEARNMORE" _category="CTA1_LEARN_MORE" href="https://www.chevrolet.com/rewards?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                    <img class=" hide" src="images/gmpdmResB2000004805_2202_CHE_cta_01.png" alt="LEARN MORE" style="display: block;">
+                                    <!--[if !mso]><!-->
+                                    <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_cta_01.png" alt="LEARN MORE" style="display: none;">
+                                    <!--<![endif]-->
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="comp_story_01" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <td class="wrapper" style="background-color: #393839;">
+                                <table class="" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                                    <tr>
+                                        <th class="img_01" align="left" valign="top" style="padding: 44px 0px 50px 38px;">
+                                            <a _label="SC_IMG_GETIN" _category="ICON_AND_TEXT1_GET_IN" href="https://www.chevrolet.com/rewards?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                                <img class="hide" src="images/gmpdmResB2000004805_2202_CHE_img_01.png" alt="Pen and star icon">
+                                                <!--[if !mso]><!-->
+                                                <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_img_01.png" alt="Pen and star icon"  style="display: none;">
+                                                <!--<![endif]-->
+                                            </a>
+                                        </th>
+                                        <th class="desc_01" align="left" valign="top" style="padding: 44px 0px 50px 10px; font-family: 'AvenirNext',Arial,sans-serif; color: #ffffff; font-size: 17px; font-weight: 300; letter-spacing: 0px; line-height: 23px;">
+                                            <b style="font-weight: bold; font-size: 22px;">GET IN</b><br>
+                                            Start by enrolling. It's simple, and it costs nothing to join. Earning is easy, and new ways to redeem let you use your points, your way.
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="img_02" align="left" valign="top" style="padding: 0px 0px 60px 38px;">
+                                            <a _label="SC_IMG_MOVEUP" _category="ICON_AND_TEXT2_MOVE_UP" href="https://www.chevrolet.com/rewards/benefits-comparison?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                                <img class="hide" src="images/gmpdmResB2000004805_2202_CHE_img_02.png" alt="Hexagon and arrow icon">
+                                                <!--[if !mso]><!-->
+                                                <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_img_02.png" alt="Hexagon and arrow icon"  style="display: none;">
+                                                <!--<![endif]-->
+                                            </a>
+                                        </th>
+                                        <th class="desc_02" align="left" valign="top" style="padding: 0px 60px 60px 10px; font-family: 'AvenirNext',Arial,sans-serif;color: #ffffff;font-size: 17px;font-weight: 300;letter-spacing: 0px;line-height: 22px;">
+                                            <b style="font-weight: bold; font-size: 22px;">MOVE UP</b><br>
+                                            Choose your path to more benefits than ever, with the flexibility to level up through three Rewards membership tiers.
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="img_03" align="left" valign="top" style="padding: 0px 1px 54px 40px;">
+                                            <a _label="SC_IMG_DRIVEON" _category="ICON_AND_TEXT3_DRIVE_ON" href="https://www.chevrolet.com/rewards/card/my-chevrolet-rewards-card?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                                <img class="hide" src="images/gmpdmResB2000004805_2202_CHE_img_03.png" alt="Phone and plus icon">
+                                                <!--[if !mso]><!-->
+                                                <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_img_03.png" alt="Phone and plus icon"  style="display: none;">
+                                                <!--<![endif]-->
+                                            </a>
+                                        </th>
+                                        <th class="desc_03" align="left" valign="top" style="padding: 0px 20px 54px 10px; font-family: 'AvenirNext',Arial,sans-serif;color: #ffffff;font-size: 17px;font-weight: 300;letter-spacing: 0px;line-height: 21px;">
+                                            <b style="font-weight: bold; font-size: 22px;">DRIVE ON</b><br>
+                                            Earn points even faster with the all-new My Chevrolet Rewards Card<sup style="line-height: 0;font-size: 75%; mso-text-raise: 4px; color: #ffffff; ">&#x02122;</sup>. <sup style="line-height: 0;font-size: 75%; mso-text-raise: 4px; color: #ffffff; ">&#x000A5;</sup>  Get 7 points<sup style="line-height: 0;font-size: 75%; mso-text-raise: 4px; color: #ffffff; ">&#x02021;</sup> for every &#x00024;1 spent with Chevrolet and 4 points&#x002C6; for every &#x00024;1 spent everywhere else.
+                                        </th>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="comp_story_02" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <td class="">
+                                <table class="" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; background-color: #393839;">
+                                    <tr>
+                                        <td>
+                                            <a _label="SC_IMG_REDSUV" _category="IMAGE1_RED_SUV" href="https://www.chevrolet.com/rewards?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                                <img class=" hide" src="images/gmpdmResB2000004805_2202_CHE_img_04.png" alt="Man with bag leaves parked 2022 Chevrolet Equinox" style=" display: block;">
+                                                <!--[if !mso]><!-->
+                                                <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_img_04.png" alt="Man with bag leaves parked 2022 Chevrolet Equinox" style=" display: none;">
+                                                <!--<![endif]-->
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="headline" align="left" valign="top" style="padding: 36px 0px 15px 40px;">
+                                            <a _label="SC_TXT_APPRECIATION" _category="HEADLINE2_APPRECIATION_IS_TIMELESS" href="https://www.chevrolet.com/rewards?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                                <img class=" hide" src="images/gmpdmResB2000004805_2202_CHE_title_02.png" alt="APPRECIATION IS TIMELESS" style="display: block;">
+                                                <!--[if !mso]><!-->
+                                                <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_title_02.png" alt="APPRECIATION IS TIMELESS" style="display: none;">
+                                                <!--<![endif]-->
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="desc_01" align="left" valign="top" style="padding: 0px 40px 34px; font-family: Arial,sans-serif;color: #ffffff;font-size: 17px;font-weight: 300;letter-spacing: -0.2px;line-height: 24px;">
+                                            When you enroll in My Chevrolet Rewards, GM vehicles you have owned in the past can add value to your incoming membership tier. You may already be eligible for our Gold or Platinum tiers. <span class="hide" style="">&#10;</span>
+                                            Higher tiers come with more exclusive benefits to enjoy.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="comp_story_03" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <td class="wrapper" style="padding: 0px 37px 22px 37px;">
+                                <table class="" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%; background-color: #ffffff;">
+                                    <tr>
+                                        <td class="headline" align="left" valign="top" style="padding: 38px 0px 20px 4px;">
+                                            <a _label="SC_TXT_REWARDS" _category="HEADLINE3_EARN_FASTER_WITH_THE_ALL_NEW_MY_CHEVROLET_REWARDS_CARD" href="https://www.chevrolet.com/rewards/card?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                                <img class=" hide" src="images/gmpdmResB2000004805_2202_CHE_title_03.png" alt="EARN FASTER WITH THE ALL-NEW MY CHEVROLET REWARDS CARD" style="display: block;">
+                                                <!--[if !mso]><!-->
+                                                <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_title_03.png" alt="EARN FASTER WITH THE ALL-NEW MY CHEVROLET REWARDS CARD" style="display: none;">
+                                                <!--<![endif]-->
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="img_05" align="center" valign="middle" style="width: 100%; display: block; padding-left: 20px;">
+                                            <a _label="SC_IMG_CARD" _category="IMAGE2_BLACK_REWARDS_CARD" href="https://www.chevrolet.com/rewards/card?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                                <img class=" hide" src="images/gmpdmResB2000004805_2202_CHE_img_05.png" alt="Image of a My Chevrolet Rewards Credit Card" style=" display: block;">
+                                                <!--[if !mso]><!-->
+                                                <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_img_05.png" alt="Image of a My Chevrolet Rewards Credit Card" style=" display: none;">
+                                                <!--<![endif]-->
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="desc" align="left" valign="top" style="padding: 0px 13px 40px 4px; font-family: Arial,sans-serif;color: #393839;font-size: 17px;font-weight: 300;letter-spacing: -0.2px;line-height: 23px;">
+                                            Earn points quicker, if approved, for the all-new My Chevrolet Rewards Card. The My Chevrolet Rewards Card is separate from My Chevrolet Rewards, but they use the same points. You will receive automatic <span style="color: #393839; font-weight: 600;">Gold</span> reward status, and earn points on everything, everywhere.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cta_02" align="center" valign="top" style="padding-bottom: 48px;">
+                                            <a _label="SC_BTN_LEARNMORE2" _category="CTA2_LEARN_MORE" href="https://www.chevrolet.com/rewards/card?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>">
+                                                <img class=" hide" src="images/gmpdmResB2000004805_2202_CHE_cta_02.png" alt="LEARN MORE" style="display: block; margin: 0 auto;">
+                                                <!--[if !mso]><!-->
+                                                <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_cta_02.png" alt="LEARN MORE" style="display: none;">
+                                                <!--<![endif]-->
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="line" style="background-color: #FFFFFF;  padding: 0px 23px;">
+                                            <table class="" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                                                <tr>
+                                                    <td style="border-bottom: 1px solid #000000;"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="comp_social" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+                        <tr>
+                            <td class="wrapper" style="padding: 4px 0px 22px 42px;">
+                                <table class="" border="0" align="center" cellspacing="0" cellpadding="0" width="100%">
+                                    <tr>
+                                        <td class="title_04" align="left">
+                                            <img class="hide" src="images/gmpdmResB2000004805_2202_CHE_title_04.png" alt=" FIND NEW ROADS&#x02122;" width="288" style="width: 288px; max-width: 288px; height: auto; display: block;">
+                                            <!--[if !mso]><!-->
+                                            <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_title_04.png" alt=" FIND NEW ROADS&#x02122;" style="display: none;">
+                                            <!--<![endif]-->
+                                        </td>
+                                        <td class="social" align="right">
+                                            <table class="" border="0" align="right" cellspacing="0" cellpadding="0" width="100">
+                                                <tr>
+                                                    <td class="fb_icon" align="right">
+                                                        <a _label="F_IMG_FB" _category="FOOTER_FACEBOOK" href="https://www.facebook.com/chevrolet/">
+                                                            <img class="hide" src="images/gmpdmResB2000004805_2202_CHE_fb_icon.png" alt="Facebook" width="13" style="width: 13px; max-width: 13px; height: auto; display: block;  margin: 0 auto;">
+                                                            <!--[if !mso]><!-->
+                                                            <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_fb_icon.png" alt="Facebook" style="display: none;">
+                                                            <!--<![endif]-->
+                                                        </a>
+                                                    </td>
+                                                    <td class="tw_icon" align="right" style="padding-left: 16px;">
+                                                        <a _label="F_IMG_TWTR" _category="FOOTER_TWITTER" href="https://twitter.com/chevrolet">
+                                                            <img class="hide" src="images/gmpdmResB2000004805_2202_CHE_tw_icon.png" alt="Twitter" width="30" style="width: 30px; max-width: 30px; height: auto; display: block;  margin: 0 auto;">
+                                                            <!--[if !mso]><!-->
+                                                            <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_tw_icon.png" alt="Twitter" style="display: none;">
+                                                            <!--<![endif]-->
+                                                        </a>
+                                                    </td>
+                                                    <td class="ig_icon" align="right" style="padding-left: 16px;">
+                                                        <a _label="F_IMG_INST" _category="FOOTER_INSTAGRAM" href="https://www.instagram.com/chevrolet/">
+                                                            <img class="hide" src="images/gmpdmResB2000004805_2202_CHE_ig_icon.png" alt="Instagram" width="24" style="width: 24px; max-width: 24px; height: auto; display: block;  margin: 0 auto;">
+                                                            <!--[if !mso]><!-->
+                                                            <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_ig_icon.png" alt="Instagram" style="display: none;">
+                                                            <!--<![endif]-->
+                                                        </a>
+                                                    </td>
+                                                    <td class="yt_icon" align="right" style="padding-left: 18px; padding-right: 40px;">
+                                                        <a _label="F_IMG_YT" _category="FOOTER_YOUTUBE" href="https://www.youtube.com/chevrolet">
+                                                            <img class="hide" src="images/gmpdmResB2000004805_2202_CHE_yt_icon.png" alt="YouTube" width="34" style="width: 34px; max-width: 34px; height: auto; display: block;  margin: 0 auto;">
+                                                            <!--[if !mso]><!-->
+                                                            <img class="show" src="images/gmpdmResB2000004805_2202_CHE_mobile_yt_icon.png" alt="YouTube" style="display: none;">
+                                                            <!--<![endif]-->
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="comp_footer" border="0" align="center" cellspacing="0" cellpadding="0" width="100%" style="margin: 0 auto;">
+                        <tr>
+                            <td class="wrapper" align="left" style="padding: 0px 32px 86px 42px;">
+                                <table border="0" align="center" cellspacing="0" cellpadding="0" width="100%" class="wrapper" style="margin: 0 auto;">
+                                    <tr>
+                                        <td align="left" style="display: block; font-family: Arial,sans-serif; color: #0c2340; font-size: 11px; font-weight: 300; letter-spacing: 0.03px; line-height: 13.3px; padding-bottom: 12px;">
+                                            <a _label="F_TXT_CONT_US" _category="FOOTER_CONTACT_US" href="https://my.chevrolet.com/contact?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>" style="font: 9x; color: #0c2340; text-decoration: none; font-family: Arial, sans-serif; font-weight: 300;">
+                                                Contact Us
+                                            </a>&nbsp;|&nbsp;
+                                            <a _label="F_TXT_REQ_INFO" _category="FOOTER_REQUEST_INFORMATION" href="https://www.chevrolet.com/contact/request-info?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>" style="font: 9x; color: #0c2340; text-decoration: none; font-family: Arial, sans-serif; font-weight: 300;">
+                                            Request Information
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text_01" align="left" style="display: block; font-family: Arial,sans-serif; color: #0c2340; font-size: 11px; font-weight: 300; letter-spacing: 0.03px; line-height: 13.3px;">
+                                            Add <a _label="F_TXT_EMAIL" _category="FOOTER_CHEVROLET@DELIVERY.CHEVROLET.COM" href="mailto:chevrolet@delivery.chevrolet.com?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>" style="text-decoration: underline; pointer-events: none; color: #0c2340; font-size: inherit;">chevrolet@delivery&zwnj;.&zwnj;chevrolet&zwnj;.&zwnj;com</a> to your address book.
+                                            <br><br>
+                                            &#x0002A;Must be 18 years or older. Points may be earned and redeemed only at GM entities, My Chevrolet Rewards participating dealers or third-party retailers in the United States (excluding Puerto Rico, the U.S. Virgin Islands or Guam). Points are not earned on taxes, fees or body shop repair orders and expire without further notice upon Member Account deactivation. Visit mychevroletrewards&zwnj;.&zwnj;com to view My Chevrolet Rewards Terms & Conditions.
+                                            <br><br>
+                                            &#42;&#42; My Chevrolet Rewards Membership tier is based on individual spend on GM vehicles, parts, service, OnStar and accessories, and My GM Rewards Cardmember status and spend. See My GM Rewards Terms and Conditions for more details.
+                                            <br><br>
+                                            &#x000A5; My Chevrolet Rewards is separate from My GM Rewards Cards. Credit approval required. My GM Rewards Card Program Rules apply. Goldman Sachs&#x000AE; Bank USA is the issuer of the My GM Rewards Card. Mastercard is a registered trademark, and the circles design is a trademark of Mastercard International Incorporated.
+                                            <br><br>
+                                            &#x02021; Subject to credit approval. Cardmembers will earn 7 points total for every dollar spent on the My Chevrolet Rewards Card on eligible purchases at GM. Eligible purchases include service, parts and accessories purchased at participating My Chevrolet Rewards Card dealerships or online, less credits and returns. To earn on most OnStar and Connected Services plans, a My Chevrolet Rewards Card online account is required. Warranty, recall and body shop work are not eligible for points. Points will not be awarded on GM Fleet vehicles. Points are accrued once per transaction.
+                                            <br><br>
+                                            &#x002C6; Subject to credit approval. Cardmembers will earn 4 points for every dollar spent on the My Chevrolet Rewards Card on eligible purchases outside of GM. Points are accrued once per transaction. Please see Program Rules that are applicable to your Account for other terms, conditions, exclusions and limitations.
+                                            <br><br>
+                                            Goldman Sachs Bank USA, Salt Lake City Branch, is the issuer of the My GM Rewards Card. GM is solely responsible for the operation and administration of the points program. For more details about the General Motors points program, including redemption options, go to mygmrewardscard&zwnj;.&zwnj;com.
+                                            <br><br>
+                                            You are receiving this email advertisement because you are a valued Chevrolet owner.
+                                            <br><br>
+                                            <a _label="F_UNSUB" _category="FOOTER_UNSUB" href="https://www.gmcontactpreferences.com/Controller?email=<%= emailAddress %> ENCRYPT='TRUE'" style="font-family: Arial,sans-serif; color: #0c2340; font-size: 11px; font-weight: 300; text-decoration: underline;">Unsubscribe</a> &#124;
+                                            <a _label="F_COPYRIGHT" _category="FOOTER_COPYRIGHT" href="https://www.gm.com/copyright-trademark" style="font-family: Arial,sans-serif; color: #0c2340; font-size: 11px; font-weight: 300; text-decoration: underline;">Copyright &amp; Trademark</a> &#124; 
+                                            <a _label="F_PRIVACY" _category="FOOTER_PRIVACY" href="https://www.gm.com/privacy-statement" style="font-family: Arial,sans-serif; color: #0c2340; font-size: 11px; font-weight: 300; text-decoration: underline;">GM Privacy Statement</a>
+                                            <br><br>
+                                            <a _label="F_CHEVY_COM" _category="FOOTER_CHEVROLET" href="https://www.chevrolet.com?evar36=B2000004805_<%= DI_TRACKING_CODE%>_<%= DI_CATALOG_ID%>&hid=<%= HASHED_EMAIL%>" style="font-family: Arial,sans-serif; color: #0c2340; font-size: 11px; font-weight: 300; text-decoration: underline;">Chevrolet</a> &#124; 
+                                            100 Renaissance Center
+                                            &#124; 4&zwj;82.A00.MAR
+                                            &#124; Detroit, MI 48&zwj;265
+                                            &#124; 1-&zwnj;80&zwnj;0-&zwnj;22&zwnj;2-&zwnj;10&zwnj;20
+                                            <br><br>
+                                            The marks of General Motors, its divisions, slogans, emblems, vehicle model names, vehicle body designs appearing in this document are the trademarks and/or service marks of General Motors, its subsidiaries, affiliates or licensors. &#x000A9;2&zwnj;0&zwnj;2&zwnj;2 General Motors LLC.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </td>
+            </tr>
+        </table>
+    <!--[if mso]></td></tr></table><![endif]-->
+</body>
+</html>

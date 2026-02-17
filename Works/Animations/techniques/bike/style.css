@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body, body * {
+  vertical-align: baseline;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+div {
+  position: absolute;
+}
+
+img {
+  width: 300px;
+  height: 600px;
+}
+
+.productHolder img {
+  width: 100%;
+  height: auto;
+}
+
+/* Div layer for the entire banner. */
+#main_content {
+  width: 300px;
+  height: 600px;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #000000;
+  opacity: 0;
+}
+
+#border {
+  width: 298px;
+  height: 248px;
+  bottom: 0;
+  left: 0;
+  border: 1px solid #000;
+}
+
+#clickthru{
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.dust, .bg-shadow {
+    width: 100%;
+    height: 100%;
+}
+#cvs{
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+.bg1, .bg3{
+  background-color: #853a92;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-shadow{
+  opacity: 0.6;
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(74deg, rgba(0,0,0,1) 16%, rgba(255,255,255,0) 54%);
+  background: -webkit-linear-gradient(74deg, rgba(0,0,0,1) 16%, rgba(255,255,255,0) 54%);
+  background: linear-gradient(74deg, rgba(0,0,0,1) 16%, rgba(255,255,255,0) 54%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#ffffff",GradientType=1);
+}
+
+.purpleBox{
+  background-color: #853a92;
+  opacity: 0.9;
+}
+
+.boxL, .boxR{
+  width: 12px;
+  height: 567px;
+}
+.boxT, .boxB{
+  width: 266px;
+  height: 13px;
+}
+.boxL{
+  top: 9px;
+  left: 10px;
+}
+.boxR{
+  top: 22px;
+  right: 10px;
+}
+.boxT{
+  top: 9px;
+  left: 22px;
+}
+.boxB{
+  bottom: 9px;
+  left: 10px;
+}
+
+.productHolder{
+  width:300px;
+  height:600px;
+}
+
+.f1-prod1, .f1-prod1_refect{
+  width: 194px;
+  height: 188px;
+  top: 118px;
+  left: 52px;
+}
+
+.f1-prod1_shadow{
+  width: 420px;
+  height: 81px;
+  top: 229px;
+  left: -60px;
+}
+
+.f3-t7{
+  top: -65px;
+  left: 0px;
+  position: absolute;
+  width: 300px;
+  height: 600px;
+}
+
+.f2-t6{
+  top: -1px;
+  left: -1px;
+}
+
+.ctaBg{
+  background-color: #ffd300;
+  width: 141px;
+  height: 40px;
+  top: 463px;
+  left: 80px;
+}
+
+#cta{
+  width: 300px;
+  height: 600px;
+}
+
+.ctaText1, .ctaText2{
+  top: -1px;
+  left: -1px;
+  width: 300px;
+  height: 600px;
+}
+.ctaText2{ opacity: 0; }

@@ -1,0 +1,335 @@
+body {margin: 0px;}
+
+.abs {
+  position: absolute;
+}
+
+.xy-0 {
+  top: 0;
+  left: 0;
+}
+
+.fs-0 {
+  font-size: 0;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.fade {
+  opacity: 1 !important;
+}
+
+.slide {
+  right: -280px !important;
+}
+
+.disabled {
+  cursor: default !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* .no-anim {
+  -webkit-transition-duration: 0s !important;
+  transition-duration: 0s !important;
+} */
+
+.bg_content_white{
+position: absolute;
+width: 300px;
+height: 339px;
+left: 0px;
+top: 261px;
+background-color: #ffffff;
+}
+
+.bg_white{
+  background-color: #ffffff;
+  }
+
+#container {
+  background-color: #ffffff;
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+}
+
+#collapsed {
+  top: 0;
+  left: 300px;
+  width: 300px;
+  height: 600px;
+  background-color: #ffffff;
+  /* background: url('bgimg.jpg') top left no-repeat; */
+  border: 1px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.bg_col {
+  top: 67px;
+}
+
+.label {
+  bottom: 7px;
+  left: 10px;
+}
+.cta_col{
+  bottom: 73px;
+  left: 35px;
+} 
+.textsub_col{
+  bottom: 23px;
+  left: 13px;
+}
+.textmain_col {
+  top: 91px;
+  left: 27px;
+}
+.logo_col{
+  top: 10px;
+  left: 10px;
+}
+.logotext_sub_col{
+  top: 10px;
+  left: 50px;
+}
+.text1_col {
+  top: 299px;
+  left: 34px;
+}
+.text2_col {
+  top: 329px;
+  left: 34px;
+}
+.text3_col {
+  top: 376px;
+  left: 34px;
+}
+.text4_col {
+  top: 424px;
+  left: 34px;
+}
+.sel1{
+  opacity: 0;
+  top: 295px;
+  left: 30px;
+}
+.sel2{
+  opacity: 0;
+  top: 332px;
+  left: 30px;
+}
+.sel3{
+  opacity: 0;
+  top: 379px;
+  left: 30px;
+}
+.sel4{
+  opacity: 0;
+  top: 420px;
+  left: 30px;
+}
+.logotext_sub_col{
+  top: 18px;
+  left: 151px;
+}
+.logo_col{
+  top: 11px;
+  left: 14px;
+}
+
+
+#blocker {
+  pointer-events: auto;
+  cursor: default;
+
+  background-color: green;
+  opacity: 0.8;
+}
+
+.black_logo{
+  right: 12px;
+  bottom: 25px;
+}
+
+.message {
+  opacity: 0;
+  top: 65px;
+  left: 26px;
+}
+
+.black_exp{
+  right: 35px;
+  bottom: 20px;
+}
+
+/* EXPANDED SECTION */
+#expanded {
+  display: none;
+  width: 600px;
+  height: 600px;
+  /* background: url('Concept_3_300x600_Expanded.jpg'); */
+  border: 1px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#expanded .panel{
+  opacity: 0;
+
+  /* Animation */
+  -webkit-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+.bg_exp {
+  top: 90px;
+}
+
+.message_exp {
+  opacity: 0;
+  top: 103px;
+  left: 47px;
+}
+
+
+.l1 {
+  top: 311px;
+  left: 176px;
+}
+.l2 {
+  top: 311px;
+  left: 381px;
+}
+.t1 {
+  top: 321px;
+  left: 40px;
+}
+.t2 {
+  top: 321px;
+  left: 194px;
+}
+.t3{
+  top: 320px;
+  left: 394px;
+}
+
+.textsub_exp{
+  bottom: 35px;
+  left: 57px;
+}
+
+.exp_cta {
+  bottom: 89px;
+  left: 56px;
+  display: none;
+  opacity: 0;
+}
+
+.logo_text_exp {
+  top: 25px;
+  left: 209px;
+}
+
+.logo_exp {
+  top: 19px;
+  left: 31px;
+}
+
+.label_exp {
+  bottom: 9px;
+  left: 12px;
+}
+
+
+.clickthru {
+  width: 100%;
+  height: 100%;
+  /* background-color: #000; */
+  top: 0;
+  left: 0;
+}
+
+.clickthru2 {
+  width: 100%;
+  height: 100%;
+  /* background-color: blue; */
+  top: 0;
+  left: 0;
+}
+
+
+/* ----- COLLAPSE -----*/
+.sprite { background: url('sprite.png') no-repeat top left; width: 252px; height: 545px; background-size: 252px 545px;  } 
+.sprite.black_logo { background-position: 0 0; width: 74px; height: 25px; } 
+.sprite.cta_col { background-position: 0 -30px; width: 228px; height: 56px; } 
+.sprite.label { background-position: 0 -91px; width: 162px; height: 8px; } 
+.sprite.logo_col { background-position: 0 -104px; width: 98px; height: 37px; } 
+.sprite.logotext_sub_col { background-position: 0 -146px; width: 105px; height: 33px; } 
+.sprite.selected-correct { background-position: 0 -184px; width: 30px; height: 30px; } 
+.sprite.text1_col { background-position: 0 -219px; width: 230px; height: 22px; } 
+.sprite.text2_col { background-position: 0 -246px; width: 229px; height: 36px; } 
+.sprite.text3_col { background-position: 0 -287px; width: 245px; height: 37px; } 
+.sprite.text4_col { background-position: 0 -329px; width: 224px; height: 22px; } 
+.sprite.textmain_col { background-position: 0 -356px; width: 252px; height: 146px; } 
+.sprite.textsub_col { background-position: 0 -507px; width: 164px; height: 38px; } 
+
+/* ----- EXPAND -----*/
+.sprite_exp { background: url('sprite_exp.png') no-repeat top left; width: 520px; height: 826px; background-size: 520px 826px;  } 
+.sprite_exp.black_exp { background-position: 0 0; width: 104px; height: 35px; } 
+.sprite_exp.exp_cta { background-position: 0 -40px; width: 514px; height: 73px; } 
+.sprite_exp.l1 { background-position: 0 -118px; width: 1px; height: 83px; } 
+.sprite_exp.l2 { background-position: 0 -206px; width: 1px; height: 83px; } 
+.sprite_exp.label_exp { background-position: 0 -294px; width: 162px; height: 8px; } 
+.sprite_exp.logo_exp { background-position: 0 -307px; width: 138px; height: 52px; } 
+.sprite_exp.logo_text_exp { background-position: 0 -364px; width: 296px; height: 38px; } 
+.sprite_exp.message_exp { background-position: 0 -407px; width: 520px; height: 180px; } 
+.sprite_exp.t1 { background-position: 0 -592px; width: 111px; height: 41px; } 
+.sprite_exp.t2 { background-position: 0 -638px; width: 173px; height: 70px; } 
+.sprite_exp.t3 { background-position: 0 -713px; width: 191px; height: 70px; } 
+.sprite_exp.textsub_exp { background-position: 0 -788px; width: 324px; height: 38px; } 
+
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 8px;
+  content: ' ';
+  height: 15px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}

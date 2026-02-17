@@ -1,0 +1,278 @@
+body {margin: 0px;}
+
+* { 
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+#container {
+	background-color: #FFFFFF;
+	display: none;
+	overflow: hidden;
+	position: absolute;
+	width: 600px;
+	height: 250px;
+}
+
+#container * {
+	position: absolute;
+}
+
+#clickthru{
+	width: 100%;
+	height: 100%;
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+#collapsedSection {
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 250px;
+}
+
+#expandedSection {
+	background-color: white;
+	display: none;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 250px;
+}
+
+#collapsedSection,
+#expandedSection {
+	overflow: hidden;
+	border: 1px solid #C4C4C4;
+}
+
+.col-bg, .exp-bg {
+	width: 100%;
+	height: 100%;
+}
+
+/*-------------- SPRITE -------------*/
+.sprite { background: url('sprite.png') no-repeat top left; width: 275px; height: 676px; background-size: 275px 676px;  } 
+.sprite.col-btnRef { background-position: 0 0; width: 50px; height: 10px; } 
+.sprite.col-btnBack { background-position: 0 -15px; width: 31px; height: 9px; } 
+.sprite.col-ctaBtn { background-position: 0 -29px; width: 108px; height: 28px; } 
+.sprite.col-ctaIcon { background-position: 0 -62px; width: 31px; height: 31px; } 
+.sprite.col-ref-t1 { background-position: 0 -98px; width: 275px; height: 100px; } 
+.sprite.col-ref-t2 { background-position: 0 -203px; width: 233px; height: 22px; } 
+.sprite.col-ref-t3 { background-position: 0 -230px; width: 191px; height: 8px; } 
+.sprite.col-t1a { background-position: 0 -243px; width: 128px; height: 15px; } 
+.sprite.col-t1b { background-position: 0 -263px; width: 111px; height: 15px; } 
+.sprite.col-t1c { background-position: 0 -283px; width: 97px; height: 13px; } 
+.sprite.col-t1d { background-position: 0 -301px; width: 118px; height: 15px; } 
+.sprite.col-t1e { background-position: 0 -321px; width: 130px; height: 13px; } 
+.sprite.col-t1f { background-position: 0 -339px; width: 107px; height: 16px; } 
+.sprite.col-t4 { background-position: 0 -360px; width: 191px; height: 8px; } 
+.sprite.col-t2 { background-position: 0 -373px; width: 214px; height: 17px; } 
+.sprite.col-t3 { background-position: 0 -395px; width: 156px; height: 25px; } 
+.sprite.exp-btnRef { background-position: 0 -425px; width: 50px; height: 10px; } 
+.sprite.exp-cta-txt { background-position: 0 -440px; width: 153px; height: 43px; } 
+.sprite.exp-cta-arrow { background-position: 0 -488px; width: 9px; height: 15px; } 
+.sprite.exp-t2 { background-position: 0 -508px; width: 73px; height: 8px; } 
+.sprite.logo { background-position: 0 -521px; width: 101px; height: 27px; } 
+.sprite.exp-t3 { background-position: 0 -553px; width: 191px; height: 8px; } 
+.sprite.exp-t1 { background-position: 0 -566px; width: 201px; height: 82px; } 
+.sprite.logo1 { background-position: 0 -653px; width: 86px; height: 23px; } 
+.sprite.logo2 { background-position: 0 -653px; width: 86px; height: 23px; } 
+
+/*--------- SPRITE POSITION ---------*/
+
+
+/*-------- COLLAPSED --------*/
+.footer{
+	width: 300px;
+	height: 74px;
+	bottom: -1px;
+}
+.header{
+	width: 300px;
+	height: 39px;
+	background-color: white;
+}
+.col-bg1{
+	width: 185px;
+	height: 151px;
+	top: 39px;
+	left: -1px;
+}
+.col-bg2{
+	width: 722px;
+	height: 136px;
+	top: 39px;
+	left: 114px;
+}
+.col-bg3{
+	width: 300px;
+	height: 126px;
+	top: 53px;
+	left: -1px;
+}
+
+.referencesHolder{
+	background-color: white;
+	width: 300px;
+	height: 250px;
+	display: none;
+	cursor: pointer;
+}
+
+.col-btnBack{
+	top: 29px;
+	left: 21px;
+	cursor: pointer;
+	display: none;
+}
+.col-btnRef{
+	bottom: 7px;
+	right: 15px;
+	cursor: pointer;
+}
+.col-ctaIcon{
+	top: 137px;
+	left: 105px;
+}
+.col-ctaBtn{
+	top: 138px;
+	left: 25px;
+}
+.col-ref-t1{
+	top: 60px;
+	left: 21px;
+}
+.col-ref-t2{
+	bottom: 44px;
+	left: 21px;
+}
+.col-ref-t3{
+	bottom: 9px;
+	right: 21px;
+}
+.col-t1a{
+	top: 54px;
+	left: 158px;
+}
+.col-t1b{
+	top: 73px;
+	left: 175px;
+}
+.col-t1c{
+	top: 92px;
+	left: 188px;
+}
+.col-t1d{
+	top: 111px;
+	left: 168px;
+}
+.col-t1e{
+	top: 130px;
+	left: 156px;
+}
+.col-t1f{
+	top: 148px;
+	left: 179px;
+}
+.col-t2{
+	bottom: 48px;
+	left: 21px;
+}
+.col-t3{
+	bottom: 21px;
+	left: 20px;
+}
+.col-t4{
+	bottom: 7px;
+	left: 20px;
+}
+.col-Logo1{
+	top: 8px;
+	left: 106px;
+}
+.col-Logo2{
+	top: 11px;
+	right: 23px;
+}
+
+/*-------- EXPAND --------*/
+.exp-bg1{
+	width: 236px;
+	height: 250px;
+	top: 0px;
+	right: 0px;
+}
+#exp-cta{
+	width: 227px;
+	height: 67px;
+	bottom: 36px;
+	right: -11px;
+	background-color: #FCDC53;
+	border-radius: 14px;
+}
+
+#expandButton {
+	pointer-events: auto;
+	width: 300px;
+	height: 175px;
+}
+
+#video{
+	background-color: #252525;
+	left: -1px;
+	outline :none;
+}
+
+.exp-Logo{
+	top: 8px;
+	right: 36px;
+}
+.exp-btnRef{
+	bottom: 21px;
+	right: 27px;
+	cursor: pointer;
+	pointer-events: auto;
+}
+.exp-cta-arrow{
+	top: 27px;
+	left: 190px;
+}
+.exp-cta-txt{
+	top: 13px;
+	left: 18px;
+}
+.exp-t1{
+	top: 55px;
+	right: 15px;
+}
+.exp-t2{
+	bottom: 20px;
+	right: 143px;
+}
+.exp-t3{
+	bottom: 7px;
+	right: 26px;
+}
+
+.exp-close {
+	top: 4px;
+	right: 5px;
+	height: 22px;
+	width: 22px;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+#blocker{
+	width: 300px;
+	height: 250px;
+	display: none;
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<meta charset="UTF-8">
+	<title>Biogen - MNDA</title>
+	<meta name="ad.size" content="width=300,height=250"> 
+	<link rel="stylesheet" href="style.css">
+    <!-- GSAP -->
+    <script src='https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.2.4_min.js'></script>
+    <!-- STANDARD -->
+    <script type="text/javascript">
+    	(function(){
+		    var _ = function(a) {return new q(a);},
+		       	q = function (a) {var b = (typeof a === 'string') ? document.querySelector(a) : a;this.c = b;return this;};  
+		        _.fn = q.prototype = {
+		        off: function(a, b) {if(this.c.addEventListener) {this.c.removeEventListener(a, b, false);}else if(this.c.attachEvent) {this.c.detachEvent('on'+a, b);};return this;},
+		        on: function(a, b) {if(this.c.addEventListener) {this.c.addEventListener(a, b, false);}else if(this.c.attachEvent) {this.c.attachEvent('on'+a, b);};  return this;},
+		        add: function(a) {this.c.innerHTML = a; return this;},
+		        way: function(a) {for(var b in a) {if (a.hasOwnProperty(b)) {this.c.style[b] = a[b];};};return this;}
+		    };
+		    if(!window._) {window._=_;}
+		})();
+		function startPreload(){
+			var ctr = 0, images_arr = new Array(), preArgumentsLength = startPreload.arguments.length-1, preArguments = startPreload.arguments; 
+			for (i = 0; i < preArgumentsLength; i++) {images_arr[i] = new Image(), images_arr[i].src = startPreload.arguments[i], _(images_arr[i]).on('load', imageLoaded);}
+			function imageLoaded(){if(ctr === (preArgumentsLength - 1)){preArguments[preArgumentsLength]();}else{ctr++;}} 
+		}
+		_(window).on('load', function() {
+		    initAd();
+		})
+    </script>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+<body>
+	<div id="container">
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+		<div class='bg imgfix'>
+			<img src="bg.jpg" alt="Background">
+		</div>
+
+		<div class="whiteBg"></div>
+		<!-- FRAME 1 -->
+		<div class="frame1">
+			<div class='sprite f1-t1 f1'></div>
+			<div class='sprite f1-t2 f1'></div>
+		</div>
+
+		<!-- FRAME 2 -->
+		<div class="frame2">
+			<div class="pie">
+				<div class="circ1"></div>
+		        <div class="semCirc1"></div>
+		        <div class="semCirc2"></div>
+			</div>
+
+			<div class="hline"></div>
+			<div class='sprite f2-t1 f2'></div>
+			<div class='sprite f2-t2 f2'></div>
+			<div class='sprite f2-t3 f2'></div>
+			
+		</div>
+		
+		<!-- FRAME 3 -->
+		<div class="frame3">
+			<div class="DNAanim">
+				<div class="strands b  str1a"></div>
+				<div class="strands lb str1b"></div>
+				<div class="strands lb str2a"></div>
+				<div class="strands b  str2b"></div>
+				<div class="strands lb str2c"></div>
+				<div class="strands lb str3a"></div>
+				<div class="strands b  str3b"></div>
+				<div class="strands lb str3c"></div>
+				<div class="strands lb str4a"></div>
+				<div class="strands b  str4b"></div>
+				<div class="strands lb str4c"></div>
+
+				<div class="DNA imgfix">
+					<img src="DNA.png">
+				</div>
+
+				<div class="dnaOverlay imgfix">
+					<img src="dnaOverlay.png">
+				</div>
+
+				<div class="dna-all imgfix">
+					<img src="dna-all.png" alt="dna-all">
+					<div class="dna-last imgfix">
+						<img src="dna-last.png" alt="dna-last">
+					</div>
+					<div class='sprite f3-t6a ALStxt'></div>
+					<div class='sprite f3-t6b ALStxt'></div>
+					<div class='sprite f3-t6c ALStxt'></div>
+					<div class='sprite f3-t6d ALStxt'></div>
+				</div>				
+			</div>
+
+			<div class='sprite f3-t1 f3a'></div>
+			<div class='sprite f3-t2 f3a'></div>
+			<div class='sprite f3-t3 f3a'></div>
+			<div class='sprite f3-t4 f3b'></div>
+			<div class='sprite f3-t5 f3b'></div>
+		</div>
+		
+
+		<!-- FRAME 4 -->
+		<div class="frame4">
+			<div class='sprite logo1-big'></div>
+		</div>
+		
+		<div class='sprite footer-jobcode'></div>
+		<div class='sprite footer-logo1'></div>
+		<div class='sprite footer-logo2'></div>
+		<div class='sprite ref-txt'></div>
+
+        <div id='clickthru'></div>
+		<div class="sprite btn-close"></div>
+
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+	</div>
+	<script>
+		var tl = gsap.timeline({delay:0.5});
+		function initAd() {
+			//--------- PRE-LOAD IMAGE ------------
+			startPreload('bg.jpg',
+						 'dna-all.png',
+						 'dna-last.png',
+						 'sprite.png',
+						  startAnim);
+			//-------------------------------------
+			function startAnim() {
+				//--------------- SET -----------------
+				gsap.set('#container', {display: 'block'});
+                gsap.set('.imgfix', { rotation:0.001});
+                gsap.set('.sprite', { rotation:0.001});
+                gsap.set('.btn-close, .referenceTxt', {y:250});
+                gsap.set('.semCirc1', {transformOrigin:"50% 100%", rotation:-90});
+                gsap.set('.semCirc2', {transformOrigin:"50% 100%", rotation:90});
+				//------------ ADD EVENT --------------
+				addEvent();
+				//---------- ADD ANIMATION ------------
+				tl
+				// ==================
+				.add('Scene1')
+				.from('.whiteBg', {duration:1.5, clip:'rect(100px,300px,100px,0px)', ease:'power4.out'}, 'Scene1')
+				.from('.f1', {duration:0.8, x:-20, opacity:0, ease:'power3.out', stagger:1}, 'Scene1+=1.3')
+				.to('.f1',   {duration:0.5, x:10, opacity:0, ease:'power2.in'}, 'Scene1+=3.8')
+
+				// ==================
+				.add('Scene2', '+=0.3')
+				.from('.pie', {duration:1.2, opacity:0, scale:1.7, x:40, y:-10, ease:'power3.out', transformOrigin:"center"}, 'Scene2')
+				.to('.semCirc2', {duration:1.4, rotation:125, ease:'power3.out'}, 'Scene2+=0.1')
+				.from('.f2',   {duration:1, x:-10, opacity:0, ease:'power3.out', stagger:0.4}, 'Scene2+=0.5')
+				.from('.hline', {duration:0.6, scaleX:0, transformOrigin:"left center", ease:'power2.out'}, 'Scene2+=0.9')
+
+				.add('Scene2out', '+=1.5')
+				.to('.hline', 	{duration:0.6, scaleX:0, transformOrigin:"left center", ease:'power3.in'}, 'Scene2out')
+				.to('.pie, .hline', 	{duration:0.6, y:-180, ease:'power3.in'}, 'Scene2out')
+
+				// ==================
+				.add('Scene3')
+                .from('.DNAanim', {duration:3.8, y:220, ease:'sine.out'}, 'Scene3')
+                .from('.DNA', {duration:0.8, opacity: 0, ease:'power2.out'}, 'Scene3')
+                .from('.strands', {duration:0.3, scaleX:0, ease:'power2.out', stagger:0.2}, 'Scene3+=0.4')
+                .to('.str1a', {duration:0.3, rotation:15, ease:'power1.out'}, 'Scene3+=0.62')
+                .to('.str2b', {duration:0.3, rotation:-23, ease:'power1.out'}, 'Scene3+=1.3')
+                .to('.str3b', {duration:0.3, rotation:15, ease:'power1.out'}, 'Scene3+=1.9')
+                .from('.dnaOverlay', {duration:0.6, opacity:0, ease:'power2.out'}, 'Scene3+=3.2')
+                .to(['.DNA', '.strands'], {duration:0.6, opacity:0, ease:'power2.out'}, 'Scene3+=3.5')
+					
+				// ==================
+                .to('.dnaOverlay', {duration:0.9, rotation:90, x:28, y:12, scale:0.36, transformOrigin:"center", ease:'power3.inOut'}, 'Scene3+=3.8')
+                .to('.f2', {duration:0.6, opacity:0, ease:'power2.out'}, 'Scene3+=3.6')
+				.from('.f3a',   {duration:1, x:-10, opacity:0, ease:'power3.out', stagger:0.4}, 'Scene3+=4')
+
+				// ==================
+                .to('.DNAanim',    {duration:7, y:-763, ease:'power4.inOut'}, 'Scene3+=3.5')
+                .from('.ALStxt', {duration:0.7, x:-10, opacity:0, ease:'sine.out', stagger:0.2}, 'Scene3+=4.45')
+                .from('.dna-all', {duration:1.4, opacity:0, ease:'sine.out'}, 'Scene3+=4.45')
+            	.to('.dna-all > img', {duration:1, opacity:0, ease:'sine.out'}, 'Scene3+=8')
+                .to('.f3a', {duration:0.6, opacity:0, ease:'power2.out'}, 'Scene3+=8')
+				.from('.f3b',   {duration:1, x:-10, opacity:0, ease:'power3.out', stagger:0.4}, 'Scene3+=8.9')
+				
+                // ==================
+				.add('Scene4', '+=1.5')
+                .to(['.f3b', '.DNAanim'], {duration:0.6, opacity:0, ease:'power2.out'}, 'Scene4')
+                .from('.logo1-big', {duration:0.8, opacity:0, ease:'sine.out'}, 'Scene4+=0.8')
+                
+                // ==================
+				.add('Scene5', '+=2')
+                .to('.logo1-big', {duration:0.6, opacity:0, ease:'sine.out'}, 'Scene5')
+                .from('.ref-txt', {duration:0.8, opacity:0, ease:'sine.out'}, 'Scene5+=0.7')
+				//-------------------------------------
+			};
+			function addEvent() {
+				// _('#clickthru').on('click', exit);
+			};
+			
+			function exit() {
+        		window.open(clickTag);
+            }
+            //-------------------------------------
+            
+		};
+	</script>
+</body>
+</html>

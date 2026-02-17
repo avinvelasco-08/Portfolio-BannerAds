@@ -1,0 +1,486 @@
+/****** Imported Fonts ******/
+@font-face {
+    font-family: 'VerizonNHGeDSRegular';
+    src: url('../fonts/VerizonNHGeDS-Regular.woff2') format('woff2');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'VerizonNHGeDSBold';
+    src: url('../fonts/VerizonNHGeDS-Bold.woff2') format('woff2');
+    font-weight: normal;
+}
+
+
+/****** Common CSS ******/
+.Guide{
+    opacity: 0.4;
+    display: none;
+    z-index: 49;
+}
+.Absolute{
+    position: absolute;
+}
+.Relative{
+    position: relative;
+}
+.Flex{
+    display: Flex;
+}
+.Left{
+    justify-content: flex-start;
+}
+.Center{
+    justify-content: center;
+}
+.Right{
+    justify-content: flex-end;
+}
+.Top{
+    align-items: flex-start
+}
+.Middle{
+    align-items: center;
+}
+.Bottom{
+    align-items: flex-end;
+}
+.Row{
+    flex-direction: row;
+}
+.Column{
+    flex-direction: column;
+}
+
+.Contain{
+    object-fit: contain;
+}
+.FullSize{
+    width: 300px;
+    height: 250px;
+}
+.MaxSize{
+    width: 100%;
+    height: 100%;
+}
+.VerizonRed{
+    color: #F50A23 !important;
+}
+.FixPixelation{
+    will-change: transform;
+    transform-origin: center;
+    text-rendering: auto;
+    perspective: 1000px;
+}
+u{
+    text-decoration-line: underline;
+    text-decoration-thickness: 0px;
+}
+b{
+    font-family: 'VerizonNHGeDSBold';
+}
+.Cover{
+    height: 1em;
+    margin-bottom: 0px;
+    text-align: center;
+}
+#MainContent {
+    overflow: hidden;
+    opacity: 0;
+    background-color: #FF3C2D;
+}
+
+/* ===============
+   Images
+   =============== */
+#borderFrame{
+    position: absolute;
+    width: 300px;
+    height: 250px;
+}
+#logo{
+    width: 81px;
+    height: 19px;
+    bottom: 14px;
+    left: 15px;
+}
+
+/* ===============
+   Red Frame Elements
+   =============== */
+.red-frame {
+    font-family: 'VerizonNHGeDSBold';
+    /* background-color: #FF3C2D; */
+    color: #FFFFFF;
+}
+
+.red-frame .eyebrow, .red-frame .alt-color {
+    color: #F5FF1E;
+}
+
+.red-frame .legal {
+    font-family: 'VerizonNHGeDSRegular';
+}
+
+/* ===============
+   White Frame Elements
+   =============== */
+.white-frame {
+    font-family: 'VerizonNHGeDSBold';
+    /* background-color: #FFFFFF; */
+    color: #000000;
+}
+
+.white-frame .eyebrow, .white-frame .alt-color {
+    color: #F50A23;
+}
+
+.white-frame .legal {
+    font-family: 'VerizonNHGeDSRegular';
+}
+
+/* ===============
+   Generic classes
+   =============== */
+.bottom-legal {
+    position: absolute;
+    bottom: 8.5px;
+}
+
+.text-cont {
+    top: 15px;
+    left: 14px;
+    width: 270px;
+    height: 193px;
+    text-align: center;
+}
+
+/* ===============
+   CTA
+   =============== */
+#CTABox{
+    right: 15px;
+    bottom: 11px;
+}
+#CTABox {
+    width: 88px;
+    height: 24px;
+    right: 14px;
+    bottom: 6px;
+}
+#CTACover {
+    overflow: hidden;
+    left: 0px;
+    text-align: left;
+}
+#CTAText {
+    width: 72px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: 'VerizonNHGeDSBold';
+}
+#CTAArrow {
+    width: 88px;
+    height: 24px;
+    right: 14px;
+    bottom: 5px;
+}
+#CTAArrowCover {
+    width: 8px;
+    height: 15px;
+    left: 79px;
+    bottom: 0px;
+}
+
+/* ===============
+   Frame 1 
+   =============== */
+#f1TextCont {
+    padding: 15px 0 0 0;
+}
+
+#f1 .headline {
+    font-size: 40px;
+    line-height: 36px;
+}
+
+/* ===============
+   Frame 2 
+   =============== */
+#f2TextCont {
+    padding: 2px 0 0 0;
+}
+
+#f2 .headline {
+    font-size: 40px;
+    line-height: 36px;
+}
+
+#f2 .eyebrow {
+    font-size: 15px;
+    line-height: 0.9em;
+}
+
+#f2 .legal {
+    font-size: 8px;
+    line-height: 1em;
+}
+
+/* ===============
+Frame 3
+=============== */
+#f3Image1 {
+    width: 86px;
+    height: 17px;
+    top: 53px;
+    left: 106px;
+    opacity: 0;
+}
+#f3Image2 {
+    width: 102px;
+    height: 11px;
+    top: 0px;
+    left: 0px;
+}
+#f3Image3 {
+    width: 178px;
+    height: 184px;
+    top: 33px;
+    left: 48px;
+}
+#f3ImageBox2{
+    width: 102px;
+    height: 11px;
+    top: 45px;
+    left: 99px;
+    overflow: hidden;
+}
+
+
+/* ===============
+   Frame 4
+   =============== */
+#f4TextCont {
+    padding: 0 0 20px 3px;
+}
+
+#f4 .headline {
+    font-size: 56px;
+    line-height: 0.55em;
+}
+
+/* ===============
+   Frame 5
+   =============== */
+#f5TextCont {
+    padding: 0 0 25px 0;
+}
+
+#f5 .headline {
+    font-size: 57px;
+    line-height: 0.65em;
+}
+
+/* ===============
+   Frame 6
+   =============== */
+#f6TextCont {
+    padding: 8px 0 0 0;
+}
+
+#f6 .headline {
+    font-size: 56px;
+    line-height: 53.2px;
+    top: -12px;
+    color: #F50A23;
+    left: 1px;
+}
+
+#f6 .eyebrow {
+    font-size: 16px;
+    line-height: 16px;
+    /* letter-spacing: -.06px; */
+    top: -6px;
+    color: #000000;
+    left: 1px;
+}
+
+#f6 .legal {
+    font-size: 8px;
+    line-height: 1em;
+    top: 4px;
+}
+
+
+
+
+
+/* TOOLTIP */
+
+.close-btn {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+}
+.xclose {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.ToolTipHotspot {
+    position: absolute;
+    display: block;
+
+    background-color: transparent;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 52;
+}
+.tooltip_arrow {
+    position: absolute;
+    width: 8px;
+    height: 5px;
+    bottom: 0px;
+    left: 0px;
+    rotate: 180deg;
+}
+.ToolTip{
+    position: relative;
+    height: auto;
+    z-index: 51;
+}
+.tooltip-container{
+    position: relative;
+    width: 100%;
+    border: solid 0.5px #000;
+    background: white;
+}
+.scroller-container{
+    position: relative;
+    width: 102px;
+    height: 55px;
+    left: 15px;
+    top: 13px;
+}
+#textScroller{
+    width: 100%;
+    font-size: 8px;
+    line-height: 1.14em;
+    font-family: "VerizonNHGeDSRegular";
+}
+.set_scroll {
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+  
+.set_scroll::-webkit-scrollbar {
+    display: none;
+  }
+.scroll-track{
+    position: absolute;
+    width: 4px;  
+    height: 50px;
+    right: 10px;
+    top: 19px;
+    background-color: #F6F6F6;
+}
+.scroll-knob{
+    position: absolute;
+    width: 4px;  
+    height: 18px;
+    right: 11px;
+    top: 19px;
+    background-color: #DAD8D8;
+}
+#f6Text3 span{
+    text-underline-offset: 1.2px;
+    text-decoration: underline;
+}
+
+
+
+/* TOOLTIP */
+
+.close-btn {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+}
+.xclose {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.ToolTipHotspot {
+    position: absolute;
+    display: block;
+
+    background-color: transparent;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 99;
+}
+.tooltip_arrow {
+    position: absolute;
+    width: 10px;
+    height: 6px;
+    bottom: 0px;
+    left: 20px;
+    rotate: 0deg;
+}
+.ToolTip{
+    position: relative;
+    height: auto;
+    z-index: 51;
+    opacity: 0.5;
+}
+.tooltip-container{
+    position: relative;
+    width: 100%;
+    border: solid 0.5px #000;
+    background: white;
+}
+.scroller-container{
+    position: relative;
+    width: 102px;
+    height: 56px;
+    left: 14px;
+    top: 12px;
+}
+#textScroller{
+    width: 100%;
+    font-size: 8px;
+    line-height: 1.125em;
+    font-family: "VerizonNHGeDSRegular";
+}
+.set_scroll {
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+  
+.set_scroll::-webkit-scrollbar {
+    display: none;
+  }
+.scroll-track{
+    position: absolute;
+    width: 4px;  
+    height: 50px;
+    right: 10px;
+    top: 19px;
+    background-color: #F6F6F6;
+}
+.scroll-knob{
+    position: absolute;
+    width: 4px;  
+    height: 18px;
+    right: 11px;
+    top: 19px;
+    background-color: #DAD8D8;
+}

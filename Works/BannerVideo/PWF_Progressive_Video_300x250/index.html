@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>PWF_Progressive_Video_300x250_EN</title>
+        <meta name="ad.size" content="width=300,height=250"> 
+		<script>
+		  var clickTag = ""; 
+		</script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+   		<script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.0_499ba64a23378545748ff12d372e59e9_min.js"></script>
+		<script>
+        	function startPreload(){function t(){e===a-1?r[a]():e++}var e=0,n=new Array,a=startPreload.arguments.length-1,r=startPreload.arguments;for(i=0;i<a;i++)n[i]=new Image,n[i].src=startPreload.arguments[i],addEvent(n[i],"load",t)}function _(t){return document.querySelector(t)}function addEvent(t,e,n){t.addEventListener?t.addEventListener(e,n,!1):t.attachEvent&&t.attachEvent("on"+e,n)}function removeEvent(t,e,n){t.addEventListener?t.removeEventListener(e,n,!1):t.attachEvent&&t.detachEvent("on"+e,n)}
+    	</script>
+    </head>
+	<body>
+    <div id="container">
+    	<div id="bg"></div>
+
+        <div id='vp-frame'>
+			<div id='video_holder'>
+				<video id="video_dc" width="300" height="182" muted>
+					<source id="video_src" type="video/mp4" src="https://paramountdlds-a.akamaihd.net/mp/advertising/pwf/progressive_videos/pwf_300x250_intro.mp4" />
+				</video>
+				<div class='btn_sound'>
+					<div class='sound-off'><img src="sound-off.png" alt=""></div>
+					<div class='sound-on'><img src="sound-on.png" alt=""></div>
+				</div>
+			</div>
+			<div id='footer'><img src="vp-bg.jpg" alt=""></div>
+			<div class='sprite date vp-date1'></div>
+			<div class='sprite date vp-date2'></div>
+			<div class='sprite date vp-date3'></div>
+			<div class='sprite date vp-date4'></div>
+			<div class='sprite vp-title'></div>
+		</div>
+
+
+		<div id='ep-frame'>
+			<div class="ep-bg"><img src="ep-bg.jpg" alt=""></div>
+
+			<div class="textsCont">
+				<div class='sprite ep-title'></div>
+				<div class='sprite date ep-date1'></div>
+				<div class='sprite date ep-date2'></div>
+				<div class='sprite date ep-date3'></div>
+				<div class='sprite date ep-date4'></div>
+				<div class="ep-axe_left"> <img src="ep-axeL.png"> </div>
+				<div class="ep-axe_right"> <img src="ep-axeR.png"> </div>
+				<div class="ep-titleMask"> <img src="ep-titleMask.png"> </div>
+				<div class='sprite ep-actor'></div>
+			</div>
+			<div id="cta_holder">
+					<div class="ctaShadow"></div>
+					<div class='btn_cta'>
+						<div class="cta_highlight"></div>
+						<div class='sprite ep-cta-get-ticket'></div>
+						<div class='sprite ep-cta-watch-trailer'></div>
+	            		<div class="shine"> <img src="shine.png"> </div>
+		            </div>
+				</div>
+			<div class='btn_replay'>
+				<img src="ep-replay.png" alt="">
+            </div>
+            <!-- <div class="sequence">
+		    	<img class="animTransition" src="seq.png" alt="Animation">
+		    </div> -->
+		</div>
+	</div>
+		<!-- <div class='sprite rated'></div> -->
+
+    </div>
+    <script>
+		(function(){
+			var tl
+			var tlaxe
+			var HAS_PLAYED = false;
+			var FPLAY = false;
+			var VIDEO_IS_PLAYING = false;
+			var OVER_EVENTS = false;
+			var vid = document.getElementById('video_dc');
+			var source = document.getElementById('video_src');
+			var videoSource = new Array();
+			videoSource[0] = 'https://paramountdlds-a.akamaihd.net/mp/advertising/pwf/progressive_videos/pwf_300x250_intro.mp4';
+			videoSource[1] = 'https://paramountdlds-a.akamaihd.net/mp/advertising/pwf/progressive_videos/pwf_300x250_replay.mp4';
+			var mInterval;
+			function checkDate(){
+			
+				// TweenMax.set(['.date1','.date2','.cta', '.cta-text'],{display:'none'})
+				// TweenMax.set('.ep-cta-button-over', {opacity: 0})
+								
+				var now = new Date();
+				var dd = now.getDate();
+				var mm = now.getMonth()+1
+				console.log('Date: ',now, mm, dd)
+				console.log(mm, ' <= ', 10)
+				if(mm <= 9){
+					console.log('September')
+					if(dd <= 31) {
+						console.log('IN THEATRES NOVEMBER 8 / WATCH VIDEO')
+						show(['.vp-date1', '.ep-date1', '.ep-cta-watch-trailer'])
+						TweenMax.set('.ep-cta-get-ticket', {display: "none"})
+					}
+				}else if(mm <= 10){
+					console.log('October')
+					if(dd <= 29){
+						console.log('IN THEATRES NOVEMBER 8 / WATCH VIDEO')
+						show(['.vp-date1', '.ep-date1', '.ep-cta-watch-trailer'])
+						TweenMax.set('.ep-cta-get-ticket', {display: "none"})
+					}else if(dd <= 30){
+						console.log('IN THEATRES NOVEMBER 8 / GET TICKETS')
+						show(['.vp-date1', '.ep-date1', '.ep-cta-get-ticket'])
+						TweenMax.set('.ep-cta-watch-trailer', {display: "none"})
+					} else {
+						console.log('IN THEATRES NOVEMBER 8 / GET TICKETS')
+						show(['.vp-date1', '.ep-date1', '.ep-cta-get-ticket'])
+						TweenMax.set('.ep-cta-watch-trailer', {display: "none"})
+					}
+				}else if(mm == 11){
+					console.log('November')
+					if(dd <= 1) {
+						console.log('IN THEATRES NOVEMBER 8 / GET TICKETS')
+						show(['.vp-date1', '.ep-date1', '.ep-cta-get-ticket'])
+						TweenMax.set('.ep-cta-watch-trailer', {display: "none"})
+					} else if(dd <= 6){
+						console.log('IN THEATRES FRIDAY / GET TICKETS')
+						show(['.vp-date2', '.ep-date2', '.ep-cta-get-ticket'])
+						TweenMax.set('.ep-cta-watch-trailer', {display: "none"})
+					} else if(dd == 7) {
+						console.log('IN THEATRES TOMORROW / GET TICKETS')
+						show(['.vp-date3', '.ep-date3', '.ep-cta-get-ticket'])
+						TweenMax.set('.ep-cta-watch-trailer', {display: "none"})
+					} else {
+						console.log('NOW PLAYING IN THEATRES / GET TICKETS ')
+						show(['.vp-date4', '.ep-date4', '.ep-cta-get-ticket'])
+						TweenMax.set('.ep-cta-watch-trailer', {display: "none"})
+					}	
+				}else{
+					console.log('NOW PLAYING IN THEATRES / GET TICKETS ')
+					show(['.vp-date4', '.ep-date4', '.ep-cta-get-ticket'])
+					TweenMax.set('.ep-cta-watch-trailer', {display: "none"})
+				}
+
+			}
+			
+			function addClickEvent(){
+				addEvent(_('#bg'),'click', onClick);				
+				addEvent(_('#cta_holder'),'click', onClick);				
+			}
+			function onClick(){
+				window.open(window.clickTag);
+				clearInterval(mInterval)
+				vid.pause();
+				source.setAttribute('src',videoSource[1]);
+				if(VIDEO_IS_PLAYING){
+					onVideoComplete();
+				}
+				FPLAY = true;
+				show('.btn_replay')
+			}
+			function addEvents(){
+
+				vid.addEventListener('ended', onVideoComplete, false);		
+				vid.addEventListener('play', onVideoPlay, false);	
+				vid.addEventListener('timeupdate', onTimeUpdate, false);	
+			
+				TweenMax.set('.sound-on',{display:'none'})
+				TweenMax.set('.btn_replay',{display:'none'})
+
+				addEvent(_('.btn_sound'),'click', onSoundClick)
+				addEvent(_('.btn_replay'),'click', onReplayClick)
+				
+			}
+
+			function onTimeUpdate() {
+				console.log('Ticking... ',this.currentTime)
+				if(!FPLAY) {
+					if(this.currentTime >= 14) {
+						forceEndVideo()
+					}
+				} else {
+					if(this.currentTime >= 26) {
+						forceEndVideo()
+					}
+				}
+			}
+			function forceEndVideo() {
+				console.log('Video Stop this time')
+				onVideoComplete();
+				vid.removeEventListener('ended', onVideoComplete, false);	
+				vid.removeEventListener('timeupdate', onTimeUpdate, false);
+			}
+			function onCtaOver(){
+				console.log('Over')
+				TweenMax.to('.btn_cta', 0.2,{ease:Power0.easeOut}, "ctaAnim")
+				TweenMax.to('.cta_highlight', 0.4,{css: {y:20,x:-55, width: "260"},ease:Power3.easeInOut}, "ctaAnim")
+				TweenMax.to('.shine', 0.9,{x:300,ease:Power3.easeInOut}, "ctaAnim")
+			}
+			function onCtaOut(){
+				console.log('Out')
+				TweenMax.to('.btn_cta', 0.2,{ease:Power0.easeOut}, "ctaAnim")
+				TweenMax.to('.cta_highlight', 0.2,{css: {y:0,x:0, width: "160"},ease:Power0.easeOut}, "ctaAnim")
+				TweenMax.set('.shine',{x:0}, "ctaAnim")
+			}
+
+			function playVideo(){
+				vid.play();
+			}
+			function onReplayOver(){
+				TweenMax.to('.btn_replay',0.5,{rotation:'+=360', ease:Sine.easeInOut})
+			}
+			function onReplayClick(){
+				source.setAttribute('src',videoSource[1]);
+				vid.load();
+    			vid.play();
+    			vid.muted = false;
+				TweenMax.set('.sound-off',{display:'none'});
+				TweenMax.set('.sound-on',{display:'block'})
+				vpFrameShow();
+				vid.addEventListener('ended', onVideoComplete, false);	
+				vid.addEventListener('timeupdate', onTimeUpdate, false);
+			}
+			function onSoundClick(){
+				console.log('SOUND CLICK...', FPLAY)
+				if(!FPLAY){
+					FPLAY = true;
+					vid.pause();
+					source.setAttribute('src',videoSource[1]);
+					vid.load();
+    				vid.play();
+    				vid.muted = false;
+				}else{
+					vid.muted = !vid.muted; 
+				}
+				if(!vid.muted){
+					console.log('Hmmmm')
+					TweenMax.set('.sound-off',{display:'none'});
+					TweenMax.set('.sound-on',{display:'block'})
+				}else{
+					TweenMax.set('.sound-off',{display:'block'});
+					TweenMax.set('.sound-on',{display:'none'})
+				}
+			}
+			function onVideoComplete(){
+				console.log('VIDEO COMPLETED...')
+				FPLAY = true
+				VIDEO_IS_PLAYING = false;
+				TweenMax.to('#vp-frame',0.5,{onStart:epFrameShow})
+				show('.btn_replay')
+				if(!HAS_PLAYED){
+					HAS_PLAYED = true;
+				}
+				
+			}
+			function onVideoPlay(){
+				VIDEO_IS_PLAYING = true;
+				TweenMax.set('#video_holder',{autoAlpha:1})
+			}
+
+			function init(){
+				
+				checkDate();
+				addEvents();
+				TweenMax.set('#black',{x:-146});
+				TweenMax.set('.btn_replay',{display:'none'});
+				TweenMax.set('img',{position: 'absolute', rotationZ:0.01, force3D: true});
+				TweenMax.set('#container',{display:'block',onComplete:addClickEvent});
+
+				if(!HAS_PLAYED){
+					// mInterval = setInterval(showFrame2, 2000)
+				}
+				
+				vpFrameShow();
+
+			}
+			function epFrameShow(){
+				console.log('EP FRAME SHOW...')
+				TweenMax.set('#ep-frame',{display:'block',opacity:0});
+				TweenMax.set('#image',{scale:0.84})
+				TweenMax.set('img',{force3D: true, rotation:0.01})
+				TweenMax.set('.animTransition', {y: 0, display: 'block'})
+				TweenMax.set('.ep-title1', {x: 18})
+				TweenMax.set('.ep-title3', {x: -18})
+				TweenMax.set('.ep-title2', {transformOrigin:"50% 50%"})
+				TweenMax.set('.ep-actor,.ep-title,.date1,.btn_replay,#ep-frame > .date,.ep-cta,.ep-bg,.ep-titleMask', {opacity: 0})
+				TweenMax.set('.ep-actor,.ep-title,.ep-cta,.blackBg', {opacity:1})
+				TweenMax.set('.textsCont', {transformOrigin:"50% 50%"})
+				TweenMax.set('.ep-axe_left',  {x:-240, rotation:-220})
+				TweenMax.set('.ep-axe_right', {x:240, rotation:220})
+
+				if(HAS_PLAYED){
+					var t = new TimelineMax();
+					t
+					.add('transAnim')
+					.to('#ep-frame', 1, {opacity:1, ease:Power2.easeInOut},'transAnim')
+					.to('#vp-frame', 1, {opacity:0, ease:Power2.easeInOut},'transAnim+=0.5')
+					.to('.ep-bg', 0.6, {opacity:1},'transAnim')
+					.to('.blackBg', 1, {opacity:0, ease:Power2.easeInOut},'transAnim')
+
+					.from('.textsCont',0.3, {display: 'block',opacity:0, scale:5, ease:Back.easeOut.config(1.2)},'transAnim+=1')
+					.to('.ep-titleMask',0.01, {opacity:1},'transAnim+=1.3')
+					.add(axes, "transAnim+=1.3")
+					.to('#ep-frame > .date', 0.4, {opacity:1,y:0, ease:Power2.easeOut},'transAnim+=1.5')
+					.to('.btn_replay', 0.7, {opacity: 1}, '+=.3')
+
+					.from('#cta_holder', 0.4, {y:30, opacity:0, ease:Power3.easeOut}, "transAnim+=2.3")
+					.to('.cta_highlight', 0.45,{css: {y:20,x:-55, width: "260"},ease:Power3.easeInOut, yoyo:true, repeat: 1, repearDelay:0.4}, "transAnim+=3")
+					.to('.shine', 1.7,{x:300,ease:Power3.easeInOut}, "transAnim+=3.5")
+					.to('.shine', 0.001,{x:0})
+				}				
+			}
+			function axes(){
+				var tlaxe = new TimelineMax();
+				tlaxe
+					.to('.ep-axe_left',0.35, {x:0, ease:Power2.easeInOut},'axeAnim')
+					.to('.ep-axe_left',0.4, {rotation:0, ease:Power1.easeOut},'axeAnim')
+					.to('.ep-axe_right',0.35, {x:0, ease:Power2.easeInOut},'axeAnim')
+					.to('.ep-axe_right',0.4, {rotation:0, ease:Power1.easeOut},'axeAnim')
+			}
+			function vpFrameShow(){
+				console.log('VP FRAME SHOW...')
+				// clearInterval(mInterval)
+				TweenMax.set('#ep-frame',{display:'none'})
+				TweenMax.set('#vp-frame',{display:'block', autoAlpha:1})
+				
+				if(!HAS_PLAYED){
+					playVideo();
+				}
+			}
+			function show(e){
+				TweenMax.set(e,{display:'block'})
+				if(e == '.btn_replay'){
+					if(!OVER_EVENTS){
+						OVER_EVENTS = true;
+						addEvent(_('.btn_replay'),'mouseenter', onReplayOver);	
+						addEvent(_('#container'),'mouseenter', onCtaOver);	
+						addEvent(_('#container'),'mouseleave', onCtaOut);
+					}
+				}
+			}
+			function shuffle(r){for(var f,n,o=r.length;0!==o;)n=Math.floor(Math.random()*o),o-=1,f=r[o],r[o]=r[n],r[n]=f;return r}
+			startPreload('sprite.png','vp-bg.jpg','sound-on.png','sound-off.png','ep-replay.png','ep-bg.jpg',init);
+		})();
+    </script>
+</body>
+</html>

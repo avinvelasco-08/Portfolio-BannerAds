@@ -1,0 +1,222 @@
+/****** Imported Fonts ******/
+.FontOpenSans{
+    font-family: "Open Sans";
+    font-weight: 700;
+}
+
+/****** Common CSS ******/
+.Guide{
+    opacity: 0.4;
+    display: none;
+    z-index: 49;
+}
+.Absolute{
+    position: absolute;
+}
+.Relative{
+    position: relative;
+}
+.Flex{
+    display: Flex;
+}
+.Left{
+    justify-content: flex-start;
+}
+.Center{
+    justify-content: center;
+}
+.Right{
+    justify-content: flex-end;
+}
+.Top{
+    align-items: flex-start
+}
+.Middle{
+    align-items: center;
+}
+.Bottom{
+    align-items: flex-end;
+}
+
+.Row{
+    flex-direction: row;
+}
+.Column{
+    flex-direction: column;
+}
+
+.Contain{
+    object-fit: contain;
+}
+.FullSize{
+    width: 300px;
+    height: 250px;
+}
+.MaxSize{
+    width: 100%;
+    height: 100%;
+}
+.AbsolutePosition{
+    left: 0px;
+    top: 0px;
+}
+.Red{
+    color: #EE0000;
+}
+.trans{
+    opacity: 0;
+}
+#cover{
+    top: 300px;
+}
+.FixPixelation{
+    will-change: transform;
+    transform-origin: center;
+    text-rendering: auto;
+    perspective: 1000px;
+}
+u{
+    text-decoration-line: underline;
+    text-decoration-thickness: 0px;
+}
+.sup1 {
+    font-size: 17px;
+    vertical-align: 12px;
+}
+.sup2 {
+    font-size: 14px;
+    vertical-align: 13px;
+}
+.sub1 {
+    font-size: 9.5px;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0 0 0 -27px;
+}
+#MainContent {
+    overflow: hidden;
+    background-color: black;
+    opacity: 0;
+}
+
+/* BG Animation */
+#chatboxOverlay{
+    left:25px;
+    top:25px;
+}
+#path1AsB{
+    position: absolute;
+    left:19px;
+    top:19px;
+}
+#Anim1{
+    position: absolute;
+    left:-13px;
+    top:-15px;
+}
+/* FRAMES */
+#Frame1, #Frame2{
+    width: 300px;
+    height: 250px;
+    left: 0px;
+    top: 0px;
+    opacity: 1;
+}
+/* FRAME TEXT */
+#F1FlexBox, #F2FlexBox, #F3FlexBox, #LegalFlexBox{
+    width: 300px;
+    height: 250px;
+    left: 0px;
+    top: 0px;
+}
+#F1HeadlineText{
+    letter-spacing: -0.3px;
+    line-height: 1.1em;
+    font-size: 22px;
+    color: #ffffff;
+    width: 213px;
+    text-indent: 0px;
+    margin: -80px 0 0 12px;
+}
+#F2HeadlineText {
+    letter-spacing: -0.3px;
+    line-height: 1.1em;
+    font-size: 22px;
+    color: #ffffff;
+    width: 213px;
+    text-indent: 0px;
+    margin: -80px 0 0 12px;
+}
+#F2SubHeadlineText{
+    letter-spacing: -0.24px;
+    line-height: 1.1em;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    width: 150px;
+    text-indent: 0px;
+    margin: 32px 0 0 -51px;
+}
+#F3HeadlineText {
+    letter-spacing: -0.68px;
+    line-height: 1.1em;
+    font-size: 23px;
+    color: #ffffff;
+    width: 213px;
+    text-indent: 0px;
+    margin: -45px 0 0 12px;
+}
+#F3SubHeadlineText{
+    letter-spacing: 0px;
+    line-height: 1.1em;
+    font-size: 32px;
+    font-weight: 700;
+    color: #CCFF33;
+    width: 150px;
+    text-indent: 0px;
+    margin: 1px 0 0 -52px;
+}
+#LegalButtonText{
+    letter-spacing: -0.2px;
+    line-height: 1em;
+    font-size: 7px;
+    color: #ffffff;
+    width: auto;
+    text-indent: 0px;
+    margin: 171px 0 0 -100px;
+    font-weight: 400;
+}
+#Legal{
+    background-color: #000000;
+    cursor: pointer;
+    /* display: none; */
+}
+#LegalHeadlineText{
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+    line-height: 15px;
+    font-size: 11px;
+    text-align: center;
+    padding: 0 28px;
+    margin: -2px 0 0 1px;
+}
+#offerHotspot {
+    top: 206px;
+    left: 49px;
+    width: 36px;
+    height: 9px;
+    cursor: pointer;
+    display: none;
+}
+
+#closeBtn {
+    top: 9px;
+    right: 13px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+green{
+    color: #CCFF33;
+}

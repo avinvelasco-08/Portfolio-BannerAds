@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<meta charset="UTF-8">
+	<title>MCD_AngusBurger_EN</title>
+	<meta name="ad.size" content="width=300,height=600"> 
+	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font.css">
+	<script> var clickTag = "https://www.jollibee.com.ph/"; </script>
+	<script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.20.0_d360d9a082ccc13b1a1a9b153f86b378_min.js"></script>
+	<script src="cb_standard.js"></script>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+<body>
+	<div id="container">
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+        <!-- ADD 'imgfix' CLASS ON ALL IMG TAGS DIVS -->
+		<div class='bg imgfix '>
+			<img src="bg.jpg" alt="Background">
+		</div>
+
+        <div class="t1_Cont">
+            <div class='sprite f1_t3 f1'> </div>
+            <div class='sprite f1_t2 f1'> </div>
+            <div class='sprite f1_t1 f1'> </div>
+        </div>
+
+        <div class="t2_Cont">
+            <div class='sprite f2_t2 f2'> </div>
+            <div class='sprite f2_t3 f2'> </div>
+            <div class='sprite f2_t4 f2'> </div>
+        </div>
+
+		<div class="burgerCon">
+			<div class="bun1 burCont">    <img src="bun1.png" alt="">  </div>
+			<div class="bun2 burCont">    <img src="bun2.png" alt="">  </div>
+			<div class="patty burCont">   <img src="patty.png" alt=""> </div>
+			<div class="veggies burCont"> <img src="veggies.png" alt=""> </div>	
+		</div>
+        <div id="smokeHolder"></div>
+        
+        <div class='sprite f2_t1'> </div>
+
+        <!-- SEEDS -->
+        <div class='spriteSeed sd1'></div>
+        <div class='spriteSeed sd2'></div>
+        <div class='spriteSeed sd3'></div>
+        <div class='spriteSeed sd4'></div>
+        <div class='spriteSeed sd5'></div>
+        <div class='spriteSeed sd6'></div>
+        <div class='spriteSeed sd7'></div>
+        <div class='spriteSeed sd8'></div>
+        <div class='spriteSeed sd9'></div>
+        <div class='spriteSeed sd10'></div>
+        <!-- SEEDS -->
+
+        <script src="smoke.js"></script>
+
+        <div class='sprite footer'> </div>
+        
+        <div class='cta'>
+            <div class='sprite cta_txt ctas'> </div>
+            <div class='sprite cta_txt_hover ctas'> </div>
+        </div>
+        
+        <div class='logo imgfix'> <img src="logo.png"> </div>
+        <div id='clickthru'></div>
+        
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+	</div>
+	<script>
+		var tl = new TimelineMax();
+        // tl.timeScale( 0.3 );
+		function initAd() {
+			//--------- PRE-LOAD IMAGE ------------
+			startPreload('bg.jpg','spriteSeed.png','bun1.png','bun2.png',
+                        'logo.png','patty.png','smoke_clear.png','veggies.png', startAnim);
+			//-------------------------------------
+			function startAnim() {
+				//--------------- SET -----------------
+				TweenMax.set('#container', {display: 'block'});
+                TweenMax.set('.sprite', { rotation:0.001});
+                TweenMax.set('.imgfix', { rotation:0.001});
+                TweenMax.set('.veggies', { transformOrigin:'20% 50%'});
+                TweenMax.set('.veggies', { rotation:-4});
+                TweenMax.set('.bun1', { transformOrigin:'70% 50%'});
+                TweenMax.set('.bun2', { transformOrigin:'80% 50%'});
+                TweenMax.set('.t1_Cont', { transformOrigin:'50% 50%'});
+                TweenMax.set('#smokeHolder,.spriteSeed', { opacity:0});
+                TweenMax.set('sd1,.sd4.sd7,.sd10', { rotation:-20});
+                TweenMax.set('sd2,.sd5,.sd8', { rotation:17});
+                TweenMax.set('sd3,.sd6,.sd9', { rotation:-18});
+
+                TweenLite.set(".t1_Cont", {perspective:800});
+                TweenMax.set(".f1", {transformStyle:"preserve-3d", transformOrigin:"50% 10%"});
+                // TweenMax.set(".f1", {rotationX:-70});
+				//------------ ADD EVENT --------------
+				addEvent();
+                hoverFunction();
+				//---------- ADD ANIMATION ------------
+				tl
+                    //=========================
+                    .add('Scene1','+=1')
+                    // TEXTS ANIM==================================================
+                    .staggerFrom('.f1',   0.3, {rotationX:110,scaleX:1.8,y:-400,ease:Power4.easeIn},0.3,'Scene1')
+                    .to('.t1_Cont',0.1, {scaleY:0.98,y:10,yoyo:true,repeat:1,ease:Power4.easeNone,repeatDelay:-0.1},'Scene1+=0.3')
+                    .to('.t1_Cont',0.1, {scaleY:0.98,y:10,yoyo:true,repeat:1,ease:Power4.easeNone,repeatDelay:-0.1},'Scene1+=0.6')
+                    .to('.t1_Cont',0.1, {scaleY:0.98,y:10,yoyo:true,repeat:1,ease:Power4.easeNone,repeatDelay:-0.1},'Scene1+=0.9')
+                    .to('.bg',   0.03, {y:"+=20",scale:0.9,yoyo:true,repeat:1,ease:Power4.easeOut},'Scene1+=0.3')
+                    .to('.bg',   0.03, {y:"+=20",scale:0.9,yoyo:true,repeat:1,ease:Power4.easeOut},'Scene1+=0.6')
+                    .to('.bg',   0.03, {y:"+=20",scale:0.9,yoyo:true,repeat:1,ease:Power4.easeOut},'Scene1+=0.9')
+                    .to('.logo', 0.1,  {y:"-=3",x:"-=2",yoyo:true,repeat:1,ease:Power3.easeIn}, 'Scene1+=0.3')
+                    .to('.logo', 0.1,  {y:"-=3",x:"-=2",yoyo:true,repeat:1,ease:Power3.easeIn}, 'Scene1+=0.6')
+                    .to('.logo', 0.1,  {y:"-=3",x:"-=2",yoyo:true,repeat:1,ease:Power3.easeIn}, 'Scene1+=0.9')
+
+                    .add('Scene2','+=1')
+                    // PATTIES AND VEGGIES==================================================
+                    .from('.veggies',   0.5, {y:-350,ease:Power2.easeIn},       'Scene2-=0.3')
+                    .from('.patty',     0.5, {y:350,ease:Power2.easeIn},        'Scene2-=0.3')
+                    .to('.veggies',     0.1, {rotation:0,ease:Power0.easeOut},  'Scene2+=0.2')
+
+                    // MASKING T1==================================================
+                    .to('.t1_Cont', 0.4, {clip:"rect (350px 600px 250 0px)", ease:Power2.easeIn}, 'Scene2-=0.17')
+
+                    // BUNS ENTRY==================================================
+                    .from('.bun1', 0.3, {y:-350,ease: Back.easeOut.config(1.4)}, 'Scene2+=0.4')
+                    .from('.bun2', 0.3, {y:350,ease: Back.easeOut.config(1.4)}, 'Scene2+=0.4')
+
+                    // FLICK==================================================
+                    .to('.veggies', 0.1, {scaleY:0.8,y:"+=3",ease:Power0.easeNone}, 'Scene2+=0.53')
+                    .to('.veggies', 0.1, {scaleY:1.0,y:"+=0",ease:Power0.easeNone}, 'Scene2+=0.63')
+                    .to('.patty',   0.1, {scaleY:0.8,y:"-=3",ease:Power0.easeNone}, 'Scene2+=0.53')
+                    .to('.patty',   0.1, {scaleY:1.0,y:"+=0",ease:Power0.easeNone}, 'Scene2+=0.63')
+
+                    // SEEDS RELEASE==================================================
+                    .to('.spriteSeed', 0.01, {opacity:1}, 'Scene2+=0.67')
+                    .from('.sd1',  0.25, {rotation: 8,y:"+=50",x:"+=8",ease: Power4.easeOut},  'Scene2+=0.68')
+                    .from('.sd2',  0.25, {rotation: -7,y:"+=70",x:"+=8",ease: Power4.easeOut}, 'Scene2+=0.68')
+                    .from('.sd3',  0.35, {rotation: 10,y:"+=80",x:"+=6",ease: Power4.easeOut}, 'Scene2+=0.68')
+                    .from('.sd4',  0.20, {rotation: -6,y:"+=80",x:"+=6",ease: Power4.easeOut}, 'Scene2+=0.68')
+                    .from('.sd5',  0.30, {rotation: 8,y:"+=80",x:"+=6",ease: Power4.easeOut},  'Scene2+=0.68')
+                    .from('.sd6',  0.30, {rotation: -7,y:"+=80",x:"+=6",ease: Power4.easeOut}, 'Scene2+=0.68')
+                    .from('.sd7',  0.35, {rotation: 9,y:"+=80",x:"+=6",ease: Power4.easeOut},  'Scene2+=0.68')
+                    .from('.sd8',  0.25, {rotation: -10,y:"+=80",x:"+=6",ease: Power4.easeOut},'Scene2+=0.68')
+                    .from('.sd9',  0.25, {rotation: 7,y:"+=80",x:"+=6",ease: Power4.easeOut},  'Scene2+=0.68')
+                    .from('.sd10', 0.35, {rotation: -8,y:"+=80",x:"+=6",ease: Power4.easeOut}, 'Scene2+=0.68')
+
+                    // SEEDS FALLING==================================================
+                    .to('.sd1',  1.0, {rotation: 0,y:"+=330",ease: Power4.easeIn}, 'Scene2+=1')
+                    .to('.sd2',  1.2, {rotation: 0,y:"+=365",ease: Power4.easeIn}, 'Scene2+=1')
+                    .to('.sd3',  0.8, {rotation: 0,y:"+=380",ease: Power4.easeIn}, 'Scene2+=1')
+                    .to('.sd4',  1.0, {rotation: 0,y:"+=420",ease: Power4.easeIn}, 'Scene2+=1')
+                    .to('.sd5',  0.9, {rotation: 0,y:"+=420",ease: Power4.easeIn}, 'Scene2+=1')
+                    .to('.sd6',  1.0, {rotation: 0,y:"+=370",ease: Power4.easeIn}, 'Scene2+=1')
+                    .to('.sd7',  0.8, {rotation: 0,y:"+=370",ease: Power4.easeIn}, 'Scene2+=1')
+                    .to('.sd8',  1.2, {rotation: 0,y:"+=405",ease: Power4.easeIn}, 'Scene2+=1')
+                    .to('.sd9',  1.3, {rotation: 0,y:"+=430",ease: Power4.easeIn}, 'Scene2+=1')
+                    .to('.sd10', 1.0, {rotation: 0,y:"+=380",ease: Power4.easeIn}, 'Scene2+=1')
+
+                    // SEEDS BOUNCE==================================================
+                    .to('.sd1',  0.13, {y:"-=5",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=2')
+                    .to('.sd2',  0.13, {y:"-=4.5",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=2.2')
+                    .to('.sd3',  0.13, {y:"-=2",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=1.8')
+                    .to('.sd4',  0.13, {y:"-=4.6",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=1.99')
+                    .to('.sd5',  0.13, {y:"-=3",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=1.93')
+                    .to('.sd6',  0.13, {y:"-=3",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=2.0')
+                    .to('.sd7',  0.13, {y:"-=2",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=1.8')
+                    .to('.sd8',  0.13, {y:"-=4",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=2.2')
+                    .to('.sd9',  0.13, {y:"-=3",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=2.3')
+                    .to('.sd10', 0.13, {y:"-=3",ease: Power1.easeOut, yoyo:true,repeat:1}, 'Scene2+=2')
+
+                    // BURGER, LOGO AND BG SHAKE==================================================
+                    .to('.burgerCon',   0.5, {rotation:-4,y:-80,ease:Power3.easeOut}, 'Scene2+=0.59')
+                    .to('.burgerCon',   0.9, {rotation:0,y:30,ease:Power3.easeIn}, 'Scene2+=0.8')
+                    .to('.bun1',        0.5, {rotation:7,x:5,ease:Power0.easeNone}, 'Scene2+=0.35')
+                    .to('.bun2',        0.5, {rotation:-5,ease:Power0.easeNone}, 'Scene2+=0.35')
+                    .to('.bun1',        0.2, {rotation:0,x:0,ease:Power0.easeNone}, 'Scene2+=1.7')
+                    .to('.bun2',        0.2, {rotation:0,ease:Power0.easeNone}, 'Scene2+=1.5')
+                    .to('.bg',          0.1, {rotation:2,scale:1.07,ease:Power3.easeIn}, 'Scene2+=0.55')
+                    .to('.bg',          0.1, {rotation:0,scale:1,ease:Power3.easeIn}, 'Scene2+=0.63')
+                    .to('.logo',        0.1, {y:"-=3",x:"-=2",ease:Power3.easeIn}, 'Scene2+=0.55')
+                    .to('.logo',        0.4, {y:"0",x:"0",ease:Power1.easeOut}, 'Scene2+=0.8')
+                    .to('.bg',          0.08, {y:"+=10",scale:0.98,yoyo:true,repeat:1,ease:Power4.easeOut},'Scene2+=1.75')
+
+                    // SMOKE CANVAS ENTRY==================================================
+                    .add(addSmoke, "Scene2+=1")
+                    .to('#smokeHolder', 3, {opacity:1, ease:Power1.easeIn}, 'Scene2+=0.6')
+
+                    // BURGER STAGGER FALLING==================================================
+                    .staggerTo(['.bun2','.patty','.veggies','.bun1'], 0.4, {y:30,ease:Power4.easeIn}, 0.15, 'Scene2+=1')
+// .addPause()
+                    //==================================================
+                    .add('Scene3','-=1')
+                    .from('.f2_t1',  0.6, {opacity:0,y:60,ease:Power3.easeOut}, 'Scene3+=0.7')
+                    .from('.footer', 0.6, {opacity:0,ease:Power3.easeOut},      'Scene3+=0.9')
+                    .staggerFrom('.f2', 0.5, {opacity:0,y:70,ease:Power3.easeIn},0.16, 'Scene3+=1.5')
+
+                    //==================================================
+                    .add('Scene4','+=0.5')
+                    .from('.cta', 0.5, { opacity: 0, ease: Power1.easeOut},'Scene4')
+                    .to('#smokeHolder', 1, {opacity:0, ease:Power1.easeIn}, 'Scene4+=15')
+				//-------------------------------------
+			};
+            function addSmoke(){
+                var smokeAmount =50;
+                var smoke = new Smoke(_('#smokeHolder').c,'canvasSmoke','smoke_clear.png',300,600,{x : 300/2, y : (600/2)},smokeAmount);
+                smoke.start(true);
+                smoke.setWind(-1.3);
+            }
+			function addEvent() {
+				//--------------- SET -----------------
+				//To add:		_(object).on(events,  function);
+				//To remove:	_(object).off(events, function);
+				//-------------------------------------
+				_('#clickthru').on('click', exit);
+			};
+			
+			function exit() {
+				window.open(clickTag); /*Standard Exit*/
+				console.log('Exit')
+			}
+			
+            function hoverFunction() {
+                _('#clickthru').on('mouseenter', function() {
+                    TweenMax.to('.cta', 			0.3, {backgroundColor:'#2e241e'});
+                    TweenMax.to('.cta-text1', 		0.3, {opacity:0});
+                    TweenMax.to('.cta_txt_hover', 	0.3, { opacity:1 });
+                });
+                _('#clickthru').on('mouseleave', function() {
+                    TweenMax.to('.cta', 			0.3, {backgroundColor:'#ffcc37'});
+                    TweenMax.to('.cta-text1', 		0.3, {opacity:1});
+                    TweenMax.to('.cta_txt_hover', 	0.3, {opacity:0});
+                });
+            }
+            //-------------------------------------
+            
+		};
+	</script>
+</body>
+</html>
+
+<!--1018V2-->

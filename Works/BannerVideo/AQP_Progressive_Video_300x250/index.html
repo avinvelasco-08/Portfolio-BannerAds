@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+        <meta name="ad.size" content="width=300,height=250"> 
+		<script>
+		  var clickTag = ""; 
+		</script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+   		<script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.0_499ba64a23378545748ff12d372e59e9_min.js"></script>
+
+    </head>
+	<body>
+    <div id="container">
+    	<div id="bg">
+        	<img src='bg.jpg'>
+        </div>
+        <div id="glitch_1" class="glitches"><img src='glitch1.jpg'></div>
+        <div id="glitch_2" class="glitches"><img src='glitch2.jpg'></div>
+
+        <div id='frame2'>
+
+			<div id='video_holder'>
+				<video id="video_dc" width="300" height="173">
+					<source id="video_src" type="video/mp4" src="https://paramountdlds-a.akamaihd.net/mp/advertising/aqp/canadian/aqp_300x250_dontmakeasound_intro.mp4" />
+				</video>
+				<div class='btn_sound'>
+					<div class='sprite sound-off'></div>
+					<div class='sprite sound-on'></div>
+				</div>
+			</div>
+			<div id='footer'></div>
+	        <div class='sprite vp-in-theatre-april6 date2'></div>
+			<div class='sprite vp-in-theatre-friday date2'></div>
+			<div class='sprite vp-in-theatre-tonight date2'></div>
+			<div class='sprite vp-now-playing date2'></div>
+			<div class='sprite vp-title'></div>
+		</div>
+
+		<div id='frame1'>
+			    <!-- <div class="sequence">
+			    	<img class="character-animation" src="sequence.jpg" alt="Animation">
+			    </div> -->
+				<div class='character'>
+					<img src="emily.svg" alt="Emily Blunt">
+				</div>
+				<div class='sprite ep-in-theatre-april6 date1'></div>
+				<div class='sprite ep-in-theatre-friday date1'></div>
+				<div class='sprite ep-in-theatre-tonight date1'></div>
+				<div class='character'>
+					<img src="john.svg" alt="John Krasinki">
+				</div>
+				<div class='sprite ep-now-playing date1'></div>
+				<div class='sprite ep-title'></div>
+                <div class='btn_replay'>
+					<div class='sprite replay'></div>
+                </div>
+				<div class="cta" id="cta_holder">
+					<div class='sprite ep-cta-button restItems'></div>
+					<div class='sprite ep-cta-button_hover hoverItems'></div>
+					<div class='sprite ep-get-ticket cta-text restItems'></div>
+					<div class='sprite ep-get-ticket_hover cta-text hoverItems'></div>
+					<div class='sprite ep-watch-trailer cta-text restItems'></div>
+					<div class='sprite ep-watch-trailer_hover cta-text hoverItems'></div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class='sprite rated'></div> -->
+
+    </div>
+    <script>
+        function startPreload(){function t(){e===a-1?r[a]():e++}var e=0,n=new Array,a=startPreload.arguments.length-1,r=startPreload.arguments;for(i=0;i<a;i++)n[i]=new Image,n[i].src=startPreload.arguments[i],addEvent(n[i],"load",t)}function _(t){return document.querySelector(t)}function addEvent(t,e,n){t.addEventListener?t.addEventListener(e,n,!1):t.attachEvent&&t.attachEvent("on"+e,n)}function removeEvent(t,e,n){t.addEventListener?t.removeEventListener(e,n,!1):t.attachEvent&&t.detachEvent("on"+e,n)}
+    </script>
+    <script>
+		(function(){
+			var tl
+			var tlOver = new TimelineMax(); //mouseOver timelinemax
+			var HAS_PLAYED = false;
+			var FPLAY = false;
+			var VIDEO_IS_PLAYING = false;
+			var OVER_EVENTS = false;
+			var vid = document.getElementById('video_dc');
+			var source = document.getElementById('video_src');
+			var videoSource = new Array();
+			videoSource[0] = 'https://paramountdlds-a.akamaihd.net/mp/advertising/aqp/canadian/aqp_300x250_dontmakeasound_intro.mp4';
+			videoSource[1] = 'https://paramountdlds-a.akamaihd.net/mp/advertising/aqp/canadian/aqp_300x250_dontmakeasound_replay.mp4';
+			var mInterval;
+			function checkDate(){
+			
+				TweenMax.set(['.date1','.date2','.cta', '.cta-text'],{display:'none'})
+								
+				var now = new Date();
+				var dd = now.getDate();
+				var mm = now.getMonth()+1
+				console.log('Date: ',now)
+				if(mm == 3){
+					if(dd <= 22){
+						console.log('ONE In Theatres April 6 CTA: Watch Video')
+						show(['.vp-in-theatre-april6', '.ep-in-theatre-april6', '.ep-watch-trailer', '.ep-watch-trailer_hover'])
+					}else if(dd <= 30){
+						console.log('TWO In Theatres April 6 CTA: Get Tickets')
+						show(['.vp-in-theatre-april6', '.ep-in-theatre-april6', '.ep-get-ticket', '.ep-get-ticket_hover'])
+					}else if(dd == 31) {
+						console.log('THREE In Theatres Friday CTA: Get Tickets')
+						show(['.vp-in-theatre-friday', '.ep-in-theatre-friday', '.ep-get-ticket', '.ep-get-ticket_hover'])
+					}
+				}else if(mm == 4){
+					if(dd <= 4){
+						console.log('THREE In Theatres Tonight CTA: Get Tickets')
+						show(['.vp-in-theatre-friday', '.ep-in-theatre-friday', '.ep-get-ticket', '.ep-get-ticket_hover'])
+					} else if(dd == 5) {
+						console.log('FOUR In Theatres Friday CTA: Get Tickets')
+						show(['.vp-in-theatre-tonight', '.ep-in-theatre-tonight', '.ep-get-ticket', '.ep-get-ticket_hover'])
+					} else {
+						console.log('FIVE-1 Now Playing CTA: Get Tickets')
+						show(['.vp-now-playing', '.ep-now-playing', '.ep-get-ticket', '.ep-get-ticket_hover'])
+					}	
+				}else{
+					console.log('FIVE-2 Now Playing CTA: Get Tickets')
+					show(['.vp-now-playing', '.ep-now-playing', '.ep-get-ticket', '.ep-get-ticket_hover'])
+				}
+			}
+			
+			function addClickEvent(){
+
+				addEvent(_('#bg'),'click', onClick);
+				addEvent(_('#cta_holder'),'click', onClick);
+			}
+			function onClick(){
+				window.open(window.clickTag);
+				clearInterval(mInterval)
+				vid.pause();
+				source.setAttribute('src',videoSource[1]);
+				if(VIDEO_IS_PLAYING){
+					onVideoComplete();
+				} 
+				FPLAY = true;
+				show('.btn_replay')
+			}
+			function addEvents(){
+
+				vid.addEventListener('ended', onVideoComplete, false);		
+				vid.addEventListener('play', onVideoPlay, false);	
+				vid.addEventListener('timeupdate', onTimeUpdate, false);	
+			
+				TweenMax.set('.sound-on',{display:'none'})
+				TweenMax.set('.btn_replay',{display:'none'})
+
+				addEvent(_('.btn_sound'),'click', onSoundClick)
+				addEvent(_('.btn_replay'),'click', onReplayClick)
+				
+			}
+
+			function onTimeUpdate() {
+				if(!FPLAY){
+					if(this.currentTime >= 8.1) {
+						console.log('Video Stop this time')
+						onVideoComplete();
+						vid.pause();
+					}
+				}
+			}
+
+			function onCtaOver(){
+				removeEvent(_('#cta_holder'),'mouseenter', onCtaOver);
+
+				//CTA ANIMATION SET 1 ==================
+				// TweenMax.to('#cta_holder',0.01,{clip:"rect (0px 0px 31px 0px)"})
+				// TweenMax.set('.cta-text',{opacity:0})
+				// TweenMax.to('.cta-text', 0.4,{opacity:1,ease:Power2.easeInOut}, "ctaAnim")
+				// TweenMax.to('#cta_holder',0.5,{clip:"rect (0px 201px 31px 0px)",ease:Power2.easeInOut, onComplete:function(){
+				// 	addEvent(_('#cta_holder'),'mouseenter', onCtaOver);
+				// }}, "ctaAnim")
+
+				//CTA ANIMATION SET 2 ==================
+				TweenMax.to('.hoverItems', 0.2,{opacity:1,ease:Power0.easeOut}, "ctaAnim")
+				TweenMax.to('.restItems', 0.2, {opacity:0,ease:Power0.easeOut, onComplete:function(){
+					addEvent(_('#cta_holder'),'mouseenter', onCtaOver);
+				}}, "ctaAnim")
+				TweenMax.set('#glitch_1', {y:0})
+
+				tlOver
+					.add('glitch')
+					.to('#glitch_1', 0.1,	{opacity:1,ease:SteppedEase.config(1)}, "glitch")
+					.to('#glitch_1', 0.1,	{opacity:0,ease:SteppedEase.config(1)}, "glitch+=0.1")
+					.to('#glitch_1', 0.1,	{y:-40,opacity:1,ease:SteppedEase.config(1)}, "glitch+=0.2")
+					.to('#glitch_1', 0.1,	{opacity:0,ease:SteppedEase.config(1)}, "glitch+=0.3")
+
+					.fromTo('#glitch_2', 0.1,	{opacity:0,ease:SteppedEase.config(1)}, {opacity:1,ease:SteppedEase.config(1), repeat: 1})
+					.to('#glitch_2', 0.1,	{opacity:0,ease:SteppedEase.config(1)})
+			}
+
+			function onCtaOut(){
+				TweenMax.to('.hoverItems', 0.2,{opacity:0,ease:Power0.easeOut}, "ctaAnim")
+				TweenMax.to('.restItems', 0.2, {opacity:1,ease:Power0.easeOut}, "ctaAnim")
+			}
+			// function onCtaOut(){
+			// 	TweenMax.to('#cta_holder',0.35,{scale:1, ease:Sine.easeOut})
+			// }
+			function playVideo(){
+				vid.play();
+			}
+			function onReplayOver(){
+				TweenMax.to('.btn_replay',0.5,{rotation:'+=360', ease:Sine.easeInOut})
+			}
+			function onReplayClick(){
+				source.setAttribute('src',videoSource[1]);
+				vid.load();
+    			vid.play();
+    			vid.muted = false;
+				TweenMax.set('.sound-off',{display:'none'});
+				TweenMax.set('.sound-on',{display:'block'})
+				showFrame2();
+			}
+			function onSoundClick(){
+
+				if(!FPLAY){
+					FPLAY = true;
+					vid.pause();
+					source.setAttribute('src',videoSource[1]);
+					vid.load();
+    				vid.play();
+				}else{
+					vid.muted = !vid.muted; 
+				}
+				if(!vid.muted){
+					TweenMax.set('.sound-off',{display:'none'});
+					TweenMax.set('.sound-on',{display:'block'})
+				}else{
+					TweenMax.set('.sound-off',{display:'block'});
+					TweenMax.set('.sound-on',{display:'none'})
+				}
+			}
+			function onVideoComplete(){
+				FPLAY = true
+				VIDEO_IS_PLAYING = false;
+				TweenMax.to('#frame2',0.5,{autoAlpha:0, onComplete:showFrame1})
+				show('.btn_replay')
+				if(!HAS_PLAYED){
+					HAS_PLAYED = true;
+				}
+				
+			}
+			function onVideoPlay(){
+				VIDEO_IS_PLAYING = true;
+				TweenMax.set('#video_holder',{autoAlpha:1})
+			}
+
+			function init(){
+				
+				checkDate();
+				addEvents();
+				// TweenMax.set('#black',{x:-146});
+				TweenMax.set('.btn_replay',{display:'none'});
+				TweenMax.set('img',{position: 'absolute', rotationZ:0.01, force3D: true});
+				TweenMax.set('#container',{display:'block',onComplete:addClickEvent});
+				TweenMax.set('#bg img', {display: 'block'})
+				TweenMax.set('#glitch_1 img', {scale:1.4, display: 'none'})
+				TweenMax.set('#glitch_2 img', {display: 'none'})
+				TweenMax.set('.hoverItems', {opacity:0})
+
+				if(!HAS_PLAYED){
+					// mInterval = setInterval(showFrame2, 2000)
+				}
+				
+				showFrame2();
+			}
+			function showFrame1(){
+				TweenMax.set('#frame2,.cta',{display:'none'});
+				TweenMax.set('#frame1',{display:'block'});
+				TweenMax.set('#cta_holder',{transformOrigin:"center bottom"})
+				TweenMax.set('#image',{scale:0.84})
+				TweenMax.set('img',{force3D: true, rotation:0.01})
+				// TweenMax.set('.character-animation', {x: 0, display: 'block'})
+				TweenMax.set('#bg img', {display: 'block'})
+				TweenMax.set('#glitch_1 img, #glitch_2 img', {display: 'block'})
+				TweenMax.set('#frame1-holder,.character,.ep-title,.date1,#cta_holder,.btn_replay', {opacity: 1})
+				TweenMax.set('#glitch_1', {y:0})
+
+				if(HAS_PLAYED){
+					var t = new TimelineMax();
+					t
+					// .from("#frame1-holder",0.7,{opacity:0},'-=.2')
+					// .from("#bg",0.7,{opacity:0})
+					// .to('.character-animation', 10, {x: -4960, ease:SteppedEase.config(16), onComplete: function() {
+					// 	TweenMax.set('#bg img', {display: 'block'})
+					// 	TweenMax.set('.character-animation', {display: 'none'})
+					// }})
+					.add('glitch', "+=0.2")
+					.from('#bg', 5,	{scale:1.1,ease:Power0.easeNone}, "glitch")
+
+					//GLITCH MOVE 1
+					.to('#bg', 0.1,			{x:"+=10", y:"+=5", ease:SteppedEase.config(1)}, "glitch+=0.1")
+					.to('#bg', 0.1,			{x:"-=15", y:"-=15",ease:SteppedEase.config(1)}, "glitch+=0.2")
+					.to('#bg', 0.1,			{x:0, y:0,ease:SteppedEase.config(1)}, "glitch+=0.3")
+					
+					//GLITCH MOVE 2
+					.from('#glitch_1', 0.1,	{opacity:0,ease:SteppedEase.config(1)}, "glitch+=0.9")
+					.to('#glitch_1', 0.1,	{opacity:0,ease:SteppedEase.config(1)}, "glitch+=1.0")
+					.to('#glitch_1', 0.1,	{y:-40,opacity:1,ease:SteppedEase.config(1)}, "glitch+=1.1")
+					.to('#glitch_1', 0.1,	{opacity:0,ease:SteppedEase.config(1)}, "glitch+=1.2")
+					
+					//GLITCH MOVE 3
+					.fromTo('#glitch_2', 0.1,	{opacity:0,ease:SteppedEase.config(1)}, {opacity:1,ease:SteppedEase.config(1), repeat: 3}, "glitch+=1.8")
+					.to('#glitch_2', 0.1,	{opacity:0,ease:SteppedEase.config(1)}, "glitch+=2.2")
+
+					//GLITCH MOVE 4
+					// .to('#bg', 0.1,			{y:"+=10",ease:SteppedEase.config(1)}, "glitch+=3")
+					// .to('#bg', 0.3,			{y:"-=5",ease:SteppedEase.config(1)}, "glitch+=3.1")
+					// .to('#bg', 0.1,			{y:"-=5",ease:SteppedEase.config(1)}, "glitch+=3.2")
+					// .to('#bg', 0.1,			{y:0,ease:SteppedEase.config(1)}, "glitch+=3.3")
+
+					//GLITCH MOVE 5
+					// .to('#bg', 0.1,			{y:"-=10",ease:SteppedEase.config(1)}, "glitch+=3.4")
+					// .to('#bg', 0.1,			{y:"+=5",ease:SteppedEase.config(1)}, "glitch+=3.5")
+					// .to('#bg', 0.1,			{y:0,ease:SteppedEase.config(1)}, "glitch+=3.6")
+
+					.add('lastFrame',"-=2")
+					.from('.character, .ep-title, .date1',0.75,{opacity:0, ease:Power0.easeNone}, "lastFrame")
+					.from('#cta_holder', 0.5, {clip:"rect (0px 0px 36px 0px)",ease:Power2.easeInOut, onStart: function() {
+						TweenMax.set('.cta', {display: 'block'})
+					}}, "lastFrame+=.2")
+					.from('.cta-text', 0.4,{opacity:0,ease:Power2.easeInOut},"lastFrame+=.5")
+					.from('.btn_replay', 0.7, {opacity: 0}, "lastFrame")
+				}				
+			}
+			function showFrame2(){
+				clearInterval(mInterval)
+				TweenMax.set('#bg img', {display: 'none'})
+				TweenMax.set('#frame1',{display:'none'})
+				TweenMax.set('#frame2',{display:'block', autoAlpha:1})
+				
+				if(!HAS_PLAYED){
+					playVideo();
+				}
+			}
+			function show(e){
+				TweenMax.set(e,{display:'block'})
+				if(e == '.btn_replay'){
+					if(!OVER_EVENTS){
+						OVER_EVENTS = true;
+						addEvent(_('.btn_replay'),'mouseenter', onReplayOver);	
+						addEvent(_('#container'),'mouseenter', onCtaOver);
+						addEvent(_('#container'),'mouseleave', onCtaOut);
+					}
+				}
+			}
+			function shuffle(r){for(var f,n,o=r.length;0!==o;)n=Math.floor(Math.random()*o),o-=1,f=r[o],r[o]=r[n],r[n]=f;return r}
+			startPreload('sprite.png',init);
+		})();
+    </script>
+</body>
+</html>

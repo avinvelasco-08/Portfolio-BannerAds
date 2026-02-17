@@ -1,0 +1,42 @@
+/*@font-face {
+	font-family: 'Berthold';
+	src: url('fonts/Akzidenz-grotesk-be-bold-condensed.ttf');
+	src: local('☺'), url('fonts/Akzidenz-grotesk-be-bold-condensed.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*/
+@font-face {
+	font-family: 'Berthold';
+	src: url('fonts/Akzidenz-grotesk-be-bold-condensed.woff');
+	src: local('☺'), url('fonts/Akzidenz-grotesk-be-bold-condensed.woff') format('woff'), url('fonts/Akzidenz-grotesk-be-bold-condensed.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'MacHand';
+	src: url('fonts/MacHand-BoldScribble.ttf');
+	src: local('☺'), url('fonts/MacHand-BoldScribble.ttf') format('truetype'), url('fonts/MacHand-BoldScribble.ttf') format('OpenType');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DINNextLTPro';
+	src: url('fonts/DINNextLTPro-BoldCondensed.ttf');
+	src: local('☺'), url('fonts/DINNextLTPro-BoldCondensed.ttf') format('truetype'), url('fonts/DINNextLTPro-BoldCondensed.otf') format('OpenType');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: url('fonts/HelveticaNeue Medium.ttf');
+	src: local('☺'), url('fonts/HelveticaNeue Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+

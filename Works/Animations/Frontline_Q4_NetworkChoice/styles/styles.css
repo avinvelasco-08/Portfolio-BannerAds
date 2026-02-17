@@ -1,0 +1,780 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+@font-face {
+  font-family: 'VerizonNHGeDSRegular';
+  src: url('https://scache1.vzw.com/globalnav/fonts/verizon-nhg/VerizonNHGeDS-Regular.woff2') format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'VerizonNHGeDSBold';
+  src: url('https://scache2.vzw.com/globalnav/fonts/verizon-nhg/VerizonNHGeDS-Bold.woff2') format('woff2');
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  /*    -webkit-backface-visibility: hidden;*/
+  /* Safari */
+  /*    backface-visibility: hidden;*/
+}
+
+html,
+body {
+  position: absolute;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  background: #FFFFFF;
+  width: 100%;
+  height: 100%;
+
+  /* below improves consistancey of font rendering across browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+
+  /* below stops FireFox rendering copy too heavily */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --ad-width: 0;
+  --ad-height: 0;
+  --cta-arrow-width: 9px;
+  --headline-font: 34px;
+}
+
+/* ------------ Generic ----------- */
+.frame {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.heading-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#main {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: var(--ad-width);
+  height: var(--ad-height);
+  background-color: #fff;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* ------------ DOM ----------- */
+#headingFrame {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 0 0 0;
+}
+
+#headingContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#footerContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 16px 0 16px;
+}
+
+/* ------------ Images ----------- */
+.media-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------ Text fields ----------- */
+#main,
+.heading,
+.eyebrow,
+.exposed-legal {
+  position: relative;
+  font-family: "VerizonNHGeDSRegular";
+  color: #FFF;
+}
+
+b {
+  font-family: VerizonNHGeDSBold;
+  font-weight: 400;
+}
+
+.exit-click {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.banner-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d8dada;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Tooltip Properties */
+
+#underlinedText {
+  position: relative;
+}
+
+.hotspot {
+  position: absolute;
+  background: transparent;
+  /* Red semi-transparent background for visibility */
+  cursor: pointer;
+  z-index: 2;
+}
+
+.arrowTip-container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 0.35px;
+  left: 0;
+  width: 9px;
+  height: 6px;
+  z-index: 3;
+}
+
+.tooltip-container {
+  position: absolute;
+  width: 146px;
+  height: 79px;
+  border: solid 0.5px #000;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 12px 25px 10px 14px;
+  z-index: 2;
+}
+
+.disclaimer {
+  font-family: VerizonNHGeDSRegular;
+  font-size: 8px;
+  line-height: 1.125em;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  box-sizing: content-box;
+}
+
+.disclaimer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 44px;
+  top: 23px;
+  right: 11px;
+  background: rgb(246, 246, 246);
+}
+
+.close-btn {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 9px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.xclose {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-thumb {
+  position: relative;
+  width: 100%;
+  background: rgb(218, 216, 216);
+  cursor: pointer;
+}
+
+/*COLORS*/
+.red,
+red {
+  color: #EE001E;
+}
+
+.coral,
+coral {
+  color: #FF281E;
+}
+
+.yellow,
+yellow {
+  color: #F8FF3C;
+}
+
+.stone,
+stone {
+  color: #F6F0E2;
+}
+
+.white,
+white {
+  color: #FFFFFF;
+}
+
+.black,
+black {
+  color: #000000;
+}
+
+/*Footer*/
+.footer-container,
+.lockup-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.footer-container {
+  min-height: 30px;
+}
+
+.lockup-container {
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.logo-container,
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.logo-container {
+  height: 104%;
+  margin-left: -0.5px;
+}
+
+/*CUSTOMIZABLE*/
+#heading1,
+#heading2,
+#heading3,
+#heading4,
+#heading5,
+#heading6,
+#heading7,
+#heading8,
+#heading9,
+#endframe {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.heading,
+.subheading,
+.cta-text,
+.eyebrow-text {
+  font-family: VerizonNHGeDSBold;
+}
+
+.cta-text {
+  font-family: VerizonNHGeDSBold;
+}
+
+.logo,
+.arrow-fill {
+  fill: #ffffff;
+}
+
+.eyebrow-text {
+  font-size: 16px;
+}
+
+.heading {
+  line-height: 1em;
+  color: #ffffff;
+  will-change: transform;
+}
+
+#h1Heading {
+  font-size: 46px;
+  top: 23.5px;
+  left: 0px;
+}
+#h1Heading .splitted-container:nth-child(1) {
+  left: -4px;
+}
+#h2NumberCont {
+  font-size: 78px;
+  height: 84px;
+  top: 21.5px;
+  display: flex;
+  overflow: hidden;
+}
+
+#h2Heading {
+  font-size: 26px;
+  top: 21px;
+  left: 2px;
+}
+
+#h3Heading {
+  font-size: 70px;
+  top: 9px;
+  left: 0px;
+}
+
+#h4Heading {
+  font-size: 46px;
+  color: #F8FF3C;
+  top: 10.5px;
+  left: 0px;
+  letter-spacing: -0.005em;
+}
+
+#h5Heading {
+  font-size: 42px;
+  top: 8px;
+  left: -0.5px;
+}
+
+#h6Heading {
+  font-size: 42px;
+  top: 7px;
+  left: -0.5px;
+}
+
+#h7Heading {
+  font-size: 32px;
+  top: 0.5px;
+  left: 0.5px;
+  text-align: left;
+}
+#h7LegalSubhead {
+  position: relative;
+  top: 9px;
+  left: -9px;
+  text-align: left;
+}
+
+.subheading {
+  font-size: 16px;
+}
+
+.legal-subheading {
+  font-size: 8px;
+  color: #ffffff;
+}
+
+#logoTop {
+  width: 83px;
+  height: 19px;
+  top: 0px;
+  left: 0px;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+#logoBottom {
+  width: 83px;
+  height: 11px;
+  position: relative;
+  top: 1px;
+  left: 1px;
+  will-change: transform;
+}
+
+#logoBottomMask {
+  height: 11px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  will-change: transform;
+}
+#arrowOnly {
+  position: absolute;
+  bottom: -4.5px;
+  right: -1px;
+}
+
+/*------------------ SLANTED RECTANGLE ------------------------*/
+.slantedRect-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.slantedRect {
+  position: absolute;
+  background: linear-gradient(194.17deg, #F50A23 4.63%, #E10014 52.98%);
+  transform: skewX(-21deg);
+
+  box-shadow:
+    7px 8px 11px rgb(132, 14, 27, 0.6),
+    17px 13px 12px rgb(132, 14, 17, 0.6),
+    24px 12px 23px rgb(132, 14, 07, 0.6)
+}
+
+.slantedRect4 {
+  position: absolute;
+  background: linear-gradient(194.17deg, #F50A23 4.63%, #E10014 52.98%);
+  transform: skewX(-21deg);
+
+  box-shadow:
+
+    7px 8px 11px rgb(132, 14, 27, 0.6),
+    17px 13px 12px rgb(132, 14, 17, 0.6),
+    24px 12px 23px rgb(132, 14, 07, 0.6)
+    /* 12px 20px 25px -1px rgba(148, 22, 37, 0.6),
+    17px 17px 25px -2px rgb(132,14,17,0.6),
+    15px 15px 25px -2px rgb(132,14,07,0.6) */
+}
+
+/* F1 AND 2 SLANTED RECT */
+.slantedRect1,
+.slantedRect2,
+.slantedRect3 {
+  width: 30px;
+  height: 96px;
+}
+.slantedRect4 {
+  width: 64px;
+  height: 205px;
+}
+
+#gridF1-top {
+  right: -167px;
+  top: -48px;
+}
+#gridF2-bot {
+  left: 137px;
+  bottom: -51px;
+}
+
+#gridF1-top-1,
+#gridF7-top-1 {
+  top: 0px;
+  left: 0px;
+}
+#gridF1-top-2,
+#gridF7-top-2 {
+  top: 0px;
+  left: 43px;
+}
+#gridF1-top-3,
+#gridF7-top-3 {
+  top: 0px;
+  left: 86px;
+}
+#gridF1-top-4,
+#gridF7-top-4 {
+  top: 0px;
+  left: 129px;
+}
+#gridF1-top-5,
+#gridF7-top-5 {
+  top: 0px;
+  left: 172px;
+}
+#gridF1-top-6,
+#gridF7-top-6 {
+  top: 0px;
+  left: 215px;
+}
+#gridF1-top-7,
+#gridF7-top-7 {
+  top: 0px;
+  left: 258px;
+}
+#gridF1-top-8,
+#gridF7-top-8 {
+  top: 0px;
+  left: 301px;
+}
+
+#gridF2-bot-1,
+#gridF7-bot-1 {
+  bottom: 0px;
+  left: 0px;
+}
+#gridF2-bot-2,
+#gridF7-bot-2 {
+  bottom: 0px;
+  left: 43px;
+}
+#gridF2-bot-3,
+#gridF7-bot-3 {
+  bottom: 0px;
+  left: 86px;
+}
+#gridF2-bot-4 {
+  bottom: 0px;
+  left: 129px;
+}
+#gridF2-bot-5 {
+  bottom: 0px;
+  left: 172px;
+}
+#gridF2-bot-6 {
+  bottom: 0px;
+  left: 215px;
+}
+#gridF2-bot-7 {
+  bottom: 0px;
+  left: 258px;
+}
+#gridF2-bot-8 {
+  bottom: 0px;
+  left: 301px;
+}
+
+/* F3 SLANTED RECT */
+#gridF3-left {
+  left: -319px;
+  top: -78px;
+}
+#gridF3-right {
+  right: -280px;
+  top: -78px;
+}
+#gridF3-left-1,
+#gridF3-right-1 {
+  bottom: 0px;
+  left: 0px;
+}
+#gridF3-left-2,
+#gridF3-right-2 {
+  bottom: 0px;
+  left: 43px;
+}
+#gridF3-left-3,
+#gridF3-right-3 {
+  bottom: 0px;
+  left: 86px;
+}
+#gridF3-left-4,
+#gridF3-right-4 {
+  bottom: 0px;
+  left: 129px;
+}
+#gridF3-left-5,
+#gridF3-right-5 {
+  bottom: 0px;
+  left: 172px;
+}
+#gridF3-left-6,
+#gridF3-right-6 {
+  bottom: 0px;
+  left: 215px;
+}
+#gridF3-left-7,
+#gridF3-right-7 {
+  bottom: 0px;
+  left: 258px;
+}
+#gridF3-left-8,
+#gridF3-right-8 {
+  bottom: 0px;
+  left: 301px;
+}
+
+#gridF4 {
+  right: -280px;
+  top: -23px;
+}
+#gridF4-1 {
+  bottom: 0px;
+  left: 0px;
+}
+#gridF4-2 {
+  bottom: 0px;
+  left: 86px;
+}
+#gridF4-3 {
+  bottom: 0px;
+  left: 172px;
+}
+#gridF4-4 {
+  bottom: 0px;
+  left: 258px;
+}
+#gridF4-5 {
+  bottom: 0px;
+  left: 344px;
+}
+#gridF4-6 {
+  bottom: 0px;
+  left: 430px;
+}
+#gridF4-7 {
+  bottom: 0px;
+  left: 516px;
+}
+#gridF4-8 {
+  bottom: 0px;
+  left: 602px;
+}
+#gridF4-9 {
+  bottom: 0px;
+  left: 688px;
+}
+#gridF4-10 {
+  bottom: 0px;
+  left: 774px;
+}
+#gridF4-11 {
+  bottom: 0px;
+  left: 860px;
+}
+#gridF4-12 {
+  bottom: 0px;
+  left: 946px;
+}
+
+
+#gridF7-top {
+  right: 170px;
+  top: -57px;
+}
+#gridF7-bot {
+  left: 111px;
+  bottom: -56px;
+}
+
+/* F5 SLANTED RECT */
+.slantedRect5 {
+  width: 65px;
+  height: 205px;
+}
+
+#gridF1-top,
+#gridF2-bot,
+#gridF3-left,
+#gridF3-right,
+#gridF4,
+#gridF7-top,
+#gridF7-bot {
+  will-change: transform;
+}
+
+body {
+  width: 300px;
+  height: 250px;
+}

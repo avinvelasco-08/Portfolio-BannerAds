@@ -1,0 +1,850 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+@font-face {
+  font-family: 'VerizonNHGeDSRegular';
+  src: url('../fonts/VerizonNHGeDS-Regular.woff2') format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'VerizonNHGDSLight';
+  src: url('../fonts/VerizonNHGDS-Light.woff2') format('woff2');
+  font-weight: normal;
+}
+
+/* @font-face {
+    font-family: 'VerizonNHGeDSBold';
+    src: url('../fonts/VerizonNHGeDS-Bold.woff2') format('woff2');
+    font-weight: normal;
+} */
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  /*    -webkit-backface-visibility: hidden;*/
+  /* Safari */
+  /*    backface-visibility: hidden;*/
+}
+
+html,
+body {
+  position: absolute;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  background: #FFFFFF;
+  width: 100%;
+  height: 100%;
+
+  /* below improves consistancey of font rendering across browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+
+  /* below stops FireFox rendering copy too heavily */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --ad-width: 0;
+  --ad-height: 0;
+  --cta-arrow-width: 9px;
+  --headline-font: 34px;
+}
+
+/* ------------ Generic ----------- */
+.frame {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.heading-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#main {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: var(--ad-width);
+  height: var(--ad-height);
+  background-color: #F8F3E9;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* ------------ DOM ----------- */
+#headingFrame {
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 0 0 0 0;
+}
+
+#headingContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#footerContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ------------ Images ----------- */
+.media-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------ Text fields ----------- */
+#main,
+.heading,
+.eyebrow,
+.sublegal {
+  position: relative;
+  font-family: 'VerizonNHGDSLight';
+  color: #000;
+}
+
+b {
+  /* font-family: VerizonNHGeDSBold; */
+  font-weight: 400;
+}
+
+.exit-click {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #D8DADA;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Tooltip Properties */
+.hotspot {
+  position: absolute;
+  background: transparent;
+  /* Red semi-transparent background for visibility */
+  cursor: pointer;
+  z-index: 2;
+}
+
+.arrowTip-container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 0.35px;
+  left: 0;
+  width: 9px;
+  height: 6px;
+  z-index: 3;
+}
+
+.tooltip-container {
+  position: absolute;
+  width: 146px;
+  height: 79px;
+  border: solid 0.5px #000;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 12px 25px 10px 14px;
+  z-index: 1;
+}
+
+.disclaimer {
+  font-family: VerizonNHGDSLight;
+  font-size: 8px;
+  line-height: 1.125em;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  box-sizing: content-box;
+}
+
+.disclaimer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 44px;
+  top: 23px;
+  right: 11px;
+  background: rgb(246, 246, 246);
+}
+
+.close-btn {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 9px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.xclose {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-thumb {
+  position: relative;
+  width: 100%;
+  background: rgb(218, 216, 216);
+  cursor: pointer;
+}
+
+/*COLORS*/
+.red,
+red {
+  color: #E10014;
+}
+
+.vzn_red_svg {
+  fill: #E10014;
+}
+
+/* .coral, coral{
+    color: #FF281E;
+} */
+.yellow,
+yellow {
+  color: #F5FF1E;
+}
+
+.stone,
+stone {
+  color: #F8F3E9;
+}
+
+.white,
+white {
+  color: #FFFFFF;
+}
+
+.black,
+black {
+  color: #000000;
+}
+
+#ctaWithText {
+  width: 86px;
+}
+
+/*Footer*/
+.footer-container,
+.lockup-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.footer-container {
+  max-height: 85px;
+}
+
+.lockup-container {
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.legal-container {
+  position: relative;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  display: none;
+}
+
+.logo-container,
+.cta-container {
+  display: flex;
+}
+
+.cta-container {
+  display: flex;
+}
+
+.sublegal {
+  font-size: 8px;
+  color: #000000;
+}
+
+.cta-container {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.cta-mask {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.cta-mask-arrow {
+  position: absolute;
+  width: 87px;
+}
+
+.cta-text {
+  position: relative;
+  white-space: nowrap;
+  /*  padding-right: calc(var(--cta-arrow-width));*/
+}
+
+cta-abs {
+  position: absolute;
+  display: block;
+  min-width: 9px;
+  width: 9px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#ctaArrow {
+  opacity: 1;
+  top: 1.8px;
+  position: relative;
+}
+
+
+/* LOGO AND CTA SVG DYNAMIC SIZE */
+
+.logo,
+.arrow-fill {
+  fill: #F8F3E9;
+}
+
+#ctaArrowOnly {
+  display: flex;
+}
+
+#ctaArrowOnly {
+  overflow: hidden;
+  display: block;
+  width: 26px;
+  margin-top: -5px;
+  margin-right: 15px;
+  opacity: 0;
+}
+
+/*CUSTOMIZABLE*/
+#heading1,
+#heading2,
+#heading3,
+#heading4,
+#heading5,
+#heading6,
+#heading7,
+#heading8,
+#heading9,
+#endframe {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading,
+.subheading,
+.cta-text,
+.eyebrow {
+  font-family: VerizonNHGDSLight;
+}
+
+
+.arrow-fill {
+  fill: #F8F3E9;
+}
+
+.heading {
+  font-size: 28px;
+  line-height: 100%;
+  text-align: center;
+}
+
+.subheading {
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.eyebrow {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.logo {
+  width: 81px;
+  height: auto;
+  color: #E10014;
+  position: relative;
+  bottom: 7px;
+  will-change: transform;
+  perspective: 1000px;
+  left: 15px;
+}
+.logo-fill {
+  fill: #E10014;
+  /* fill: #ffffff; */
+}
+
+#legalContainerInner .sublegal {
+  text-align: right;
+  position: absolute;
+  top: -9px;
+}
+
+#legalContainerWide.legal-container {
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+}
+
+#legalContainerWide.legal-container:not(:empty) {
+  margin-bottom: -20px;
+}
+
+.legal-container.legal-inner {
+  margin-top: 0px;
+}
+
+.disclaimer {
+  color: #000;
+}
+
+#deviceFrame {
+  opacity: 0;
+  visibility: visible;
+  text-align: center;
+}
+
+#deviceFrame img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: auto;
+}
+
+.cta-mask {
+  width: 53% !important;
+}
+
+#heading4,
+#endframe {
+  opacity: 0;
+}
+
+/* ------------- HEADLINES ---------------------------------------- */
+#h1Heading div,
+#h2Heading div,
+#h3Heading div {
+  will-change: transform;
+  perspective: 1000px;
+}
+
+#h1Heading,
+#h2Heading,
+#h3Heading {
+  margin-top: 31px;
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.splitted-chars {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+#h1Heading {
+  color: #E10014;
+  top: -5px;
+}
+#h1Heading .splitted-container:first-child {
+  left: -2px;
+}
+
+/* ------------- ELLIPSE ---------------------------------------- */
+#ellipseWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ellipse {
+  position: absolute;
+  background-color: #000000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  will-change: transform;
+  will-change: box-shadow;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+#ellipse1 {
+  top: -7px;
+  left: 138px;
+}
+#ellipse2 {
+  top: 32px;
+  left: 217px;
+}
+#ellipse3 {
+  top: 114px;
+  left: 249px;
+}
+#ellipse4 {
+  top: 190px;
+  left: 212px;
+}
+#ellipse5 {
+  top: 229px;
+  left: 138px;
+}
+#ellipse6 {
+  top: 202px;
+  left: 47px;
+}
+#ellipse7 {
+  top: 113px;
+  left: 11px;
+}
+#ellipse8 {
+  top: 20px;
+  left: 47px;
+}
+
+#h2Heading {
+  color: #F8F3E9;
+  font-size: 64px;
+  top: -11px;
+  left: 1px;
+}
+#h2HeadingCirc1Wrapper1 {
+  width: 300px;
+  height: 250px;
+  position: absolute;
+}
+#h2HeadingCirc {
+  position: absolute;
+  background-color: #E10014;
+  top: 24px;
+  left: 63px;
+  width: 173px;
+  height: 173px;
+  border-radius: 50%;
+  border: 3px solid #E10014;
+}
+
+#h2CircOutline1 {
+  position: absolute;
+  left: 44px;
+  top: 5px;
+}
+#h2CircOutline2 {
+  position: absolute;
+  top: -5px;
+  left: 34px;
+}
+
+#h3CircOutline {
+  position: absolute;
+  left: 15px;
+  top: -14px;
+}
+#h3Heading {
+  color: #F8F3E9;
+  font-size: 28px;
+  top: -6px;
+  left: 0px;
+  will-change: transform;
+  perspective: 1000px;
+}
+.liner {
+  position: absolute;
+  width: 74px;
+  height: 1px;
+}
+#h3HeadingLiner1 {
+  background-color: #F5FF1E;
+  top: 45px;
+  left: 226px;
+}
+#h3HeadingLiner2 {
+  background-color: #F5FF1E;
+  top: 175px;
+  left: 0px;
+}
+
+#h4Heading {
+  font-family: 'VerizonNHGeDSRegular';
+  position: absolute;
+  color: transparent;
+  font-size: 68px;
+  top: 75px;
+  will-change: transform;
+  perspective: 1000px;
+  -webkit-text-stroke-color: #000000;
+  -webkit-text-stroke-width: 1.13px;
+  left: 15px;
+  letter-spacing: -1.1px;
+}
+#h4HeadingLiner1 {
+  background-color: #E10014;
+  top: 33px;
+  left: 154px;
+  width: 147px;
+}
+#h4HeadingLiner2 {
+  background-color: #E10014;
+  top: 48px;
+  left: 154px;
+  width: 147px;
+}
+#h4HeadingLiner3 {
+  background-color: #E10014;
+  top: 165px;
+  left: 0px;
+  width: 147px;
+}
+#h4HeadingLiner4 {
+  background-color: #E10014;
+  top: 180px;
+  left: 0px;
+  width: 147px;
+}
+#h5Heading {
+  top: 11px;
+}
+#h3ShapeWrapper,
+#h4ShapeWrapper,
+#h5ShapeWrapper,
+#h6ShapeWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#h5HeadingLiner1 {
+  background-color: #E10014;
+  top: 55px;
+  left: 110px;
+  width: 154px;
+}
+#h5HeadingLiner2 {
+  background-color: #E10014;
+  width: 132px;
+  left: -56px;
+  top: 54px;
+}
+#h5HeadingLiner3 {
+  background-color: #E10014;
+  top: 39px;
+  left: -78px;
+  width: 154px;
+}
+#h5HeadingCirc1 {
+  position: absolute;
+  top: 47px;
+  left: 85px;
+  width: 16px;
+  height: 16px;
+  background-color: #E10014;
+  border-radius: 50%;
+}
+
+#h6HeadingLiner1 {
+  background-color: #E10014;
+  top: 194px;
+  left: 30px;
+  width: 147px;
+}
+#h6HeadingLiner2 {
+  background-color: #E10014;
+  left: 211px;
+  top: 193px;
+  width: 132px;
+}
+#h6HeadingLiner3 {
+  background-color: #E10014;
+  top: 178px;
+  left: 211px;
+  width: 154px;
+}
+#h6HeadingCirc1 {
+  position: absolute;
+  top: 186px;
+  left: 186px;
+  width: 16px;
+  height: 16px;
+  background-color: #E10014;
+  border-radius: 50%;
+}
+#h6Heading {
+  top: 11px;
+}
+#endframeRect {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  background-color: #E10014;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+#endFrameHeading {
+  margin-top: 20px;
+  color: #FFFFFF;
+}
+
+#rectWrapper,
+#rectangleWrapper {
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  top: -14px;
+  left: 0px;
+}
+.rectBg {
+  position: absolute;
+  width: 300px;
+  height: 125px;
+}
+
+body {
+  width: 300px;
+  height: 250px;
+}
+
+body {
+  width: 300px;
+  height: 250px;
+}

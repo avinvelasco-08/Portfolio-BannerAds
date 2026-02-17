@@ -1,0 +1,554 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+@font-face {
+  font-family: 'VerizonNHGeDSRegular';
+  src: url('../fonts/VerizonNHGeDS-Regular.woff2') format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'VerizonNHGeDSBold';
+  src: url('../fonts/VerizonNHGeDS-Bold.woff2') format('woff2');
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+html,
+body {
+  position: absolute;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  background: #FFFFFF;
+  width: 100%;
+  height: 100%;
+
+  /* below improves consistancey of font rendering across browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+
+  /* below stops FireFox rendering copy too heavily */
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --ad-width: 0;
+  --ad-height: 0;
+}
+/* ------------ Generic ----------- */
+.frame {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  perspective: 1000px;
+}
+
+.heading-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#main {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: var(--ad-width);
+  height: var(--ad-height);
+  background-color: #F3EDE0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* ------------ DOM ----------- */
+#headingFrame {
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 0 15px 14px 15px;
+}
+
+#headingContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+#heading1,
+#heading2,
+#heading3,
+#heading4,
+#heading5,
+#heading6,
+#heading7,
+#heading8,
+#heading9 {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ------------ Images ----------- */
+.media-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#vlogo {
+  position: absolute;
+  width: 29px;
+  top: 31px;
+  left: -1px;
+  display: flex;
+
+}
+
+#lines {
+  position: absolute;
+  top: -90px;
+  left: -158px;
+  opacity: 0;
+}
+
+/* ------------ Text fields ----------- */
+.heading {
+  position: relative;
+  font-family: 'VerizonNHGeDSRegular';
+  color: #000000;
+  font-size: 26px;
+  text-align: center;
+}
+
+.legal-subheading {
+  position: relative;
+  font-family: 'VerizonNHGeDSRegular';
+  color: #000000;
+  font-size: 8px;
+  line-height: 1.1em;
+  text-align: left;
+}
+
+#heading1 {
+  position: absolute;
+  display: block;
+  width: 276px;
+  height: 33px;
+  top: 105px;
+  left: 69px;
+  transform-origin: 100% 50%;
+}
+
+#heading1 .heading {
+  position: absolute;
+  transform-origin: right center;
+  width: 276px;
+  text-align: left;
+  opacity: 0;
+}
+
+#f1Heading1 {
+  rotate: 73deg;
+  top: 52px;
+  left: 1px;
+}
+
+#f1Heading2 {
+  rotate: 45deg;
+  top: 19px;
+  left: 4px;
+}
+
+#f1Heading3 {
+  rotate: 22deg;
+  top: 17px;
+  left: 24px;
+}
+
+#f1Heading4 {}
+
+#f1Heading5 {
+  rotate: -18deg;
+  top: -6px;
+  left: 15px;
+}
+
+#f1Heading6 {
+  rotate: -38deg;
+  top: 1px;
+  left: -7px;
+}
+
+#f1Heading7 {
+  rotate: -63deg;
+  top: -21px;
+  left: -11px;
+}
+
+#f1Heading8 {
+  rotate: -80deg;
+  top: 3px;
+  left: -17px;
+}
+
+#f1Heading9 {
+  rotate: -100deg;
+  top: -11px;
+  left: -19px;
+}
+
+#heading3 .heading {
+  color: #F3EDE0;
+  font-size: 34px;
+  line-height: 1em;
+  text-align: left;
+  left: -28px;
+  top: 23px;
+}
+#heading4 .heading {
+  color: #000000;
+  font-size: 34px;
+  line-height: 1em;
+  text-align: left;
+  left: -14px;
+  top: -15px;
+}
+#f4Heading .splitted-container:nth-child(2) {
+  color: #F50A23;
+}
+#f4LegalSubheading {
+  top: 74px;
+  left: -17px;
+}
+#heading5 .heading {
+  color: #000000;
+  font-size: 34px;
+  line-height: 1em;
+  text-align: left;
+  top: -21px;
+  left: -24px;
+}
+#f5Heading .splitted-container:nth-child(3) {
+  color: #F50A23;
+}
+#f5Subheading {
+  top: -11px;
+  left: -80px;
+}
+#f5LegalSubheading {
+  left: -9px;
+  top: 69px;
+}
+
+b {
+  font-family: VerizonNHGeDSBold;
+  font-weight: 400;
+}
+
+.exit-click {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #D8DADA;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Tooltip Properties */
+.hotspot {
+  position: absolute;
+  background: transparent;
+  /* Red semi-transparent background for visibility */
+  cursor: pointer;
+  z-index: 2;
+}
+
+.arrowTip-container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 5px;
+  z-index: 3;
+}
+.tooltip-container {
+  position: absolute;
+  width: 146px;
+  height: 79px;
+  border: solid 0.5px #000;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 12px 25px 10px 14px;
+  z-index: 1;
+}
+
+.disclaimer {
+  font-family: VerizonNHGeDSRegular;
+  font-size: 8px;
+  line-height: 1.125em;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  box-sizing: content-box;
+}
+
+.disclaimer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 44px;
+  top: 23px;
+  right: 11px;
+  background: rgb(246, 246, 246);
+}
+
+.close-btn {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 9px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.xclose {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-thumb {
+  position: relative;
+  width: 100%;
+  background: rgb(218, 216, 216);
+  cursor: pointer;
+}
+
+.device {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.footer-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-height: 77px;
+  top: -27px;
+}
+.lockup-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#footerContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.logo {
+  width: 81px;
+  height: auto;
+  fill: #F6F0E2;
+}
+#businessLogo {
+  width: 165px;
+  height: 31px;
+  overflow: hidden;
+}
+#LogoMask1A,
+#LogoMask1B {
+  width: inherit;
+  height: 19px;
+  overflow: hidden;
+  top: 1px;
+}
+#LogoMask1A {
+  position: relative;
+  left: 0px;
+  width: 0px;
+}
+
+#LogoMask2A,
+#LogoMask2B {
+  width: inherit;
+  height: 16px;
+  overflow: hidden;
+  bottom: -3px;
+  position: absolute;
+  left: 28px;
+}
+#LogoMask2A {
+  bottom: -2.5px;
+}
+
+#slogocover {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 16px;
+  width: 100%;
+  background-color: #F3EDE0;
+  opacity: 0;
+}
+#coverTop {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 34px;
+  width: 50%;
+  background-color: #F3EDE0;
+  opacity: 1;
+}
+#BottomLogoA {
+  bottom: 1px;
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+}
+
+#ctaArrowOnly {
+  opacity: 0;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+#ctaMask {
+  overflow: none;
+  position: relative;
+  top: 5px;
+  left: 1.5px;
+}
+#logoContainer {
+  margin-left: -6px;
+}
+body {
+  width: 300px;
+  height: 250px;
+}

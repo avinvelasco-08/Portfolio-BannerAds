@@ -1,0 +1,898 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+@font-face {
+  font-family: "VerizonNHGeDSRegular";
+  src: url("../fonts/VerizonNHGeDS-Regular.woff2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "VerizonNHGeDSBold";
+  src: url("../fonts/VerizonNHGeDS-Bold.woff2") format("woff2");
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+html,
+body {
+  position: absolute;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  font-family: "VerizonNHGeDSRegular";
+  /* below improves consistancey of font rendering across browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+
+  /* below stops FireFox rendering copy too heavily */
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --ad-width: 0;
+  --ad-height: 0;
+}
+/* ------------ Generic ----------- */
+.abs {
+  position: absolute;
+}
+.frame {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  perspective: 1000px;
+}
+
+.heading-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 5% 5% 22%;
+}
+
+.cta-container {
+  position: relative;
+  display: flex;
+}
+b {
+  font-family: VerizonNHGeDSBold;
+  font-weight: 400;
+}
+/*COLORS*/
+.red,
+red {
+  color: #ee001e;
+}
+.vzn_red_svg {
+  fill: #ee001e;
+}
+.coral,
+coral {
+  color: #ff281e;
+}
+.yellow,
+yellow {
+  color: #f8ff3c;
+}
+.stone,
+stone {
+  color: #f6f0e2;
+}
+.white,
+white {
+  color: #ffffff;
+}
+.black,
+black {
+  color: #000000;
+}
+
+#main {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: var(--ad-width);
+  height: var(--ad-height);
+  background-color: #ee001e;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* ------------ DOM ----------- */
+#frame3,
+#frame4 {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#headingContainer {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#devicesFrame {
+  align-items: center;
+  justify-content: center;
+}
+
+#footer {
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 4% 5%;
+}
+
+#ctaContainer {
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 0.5em;
+  overflow: hidden;
+  bottom: 1px;
+}
+
+#heading1,
+#heading2,
+#heading3,
+#heading4,
+#heading5,
+#heading6,
+#heading7,
+#heading8,
+#heading9 {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* ------------ Images ----------- */
+.img-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-device {
+  position: absolute;
+  display: flex;
+  width: 300px;
+  height: auto;
+}
+
+.verizon-logo {
+  position: relative;
+  /*width: 32vh;*/
+  width: 81.36px;
+  height: auto;
+}
+
+.carret {
+  position: relative;
+  display: block;
+  width: 8px;
+  height: auto;
+  fill: #000;
+  bottom: 0px;
+}
+
+/* ------------ Text fields ----------- */
+.verizon-bold {
+  font-family: VerizonNHGeDSBold;
+}
+.verizon-regular {
+  font-family: VerizonNHGeDSRegular;
+}
+smallFont {
+  font-size: 20px;
+  line-height: 0.9em;
+}
+#frame1 .eyebrow {
+  position: relative;
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame1 .heading {
+  position: relative;
+  color: #fff;
+  font-size: 38px;
+  line-height: 1em;
+  text-align: center;
+  white-space: pre;
+}
+
+#frame1 .sub-heading {
+  position: relative;
+  color: #fff;
+  font-size: 8px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame1 .sub-legal {
+  position: relative;
+  color: #fff;
+  font-size: 8px;
+  text-align: center;
+  line-height: 0.9em;
+  top: 27px;
+  opacity: 0;
+}
+#f1Heading .splitted-container1 {
+  top: 10px;
+  left: 0px;
+  letter-spacing: 0.5px;
+}
+#f1Heading .splitted-container2 {
+  top: 11px;
+  left: 0px;
+  letter-spacing: 0.4px;
+}
+#f1Heading .splitted-container3 {
+  top: 26px;
+  left: -1px;
+
+}
+#f1Heading .splitted-container4 {
+  top: 25px;
+  left: -1px;
+
+}
+
+#frame5 .heading {
+  position: relative;
+  color: #fff;
+  font-size: 36px;
+  line-height: 0.97em;
+  text-align: center;
+  white-space: pre;
+}
+
+#frame5 .heading yellow {
+  letter-spacing: -0.01em;
+}
+
+#frame5 .heading {
+  margin-top: -40px;
+}
+
+#f5Heading .splitted-container1 {
+  top: 8.5px;
+  left: -.5px;
+}
+#f5Heading .splitted-container2 {
+  top: 10px;
+  left: 0px;
+
+}
+
+
+
+
+#f5Heading .splitted-container3,
+#f5Heading .splitted-container4 {
+  font-size: 35px;
+  top: 20px;
+  left: -1px;
+}
+#f5Heading .splitted-container3 {
+  top: 21px;
+}
+
+#frame5 .sub-heading {
+  position: relative;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 0.92em;
+  white-space: pre;
+  margin-top: -3px;
+  top: 14.5px;
+}
+
+#frame5 .sub-legal {
+  position: relative;
+  color: #fff;
+  font-size: 8px;
+  text-align: center;
+  line-height: 1.2em;
+  margin-top: -9px;
+  top: 17px;
+  left: 1px;
+}
+#frame2 .eyebrow {
+  position: relative;
+  color: #f6f0e2;
+  font-size: 16px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame2 .heading {
+  position: relative;
+  color: #f6f0e2;
+  font-size: 33px;
+  line-height: 0.9em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#frame2 .sub-heading {
+  position: relative;
+  color: #f6f0e2;
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame2 .sub-legal {
+  position: relative;
+  color: #f6f0e2;
+  font-size: 8px;
+  text-align: center;
+  line-height: 0.9em;
+}
+
+#frame3 .eyebrow {
+  position: relative;
+  color: #f8ff3c;
+  font-size: 24px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+  font-family: VerizonNHGeDSBold;
+  top: 3px;
+}
+
+#frame3 .heading {
+  position: relative;
+  color: #fff;
+  font-size: 41px;
+  line-height: 0em;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 6px;
+  letter-spacing: -0.015em;
+  font-family: VerizonNHGeDSBold;
+}
+
+#frame3 .sub-heading {
+  position: relative;
+  color: #f6f0e2;
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame3 .sub-legal {
+  position: absolute;
+  bottom: -14px;
+  color: #f6f0e2;
+  font-size: 8px;
+  text-align: left;
+  line-height: 1.1em;
+  margin: 0 0 28px 104px;
+  font-weight: normal;
+  /* letter-spacing: 0.25px; */
+  font-family: VerizonNHGeDSBold;
+}
+
+#f3Heading .splitted-container1 {
+  top: 14px;
+  left: 2px;
+}
+
+#f3Heading .splitted-container2 {
+  top: 14px;
+  left: 2px;
+}
+
+#f3Heading .splitted-container3 {
+  top: -1px;
+  left: 2px;
+}
+
+#f3Heading .splitted-container4 {
+  top: -1px;
+  left: 2px;
+}
+
+#frame4 .eyebrow {
+  position: relative;
+  color: #f8ff3c;
+  font-size: 23px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+  font-family: VerizonNHGeDSBold;
+  top: 8px;
+}
+
+#frame4 .heading {
+  position: relative;
+  color: #fff;
+  font-size: 47px;
+  line-height: 0em;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 0px;
+  letter-spacing: -0.013em;
+  font-family: VerizonNHGeDSBold;
+}
+
+#frame4 .sub-heading {
+  position: relative;
+  color: #f6f0e2;
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.9em;
+  white-space: pre;
+}
+
+#frame4 .sub-legal {
+  position: absolute;
+  top: 146px;
+  color: #ffffff;
+  font-size: 8px;
+  text-align: center;
+  line-height: 1.1em;
+  font-weight: normal;
+}
+
+#f4Heading .splitted-container1 {
+  top: -5px;
+  left: 4px;
+}
+
+#f4Heading .splitted-container2 {
+  top: -6px;
+  left: 3px;
+}
+
+#f4Heading .splitted-container3 {
+  top: -1px;
+  left: 2px;
+}
+
+#f4Heading .splitted-container4 {
+  top: -1px;
+  left: 2px;
+}
+
+.cta-text {
+  position: relative;
+  font-family: VerizonNHGeDSBold;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 0.9em;
+  height: 16px;
+}
+
+.exit-click {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d8dada;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Tooltip Properties */
+.hotspot {
+  position: absolute;
+  background: transparent;
+  /* Red semi-transparent background for visibility */
+  cursor: pointer;
+  z-index: 7;
+}
+
+.arrowTip-container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 6px;
+  z-index: 3;
+}
+.tooltip-container {
+  position: absolute;
+  width: 146px;
+  height: 79px;
+  border: solid 0.5px #000;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 12px 25px 10px 14px;
+  z-index: 1;
+}
+
+.disclaimer {
+  font-family: VerizonNHGeDSRegular;
+  font-size: 8px;
+  line-height: 1.125em;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  box-sizing: content-box;
+}
+
+.disclaimer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 44px;
+  top: 23px;
+  right: 11px;
+  background: rgb(246, 246, 246);
+}
+
+.close-btn {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 9px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.xclose {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-thumb {
+  position: relative;
+  width: 100%;
+  background: rgb(218, 216, 216);
+  cursor: pointer;
+}
+
+#frame3 .yellow-box,
+#frame4 .yellow-box {
+  top: 23px;
+  position: absolute;
+  width: 254px;
+  height: 176px;
+  background: #F8FF3C;
+  border-radius: 22px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+#frame3 .yellow-box::after,
+#frame4 .yellow-box::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid #000;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: #ee001e;
+  opacity: var(--afterOpacity1, 0);
+}
+
+/*headline outlined and pill*/
+
+
+.y-outlined,
+y-outlined {
+  position: absolute;
+  color: #f8ff3c;
+  /* -webkit-text-stroke: 0.6px black;
+    text-stroke: 0.6px black; */
+  top: 100%;
+  left: 50.3%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  padding: 0px 3px;
+  text-shadow: -0.6px -0.6px 0 black, 0.6px -0.6px 0 black, -0.6px 0.6px 0 black,
+    0.6px 0.6px 0 black;
+}
+
+
+
+
+.outlined {
+  position: relative;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* -webkit-text-stroke: 0.6px black;
+    text-stroke: 0.6px black; */
+  padding: 0px 3px;
+  text-shadow: -0.6px -0.6px 0 black, 0.6px -0.6px 0 black, -0.6px 0.6px 0 black,
+    0.6px 0.6px 0 black;
+}
+
+
+
+.pill {
+  position: relative;
+  padding: 0px 5px 5px 0px;
+  border: black solid 1.5px;
+  border-radius: 999px;
+  background-color: #fff;
+  color: black;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  top: 1px;
+  left: 4px;
+  width: 151.5px;
+}
+#frame5 .pill {
+  padding: 0px 2px 4px 0px;
+  width: 135px;
+}
+
+
+#f5Heading .splitted-container3 .pill {
+  width: 133px;
+}
+#f5Heading .splitted-container3 .pill b {
+  line-height: 99%;
+}
+
+.pill_end {
+  position: relative;
+  padding: 0px 5px 5px 0px;
+  border: black solid 1.5px;
+  border-radius: 999px;
+  background-color: #fff;
+  color: black;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  top: 1px;
+  left: 4px;
+  width: 150px;
+}
+.pill b {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 102%;
+  position: relative;
+  top: 1px;
+  left: 3px;
+}
+#frame5 .pill b {
+  left: 1px;
+  top: 0.5px;
+}
+.pill.yellow {
+  position: absolute;
+  top: 0px;
+  left: 52%;
+  width: 150px;
+  transform: translateX(-50%);
+  transform-origin: center center;
+  color: #f8ff3c;
+  background: #f8ff3c;
+}
+
+@supports (-webkit-hyphens: none) {
+  /* Safari-only CSS */
+  .outlined,
+  .y-outlined {
+    text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black,
+      0.5px 0.5px 0 black;
+  }
+}
+/* Firefox only CSS*/
+@supports (-moz-appearance: none) {
+  #frame3 .heading {
+    letter-spacing: -0.025em;
+  }
+  #frame4 .heading {
+    letter-spacing: -0.025em;
+  }
+}
+.outlined b,
+.y-outlined b {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 124%;
+  position: relative;
+  top: 1px;
+  left: -2px;
+}
+
+/* ICONS SVG */
+#icon-bubHeart1 {
+  top: 15px;
+  right: 16px;
+}
+#icon-plane {
+  bottom: 46px;
+  left: 12px;
+}
+
+#icon-bubHeart1 {
+  top: 21px;
+  left: 26px;
+  width: 34px;
+  height: 33px;
+}
+#icon-bubHeart2 {
+  top: 23px;
+  left: 22px;
+  width: 34px;
+  height: 33px;
+}
+
+#icon-bubLike {
+  top: 15px;
+  left: 16px;
+}
+
+#svg-Heart1 {
+  top: 15px;
+  left: 16px;
+}
+#svg-Heart2 {
+  top: 15px;
+  left: 16px;
+}
+
+#icon-phone {
+  bottom: 45px;
+  right: 46px;
+  transform-origin: 50% 50%;
+}
+.svg-phone {
+  transform-origin: 13% 13%;
+}
+
+#icon-flash {
+  bottom: 41px;
+  left: 65px;
+  overflow: visible;
+}
+#icon-bubPlane {
+  top: 8px;
+  right: 31px;
+}
+body {
+  width: 300px;
+  height: 250px;
+}
