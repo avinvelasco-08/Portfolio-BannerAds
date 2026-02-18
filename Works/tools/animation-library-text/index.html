@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Text Animations Library</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'VerizonNHGeDS-Regular';
+      src: url('https://scache1.vzw.com/globalnav/fonts/verizon-nhg/VerizonNHGeDS-Regular.woff2') format('woff2');
+      font-weight: normal;
+    }
+
+    @font-face {
+      font-family: 'VerizonNHGeDS-Bold';
+      src: url('https://scache2.vzw.com/globalnav/fonts/verizon-nhg/VerizonNHGeDS-Bold.woff2') format('woff2');
+      font-weight: normal;
+    }
+    
+    body {
+      font-family: VerizonNHGeDS-Regular, Arial, sans-serif;
+      background: #f8f8f8;
+      padding: 20px;
+    }
+   
+    .header{
+      position: relative;
+      font-family: VerizonNHGeDS-Bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 88px;
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+    .verizon-logo {
+      position: relative;
+      width: 124px;
+      height: auto;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .card {
+      position: relative;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      width: 400px;
+      height: 100px;
+      text-align: center;
+      transition: height 0.4s ease, padding 0.3s ease;
+    }
+    .card.active {
+      height: 500px;
+    }
+    .copy {
+      font-family: VerizonNHGeDS-Bold;
+      font-size: 20px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: black 1px solid;
+      overflow: hidden;
+    }
+    button {
+      background: #e00;
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .code-container {
+      position: relative;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #333;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      opacity: 1;
+    }
+    .code-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .code-wrapper.active {
+      max-height: 500px; /* More than enough for the snippet */
+      padding-top: 10px;
+    }
+    pre {
+      margin: 0;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+    /* -------------------------------- CUSTOM ---------------- */
+    [data-index="4"],[data-index="5"], [data-index="12"], [data-index="13"], [data-index="14"], [data-index="15"] {
+      padding-bottom: 60px;
+    }
+    #rotateSwitch-wrapper {
+      display: grid;
+      padding: 30px 0 30px 0;
+    }
+    #rotateSwitch1,
+    #rotateSwitch2 {
+      grid-area: 1 / 1;
+      position: relative;
+    }
+    #rotateSwitch2{
+      color:#e00
+    }
+    #hardCutRevealWordsBot, #hardCutRevealWordsTop {
+      padding: 30px 0 30px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <!-- <div id="verizonLogo" class="verizon-logo">
+    <svg viewBox="0 0 500 112" xmlns="http://www.w3.org/2000/svg"><g><path class="st0" d="M606.78 229.306h29.661v-54.187c0-12.36 7.225-21.107 17.872-21.107 10.267 0 15.591 7.227 15.591 17.495v57.8h29.661v-63.503c0-21.488-12.928-36.699-33.844-36.699-13.308 0-22.626 5.705-29.661 16.162h-.571v-13.309h-28.71v97.348zm-58.182-100.011c-30.993 0-51.716 22.246-51.716 51.527 0 29.092 20.724 51.528 51.716 51.528s51.716-22.436 51.716-51.528c0-29.282-20.724-51.527-51.716-51.527zm-.19 81.188c-14.072 0-21.485-11.787-21.485-29.661 0-18.063 7.413-29.662 21.485-29.662 14.069 0 21.865 11.598 21.865 29.662 0 17.874-7.796 29.661-21.865 29.661zM412.46 229.306h83.28v-23.385h-47.153v-.573l45.062-50.576v-22.814H412.46v23.385h45.633v.571L412.46 206.87v22.436zm-38.031 0h29.851v-97.348h-29.851v97.348zm-69.21 0h29.661v-44.68c0-20.346 12.169-29.283 30.802-26.81h.571v-25.668c-1.522-.571-3.232-.761-6.084-.761-11.598 0-19.394 5.323-26.05 16.731h-.571v-16.16h-28.329v97.348zm-54.568-18.631c-13.12 0-21.105-8.559-22.627-21.675h70.16c.19-20.918-5.325-37.65-16.923-48.107-8.174-7.605-19.014-11.789-32.703-11.789-29.279 0-49.625 22.246-49.625 51.337 0 29.28 19.394 51.716 51.527 51.716 12.169 0 21.865-3.232 29.851-8.747 8.557-5.891 14.64-14.45 16.35-23.005h-28.519c-2.851 6.465-8.746 10.27-17.491 10.27zm-1.522-60.276c10.457 0 17.682 7.798 18.823 19.205h-39.738c2.283-11.6 8.556-19.205 20.915-19.205zm125.3-53.049h29.851v26.43h-29.851V97.35z" style="fill:#f50a23" transform="matrix(.82558 0 0 .82558 -79.427 -79.452)"/><g transform="matrix(.82558 0 0 .82558 -79.427 -79.452)"><radialGradient id="a" cx="-1103.699" cy="2428.092" r="354.369" gradientTransform="matrix(.0495 -.1371 .1483 .0536 -145.643 -68.868)" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:#f5ff1e"/><stop offset=".257" style="stop-color:#f5ff1e"/><stop offset=".266" style="stop-color:#f5fa1e"/><stop offset=".423" style="stop-color:#f5a620"/><stop offset=".562" style="stop-color:#f56321"/><stop offset=".678" style="stop-color:#f53322"/><stop offset=".766" style="stop-color:#f51523"/><stop offset=".816" style="stop-color:#f50a23"/></radialGradient><path class="st1" d="m164.201 228.095-36.908-96.137H97.35l36.908 96.137c.28.733.983 1.213 1.765 1.213h29.943c-.782 0-1.485-.48-1.765-1.213z" style="fill:url(#a)"/><path class="st0" d="m137.787 228.095 36.908-96.137h29.943l-36.908 96.137a1.887 1.887 0 0 1-1.765 1.213h-29.943c.783 0 1.486-.48 1.765-1.213z" style="fill:#f50a23"/></g></g></svg>
+  </div> -->
+  <span>Text Animations Library</span>
+</div>
+<div class="container">
+  
+  <!------------------------------------- Mask Slide Up ------------------------------------------------>
+  <div class="card" data-index="0">
+    <div id="maskedSlideUp" class="copy">Masked Text<br>Slide Up</div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedLines[0], {
+    yPercent: 100,
+    clipPath: 'inset(0% 0% 100% 0%)'
+  })
+  .to(splittedLines[0], {
+    yPercent: 0,
+    stagger: 0.1,
+    delay: 0.5,
+    clipPath: 'inset(0% 0% 0% 0%)',
+    ease: "power2.out"
+  })
+          </code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!------------------------------------- Mask Slide Down ------------------------------------------------>
+  <div class="card" data-index="1">
+    <div id="maskedSlideDown" class="copy">Masked Text<br>Slide Down</div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedLines[1], {
+    yPercent: -100,
+    clipPath: 'inset(100% 0% 0% 0%)'
+  })
+  .to(splittedLines[1], {
+    yPercent: 0,
+    stagger: -0.1,
+    delay: 0.5,
+    clipPath: 'inset(0% 0% 0% 0%)',
+    ease: "power2.out"
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>
+
+  <!------------------------------------- Hard cut reveal lines Baseline ------------------------------------------------>
+  <div class="card" data-index="2">
+    <div id="hardCutRevealBase" class="copy">Hard cut reveal<br>lines from baseline</div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedLines[3], {
+    yPercent: 100,
+    opacity:0
+  })
+  .to(splittedLines[3], {
+    yPercent: 0,
+    stagger: 0.1,
+    delay: 0.5,
+    ease: "power2.out",
+    onStart:()=>{
+      gsap.set(splittedLines[3], {opacity:1, stagger: 0.1, delay:0.05})
+    }
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>    
+
+  <!------------------------------------- Hard cut reveal lines Top ------------------------------------------------>
+  <div class="card" data-index="3">
+    <div id="hardCutRevealTop" class="copy">Hard cut reveal<br>lines from top</div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedLines[4], {
+    yPercent: -100,
+    opacity:0
+  })
+  .to(splittedLines[4], {
+    yPercent: 0,
+    stagger: -0.1,
+    delay: 0.5,
+    ease: "power2.out",
+    onStart:()=>{
+      gsap.set(splittedLines[4], {opacity:1, stagger: -0.1, delay:0.05})
+    }
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>  
+
+  <!------------------------------------- Hard cut reveal words - Top ------------------------------------------------>
+  <div class="card" data-index="4">
+    <div id="hardCutRevealWordsTop" class="copy">Hard cut reveal words from top</div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedWords[1], {
+    yPercent: -200,
+    opacity:0
+  })
+  .to(splittedWords[1], {
+    duration:0.3,
+    yPercent: 0,
+    stagger: 0.1,
+    delay: 0.5,
+    ease: "power2.out",
+    onStart:()=>{
+      gsap.set(splittedWords[1], {opacity:1, stagger: 0.1, delay:0.05})
+    }
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>
+
+  <!------------------------------------- Hard cut reveal words - Bot ------------------------------------------------>
+  <div class="card" data-index="5">
+    <div id="hardCutRevealWordsBot" class="copy">Hard cut reveal words from bottom</div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedWords[2], {
+    yPercent: 200,
+    opacity:0
+  })
+  .to(splittedWords[2], {
+    duration:0.3,
+    yPercent: 0,
+    stagger: 0.06,
+    delay: 0.5,
+    ease: "power4.out",
+    onStart:()=>{
+      gsap.set(splittedWords[2], {opacity:1, stagger: 0.06, delay:0.03})
+    }
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>
+
+  <!------------------------------------- Slide in stagger - Left ------------------------------------------------>
+  <div class="card" data-index="6">
+    <div id="slideInStaggerLeft-wrapper" class="copy">
+      <div id="slideInStaggerLeft" class="">Slide in Stagger<br>from left</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set("#slideInStaggerLeft .splitted-container", {xPercent: 100})
+  .to("#slideInStaggerLeft .splitted-container", {
+    duration:1,
+    stagger: 0.2,
+    xPercent:0,
+    delay: 0.5,
+    ease: "power2.out"})
+          </code></pre>
+     </div>
+    </div>
+  </div>    
+
+  <!------------------------------------- Slide in stagger - Right ------------------------------------------------>
+  <div class="card" data-index="7">
+    <div id="slideInStaggerRight-wrapper" class="copy">
+      <div id="slideInStaggerRight" class="">Slide in Stagger<br>from right</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set("#slideInStaggerRight .splitted-container", {xPercent: -100})
+  .to("#slideInStaggerRight .splitted-container", {
+    duration:1,
+    stagger: 0.2,
+    xPercent:0,
+    delay: 0.5,
+    ease: "power2.out"})
+          </code></pre>
+     </div>
+    </div>
+  </div>  
+
+  <!------------------------------------- moving Stagger reveal ------------------------------------------------>
+  <div class="card" data-index="8">
+    <div id="movingStaggerReveal-wrapper" class="copy">
+      <div id="movingStaggerReveal" class="">moving stagger reveal</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedChars[1], {opacity:0})
+  .set("#movingStaggerReveal", {xPercent: -40})
+  .to(splittedChars[1], {
+    duration:0.001,
+    stagger: {each:-0.05, amount:-0.6},
+    opacity:1,
+    delay: 0.5,
+    ease: "power2.out"}, "movingReveal")
+  .to("#movingStaggerReveal", {
+    duration:0.6,
+    xPercent: 0,
+    delay: 0.5},"movingReveal")
+          </code></pre>
+     </div>
+    </div>
+  </div>    
+
+  <!------------------------------------- moving Stagger Hide ------------------------------------------------>
+  <div class="card" data-index="9">
+    <div id="movingStaggerHide-wrapper" class="copy">
+      <div id="movingStaggerHide" class="">moving stagger hide</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedChars[2], {opacity:1})
+  .set("#movingStaggerHide", {xPercent: 0})
+  .to(splittedChars[2], {
+    duration:0.001,
+    stagger: {each:-0.05, amount:-0.6},
+    opacity:0,
+    delay: 0.5,
+    ease: "power2.out"}, "movingHide")
+  .to("#movingStaggerHide", {
+    duration:0.6,
+    xPercent: 30,
+    delay: 0.5, onComplete:()=>{
+      gsap.set(splittedChars[2], {opacity:1,delay:0.5})
+      gsap.set("#movingStaggerHide", {xPercent: 0,delay:0.5})
+    }},"movingHide")
+          </code></pre>
+     </div>
+    </div>
+  </div>  
+    
+  <!------------------------------------- Change Color Char ------------------------------------------------>
+  <div class="card" data-index="10">
+    <div id="changeColorChar" class="copy">Change color<br>per character</div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedChars[0], {
+    color:"#000000"
+  })
+  .to(splittedChars[0], {
+    duration:0.2,
+    color:"#f50a23",
+    stagger:{each: 0.1, amount:1},
+    delay: 0.5,
+    ease: "power2.out"
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>
+
+  <!------------------------------------- Change Color Word ------------------------------------------------>
+  <div class="card" data-index="11">
+    <div id="changeColorWord" class="copy">Change color<br>per words</div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedWords[0], {
+    color:"#000000"
+  })
+  .to(splittedWords[0], {
+    duration:0.2,
+    color:"#f50a23",
+    stagger:0.2,
+    delay: 0.5,
+    ease: "power2.out"
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>
+
+  <!------------------------------------- Stomp spread ------------------------------------------------>
+  <div class="card" data-index="12">
+    <div id="stompSpread" class="copy">Stomp Spread<br>Stomp Spread<br>Stomp Spread</div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set(splittedLines[5][1], {color: "#e00", scale:1.4, opacity:0})
+  .set(splittedLines[5][0], {yPercent: 100, opacity:0})
+  .set(splittedLines[5][2], {yPercent: -100, opacity:0})
+  .to(splittedLines[5][1], {
+    duration:0.2,
+    scale: 1,
+    delay: 0.5,
+    ease: "power2.out",
+      onStart:()=>{
+        gsap.set(splittedLines[5][1], {opacity:1})
+        gsap.to(splittedLines[5][0], {duration:0.2,yPercent:0, opacity:1, ease: "power2.out", delay:0.1})
+        gsap.to(splittedLines[5][2], {duration:0.2,yPercent:0, opacity:1, ease: "power2.out", delay:0.1})
+      }
+    }
+  )
+          </code></pre>
+     </div>
+    </div>
+  </div>
+
+  <!------------------------------------- Rotate switch ------------------------------------------------>
+  <div class="card" data-index="13">
+    <div id="rotateSwitch-wrapper" class="copy">
+      <div id="rotateSwitch1" class="">Rotate...</div>
+      <div id="rotateSwitch2" class="">...switch!</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set("#rotateSwitch1", {opacity:1, rotate: 0})
+  .set("#rotateSwitch2", {opacity:0, rotate: -180})
+  .to("#rotateSwitch1", { duration:1.1, rotate:180, delay: 0.5, ease: "power4.inOut"}, "rotateAnim")
+  .to("#rotateSwitch2", { duration:1.1, rotate:0, ease: "power4.inOut", delay: 0.5},"rotateAnim")
+  .to("#rotateSwitch1", { duration:0.001, opacity:0},"rotateAnim+=1.05")
+  .to("#rotateSwitch2", { duration:0.001, opacity:1},"rotateAnim+=1.05")
+          </code></pre>
+     </div>
+    </div>
+  </div>
+
+
+  <!------------------------------------- Trail effect ------------------------------------------------>
+  <div class="card" data-index="14">
+    <div id="trailEffect-wrapper" class="copy">
+      <div id="trailEffect" class="">TRAIL EFFECT<br>TRAIL EFFECT<br>TRAIL EFFECT</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set("#trailEffect .splitted-container", {opacity:0, color:"#000"})
+  .to("#trailEffect .splitted-container", {
+    duration:0.001,
+    opacity: 1,
+    delay: 0.5,
+    ease: "none",
+    stagger:0.2
+  }, "trailAnim")
+  .to("#trailEffect .splitted-container", {
+    duration:0.001,
+    color:"#DBDBDB",
+    delay: 0.5,
+    ease: "none",
+    stagger:0.2
+  }, "trailAnim+=0.2")
+          </code></pre>
+     </div>
+    </div>
+  </div>
+
+  <!------------------------------------- Sequential Highlight ------------------------------------------------>
+  <div class="card" data-index="15">
+    <div id="seqHighlight-wrapper" class="copy">
+      <div id="seqHighlight" class="">SEQUENTIAL HIGHLIGHT<br>SEQUENTIAL HIGHLIGHT<br>SEQUENTIAL HIGHLIGHT</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set("#seqHighlight .splitted-container", {color:"#000"})
+  .to("#seqHighlight .splitted-container", {
+    duration:0.001,
+    delay: 0.5,
+    color: "#e00",
+    stagger: {
+      each: 0.2,
+      yoyo: true,
+      repeat: 1,
+      repeatDelay: 0.2},
+    ease: "none"
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>
+  
+  <!------------------------------------- From Scale Up ------------------------------------------------>
+  <div class="card" data-index="16">
+    <div id="fromScaleUp-wrapper" class="copy">
+      <div id="fromScaleUp" class="">From<br>Scale Up</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set("#fromScaleUp", {
+    scale:2,
+    opacity:0
+  })
+  .to("#fromScaleUp", {
+    duration:0.2,
+    scale:1,
+    delay: 0.5,
+    ease: "power2.out",
+    onStart:()=>{
+      gsap.set("#fromScaleUp", {opacity:1})
+    }
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>      
+
+  <!------------------------------------- To Scale Up ------------------------------------------------>
+  <div class="card" data-index="17">
+    <div id="toScaleUp-wrapper" class="copy">
+      <div id="toScaleUp" class="">To<br>Scale Up</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set("#toScaleUp", {
+    scale:1,
+    opacity:1
+  })
+  .to("#toScaleUp", {
+    duration:0.2,
+    scale:2,
+    delay: 0.5,
+    ease: "power2.in",
+    onComplete:()=>{
+      gsap.set("#toScaleUp", {opacity:0, delay:0.03})
+      gsap.set("#toScaleUp", {opacity:1, scale:1, delay:1})
+    }
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>        
+
+  <!------------------------------------- From Scale Down ------------------------------------------------>
+  <div class="card" data-index="18">
+    <div id="fromScaleDown-wrapper" class="copy">
+      <div id="fromScaleDown" class="">From<br>Scale Down</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set("#fromScaleDown", {
+    scale:0,
+    opacity:0
+  })
+  .to("#fromScaleDown", {
+    duration:0.2,
+    scale:1,
+    delay: 0.5,
+    ease: "power2.out",
+    onStart:()=>{
+      gsap.set("#fromScaleDown", {opacity:1})
+    }
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>    
+
+  <!------------------------------------- To Scale Down ------------------------------------------------>
+  <div class="card" data-index="19">
+    <div id="toScaleDown-wrapper" class="copy">
+      <div id="toScaleDown" class="">To<br>Scale Down</div>
+    </div>
+    <button class="replay-btn">Replay</button>
+    <button class="toggle-btn">Show Code</button>
+    <div class="code-wrapper">
+      <div class="code-container">
+        <button class="copy-btn" title="Copy to clipboard">📋</button>
+          <pre><code class="language-js">
+tl.set("#toScaleDown", {
+    scale:1,
+    opacity:1
+  })
+  .to("#toScaleDown", {
+    duration:0.2,
+    scale:0,
+    delay: 0.5,
+    ease: "power2.in",
+    onComplete:()=>{
+      gsap.set("#toScaleDown", {opacity:0, delay:0.03})
+      gsap.set("#toScaleDown", {opacity:1, scale:1, delay:1})
+    }
+  })
+          </code></pre>
+     </div>
+    </div>
+  </div>    
+
+</div>
+
+
+<!-- GSAP + SplitText -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="js/SplitText.min.js"></script>
+<script src="js/animation-library.js"></script>
+<!-- Prism.js -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+</body>
+</html>
